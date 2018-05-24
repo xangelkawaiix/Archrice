@@ -1,0 +1,159 @@
+# Font for window titles.
+font pango:Menlo 8
+
+# Window borders
+for_window [class=".*"] border pixel 2
+hide_edge_borders both
+
+# i3 gaps
+gaps inner 15
+gaps outer 10
+smart_gaps on
+
+# #--Startup--# #
+
+exec --no-startup-id exec bash $HOME/.fehbg
+
+# #--Basic binding--# #
+
+set $mod Mod4
+
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to quit?' -b 'Quit Already!' 'i3-msg exit'"
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Show rofi
+bindsym $mod+d exec "rofi -combi-modi window,drun -show combi"
+
+# #--letter key binding--# #
+bindsym $mod+q kill
+
+bindsym $mod+z gaps outer current plus 5
+bindsym $mod+Shift+z gaps outer current  minus 5
+
+bindsym $mod+x gaps inner current plus 5
+bindsym $mod+Shift+x gaps inner current minus 5
+
+
+# #--Application launcher--# #
+bindsym $mod+c nop "STARTING CHROME", exec --no-startup-id chromium
+
+bindsym $mod+Return exec urxvt
+
+bindsym $mod+r exec urxvt -e ranger
+
+bindsym $mod+Shift+n exec urxvt -e neomutt
+bindsym $mod+n exec urxvt -e newsboat
+
+bindsym $mod+m exec --no-startup-id urxvt -e mocp
+
+# Lock screen
+bindsym $mod+l exec i3lock
+
+# Print screen focused window
+bindsym Print exec scrot -u '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/scrot'
+
+# Print screen entire view
+bindsym $mod+Print exec scrot '%Y%m%d_%Ho%M%S.png' -e 'mv $f ~/Pictures/scrot'
+
+# Move Focus workspace
+bindsym $mod+Left          focus left
+bindsym $mod+Down          focus down
+bindsym $mod+Up            focus up
+bindsym $mod+Right         focus right
+
+# move focused window
+bindsym $mod+Shift+h       move left
+bindsym $mod+Shift+j       move down
+bindsym $mod+Shift+k       move up
+bindsym $mod+Shift+l       move right
+bindsym $mod+Shift+Left    move left
+bindsym $mod+Shift+Down    move down
+bindsym $mod+Shift+Up      move up
+bindsym $mod+Shift+Right   move right
+
+# split
+bindsym $mod+h  split h
+bindsym $mod+v  split v
+
+# fullscreen
+bindsym $mod+f  fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+# bindsym $mod+Shift+a focus parent
+
+# focus the child container
+# bindsym $mod+Shift+d focus child
+
+# Define names for default workspaces for which we configure key bindings later on.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+
+# restart i3 inplace
+bindsym $mod+Shift+r restart
+
+bar {
+    font pango:Menlo 9
+    status_command    i3blocks
+    position          top
+    mode              dock
+    modifier          none
+    colors {
+      separator #d8d8d8 
+      background #000000
+      statusline #dddddd
+      focused_workspace #0088CC #0088CC #ffffff
+      active_workspace #333333 #333333 #ffffff
+      inactive_workspace #333333 #333333 #888888
+      urgent_workspace #2f343a #900000 #ffffff
+      }        
+}
+
