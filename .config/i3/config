@@ -1,8 +1,8 @@
 # Font for window titles.
-font pango:Menlo 8
+font pango:Monaco 8
 
 # Window borders
-for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 3 
 hide_edge_borders both
 
 # i3 gaps
@@ -13,7 +13,8 @@ smart_gaps on
 # #--Startup--# #
 
 exec --no-startup-id exec bash $HOME/.fehbg
-
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.config/i3/polybar.sh &
 # #--Basic binding--# #
 
 set $mod Mod4
@@ -24,8 +25,23 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to quit?'
 floating_modifier $mod
 
 # Show rofi
-bindsym $mod+d exec "rofi -combi-modi window,drun -show combi"
+# bindsym $mod+d exec "rofi -combi-modi window,drun -show combi"
+# Show dmenu
+bindsym $mod+d exec  dmenu_run
 
+# System Menu #
+set $sysmenu "[p]oweroff  re[b]oot  [r]eload [s]uspend  [l]ogout  "
+bindsym $mod+Delete      mode $sysmenu
+
+mode $sysmenu {
+    bindsym r         restart
+    bindsym l         exit
+    bindsym p         exec shutdown -P now
+    bindsym b         exec shutdown -r now
+    bindsym s         exec systemct suspend
+    bindsym Return    mode "default"
+    bindsym Escape    mode "default"
+}
 # #--letter key binding--# #
 bindsym $mod+q kill
 
@@ -37,16 +53,16 @@ bindsym $mod+Shift+x gaps inner current minus 5
 
 
 # #--Application launcher--# #
-bindsym $mod+c nop "STARTING CHROME", exec --no-startup-id chromium
+bindsym $mod+c exec --no-startup-id firefox
 
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec termite 
 
-bindsym $mod+r exec urxvt -e ranger
+bindsym $mod+r exec termite -e ranger
 
-bindsym $mod+Shift+n exec urxvt -e neomutt
-bindsym $mod+n exec urxvt -e newsboat
+bindsym $mod+Shift+n exec termite -e neomutt
+bindsym $mod+n exec termite -e newsboat
 
-bindsym $mod+m exec --no-startup-id urxvt -e mocp
+bindsym $mod+m exec --no-startup-id termite -e ncmpcpp
 
 # Lock screen
 bindsym $mod+l exec i3lock
@@ -140,20 +156,21 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace
 bindsym $mod+Shift+r restart
 
-bar {
-    font pango:Menlo 9
-    status_command    i3blocks
-    position          top
-    mode              dock
-    modifier          none
-    colors {
-      separator #d8d8d8 
-      background #000000
-      statusline #dddddd
-      focused_workspace #0088CC #0088CC #ffffff
-      active_workspace #333333 #333333 #ffffff
-      inactive_workspace #333333 #333333 #888888
-      urgent_workspace #2f343a #900000 #ffffff
-      }        
-}
+#bar {
+#    font pango:Monaco 9
+#    status_command    i3blocks
+#     i3bar_command ~/.config/polybar/launch.sh
+#    position          top
+#    mode              dock
+#    modifier          none
+#    colors {
+#      separator #d8d8d8 
+#      background #000000
+#      statusline #dddddd
+#      focused_workspace #0088CC #0088CC #ffffff
+#      active_workspace #333333 #333333 #ffffff
+#      inactive_workspace #333333 #333333 #888888
+#      urgent_workspace #2f343a #900000 #ffffff
+#      }        
+#}
 
