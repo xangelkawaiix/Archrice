@@ -1,33 +1,23 @@
-# Font for window titles.
-font pango:Monaco 8
-
-# Window borders
-for_window [class=".*"] border pixel 3 
-hide_edge_borders both
-
-# i3 gaps
-gaps inner 15
-gaps outer 10
-smart_gaps on
-
 # #--Startup--# #
-
 exec --no-startup-id exec bash $HOME/.fehbg
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id ~/.config/i3/polybar.sh &
+
 # #--Basic binding--# #
-
 set $mod Mod4
-
+font pango:Hack Regular 10
+for_window [class=".*"] border pixel 3
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to quit?' -b 'Quit Already!' 'i3-msg exit'"
+# bindsym $mod+Shift+d exec "rofi -combi-modi window,drun -show combi"
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+bindsym $mod+d		exec dmenu_run
+floating_modifier 	$mod
+hide_edge_borders 	both
 
-# Show rofi
-# bindsym $mod+d exec "rofi -combi-modi window,drun -show combi"
-# Show dmenu
-bindsym $mod+d exec  dmenu_run
+# Needed for i3 gaps
+gaps inner 15
+gaps outer 15
+smart_gaps on
 
 # System Menu #
 set $sysmenu "[p]oweroff  re[b]oot  [r]eload [s]uspend  [l]ogout  "
@@ -42,31 +32,54 @@ mode $sysmenu {
     bindsym Return    mode "default"
     bindsym Escape    mode "default"
 }
+
 # #--letter key binding--# #
 bindsym $mod+q kill
-
+bindsym $mod+Return exec urxvt
 bindsym $mod+z gaps outer current plus 5
 bindsym $mod+Shift+z gaps outer current  minus 5
 
 bindsym $mod+x gaps inner current plus 5
 bindsym $mod+Shift+x gaps inner current minus 5
 
+# #---Media Keys---# #
+
+# Volume keys
+bindsym $mod+plus		exec --no-startup-id lmc up 5
+bindsym $mod+Shift+plus		exec --no-startup-id lmc up 15
+bindsym $mod+minus 		exec --no-startup-id lmc down 5
+bindsym $mod+Shift+minus	exec --no-startup-id lmc down 15
+bindsym $mod+less 		exec --no-startup-id lmc prev
+bindsym $mod+Shift+less		exec --no-startup-id lmc replay
+bindsym $mod+greater		exec --no-startup-id lmc next
+bindsym $mod+Shift+greater	exec --no-startup-id lmc next
+
+# For advancing forward/backward in an mpd song
+bindsym $mod+bracketleft 	exec --no-startup-id lmc back 10
+bindsym $mod+Shift+bracketleft 	exec --no-startup-id lmc back 120
+bindsym $mod+bracketright 	exec --no-startup-id lmc forward 10
+bindsym $mod+Shift+bracketright exec --no-startup-id lmc forward 120
+
+# #--Extra XF86 keys--# #
+bindsym XF86AudioRaiseVolume exec "amixer -c 0 set PCM 3dB+"
+bindsym XF86AudioLowerVolume exec "amixer -c 0 set PCM 3dB-"
+bindsym XF86AudioMute exec "amixer set Master toggle"
+
+bindsym XF86MonBrightnessUp exec xbacklight +20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -20 # decrease screen brightness
 
 # #--Application launcher--# #
-bindsym $mod+c exec --no-startup-id firefox
-
-bindsym $mod+Return exec termite 
-
-bindsym $mod+r exec termite -e ranger
-
-bindsym $mod+Shift+n exec termite -e neomutt
-bindsym $mod+n exec termite -e newsboat
-
+# TODO: Rewrite the binding keys
+# bindsym $mod+q exec
+bindsym $mod+w exec --no-startup-id firefox
+# bindsym $mod+e exec
+bindsym $mod+r exec  termite -e     ranger
+bindsym $mod+t exec termite -e 	    neomutt
+bindsym $mod+y exec termite -e      newsboat
 bindsym $mod+m exec --no-startup-id termite -e ncmpcpp
-
-# Lock screen
 bindsym $mod+l exec i3lock
 
+# TODO: Put these below on letter key binding section
 # Print screen focused window
 bindsym Print exec scrot -u '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/scrot'
 
@@ -88,7 +101,7 @@ bindsym $mod+Shift+Left    move left
 bindsym $mod+Shift+Down    move down
 bindsym $mod+Shift+Up      move up
 bindsym $mod+Shift+Right   move right
-
+# TODO: Put these below on Letter key binding section
 # split
 bindsym $mod+h  split h
 bindsym $mod+v  split v
@@ -97,9 +110,9 @@ bindsym $mod+v  split v
 bindsym $mod+f  fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
+# bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -149,9 +162,9 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+# TODO: Put this on Letter key binding
 # reload the configuration file
 bindsym $mod+Shift+c reload
-
 
 # restart i3 inplace
 bindsym $mod+Shift+r restart
