@@ -112,7 +112,7 @@ bindsym $mod+t exec thunar
 bindsym $mod+s gaps inner current plus 5
 bindsym $mod+Shift+s gaps inner current minus 5
 
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+Shift+d gaps inner current set 0; gaps outer current set 0
 
 bindsym $mod+f fullscreen toggle
@@ -137,13 +137,13 @@ bindsym $mod+Shift+l move right 30
 bindsym $mod+z gaps outer current plus 5
 bindsym $mod+Shift+z gaps outer current minus 5
 
-#bindsym $mod+x
+bindsym $mod+x exec --no-startup-id i3lock 
 #bindsym $mod+Shift+x
 
 #bindsym $mod+c
-bindsym $mod+Shift+c reload
+#bindsym $mod+Shift+c 
 
-#bindsym $mod+v
+#bindsym $mod+v exec $term -e ncmpcpp -s visualizer
 #bindsym $mod+Shift+v
 
 #bindsym $mod+b
