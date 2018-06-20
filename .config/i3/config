@@ -16,6 +16,12 @@ font pango:hack 10
 for_window [class=".*"] border pixel 3
 
 set $term --no-startup-id urxvt
+# i3volume
+set $volumepath ~/i3-volume
+set $statuscmd polybar
+set $statussig SIGUSR1
+set $volumestep 5
+set $alsacard 1
 
 bindsym $mod+Shift+Escape exec "i3-nagbar -t warning -m 'Do you really want to quit?' -b 'Quit Already!' 'i3-msg exit'"
 
@@ -66,9 +72,11 @@ bindsym $mod+bracketright 	exec --no-startup-id lmc forward 10
 bindsym $mod+Shift+bracketright exec --no-startup-id lmc forward 120
 
 # #--Extra XF86 keys--# #
-bindsym XF86AudioRaiseVolume exec "alsamixer -c 0 set PCM 3dB+"
-bindsym XF86AudioLowerVolume exec "alsamixer -c 0 set PCM 3dB-"
-bindsym XF86AudioMute exec "alsamixer set Master toggle"
+
+bindsym XF86AudioRaiseVolume exec $volumepath/volume -anp -i $volumestep -t $statuscmd -u $statussig
+bindsym XF86AudioLowerVolume exec $volumepath/volume -anp -d $volumestep -t $statuscmd -u $statussig
+bindsym XF86AudioMute        exec $volumepath/volume -amn -t $statuscmd -u $statussig
+
 
 #bindsym XF86MonBrightnessUp exec xbacklight +20 # increase screen brightness
 #bindsym XF86MonBrightnessDown exec xbacklight -20 # decrease screen brightness
@@ -226,8 +234,8 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # #--External Scripts--# #
 # composite manager
 exec --no-startup-id compton
-#Starts dunst for notifications:
-exec --no-startup-id dunst
+#Dunst for notifications:
+exec_always --no-startup-id dunst
 #Music player daemon:
 exec --no-startup-id mpd
 #Torrent daemon:
