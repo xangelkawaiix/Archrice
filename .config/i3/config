@@ -11,7 +11,7 @@ set $mod Mod4
 font pango:hack 10
 for_window [class=".*"] border pixel 3
 set $term --no-startup-id urxvt
-set $browser --no-startup-id firefox
+
 
 # i3volume
 set $volumepath ~/i3-volume
@@ -20,9 +20,7 @@ set $statussig SIGUSR1
 set $volumestep 5
 set $alsacard 1
 
-bindsym $mod+Shift+Escape exec "i3-nagbar -t warning -m 'Do you really want to quit?' -b 'Quit Already!' 'i3-msg exit'"
-
-# bindsym $mod+Shift+d exec "rofi -combi-modi window,drun -show combi"
+bindsym $ mod+Shift+Escape exec "i3-nagbar -t warning -m 'Do you really want to quit?' -b 'Quit Already!' 'i3-msg exit'"
 
 floating_modifier 	$mod
 hide_edge_borders 	both
@@ -46,9 +44,12 @@ mode $sysmenu {
     bindsym Escape    mode "default"
 }
 
-# #--letter key binding--# #
+# #--Basic binding--# #
 bindsym $mod+Return exec $term
 #bindsym $mod+Shift+Return
+
+bindsym $mod+Shift+space    floating toggle
+bindysm $mod+space          focus mode_toggle
 
 # #--Extra XF86 keys--# #
 
@@ -61,27 +62,27 @@ bindsym XF86AudioMute        exec $volumepath/volume -amn -t $statuscmd -u $stat
 # #--Application launcher--# #
 # Row First
 bindsym $mod+q kill
-bindsym $mod+Shift+q kill 
+#bindsym $mod+Shift+q kill 
 
-bindsym $mod+w exec --no-startup-id $browser
-bindsym $mod+Shift+w exec --no-startup-id $BROWSER 
+bindsym $mod+w exec --no-startup-id qutebrowser
+bindsym $mod+Shift+w exec --no-startup-id firefox
 
-#bindsym $mod+e exec
+bindsym $mod+e exec $term -e neomutt
 #bindsym $mod+Shift+e 
 
 bindsym $mod+r exec  $term -e ranger 
 bindsym $mod+Shift+r exec $term -e sudo ranger /
 
 bindsym $mod+t exec thunar	    
-#bindsym $mod+Shift+t
+#bindsym $mod+Shift+t gaps inner current set 15; gaps outer current set 15
 
-#bindsym $mod+y  
+#bindsym $mod+y  exec $term calcurse
 #bindsym $mod+Shift+y 
 
-bindsym $mod+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
+#bindsym $mod+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 #bindsym $mod+Shift+u
 
-#bindsym $mod+i 
+bindsym $mod+i exec $term -e htop
 #bindsym $mod+Shift+i
 
 #bindsym $mod+o 
@@ -134,11 +135,11 @@ bindsym $mod+x exec --no-startup-id i3lock
 #bindsym $mod+b
 #bindsym $mod+Shift+b
 
-bindsym $mod+n exec urxvt -e newsboat
-bindsym $mod+Shift+n exec urxvt -e neomutt
+bindsym $mod+n exec $term -e newsboat
+#bindsym $mod+Shift+n
 
-bindsym $mod+m exec --no-startup-id urxvt -e ncmpcpp
-#bindsym $mod+Shift+m
+bindsym $mod+m exec --no-startup-id $term -e ncmpcpp
+bindsym $mod+Shift+m exec $volumepath/volume -amn -t $statuscmd -u $statussig
 
 # #---Function Buttons---# #
 #bindsym $mod+F1
@@ -150,18 +151,17 @@ bindsym $mod+F6		exec --no-startup-id $term -e transmission-remote-cli
 ##bindsym $mod+F7
 ##bindsym $mod+F8
 bindsym $mod+F9		exec --no-startup-id dmenumount
-bindsym $mod+F10	exec --no-startup-id dmenuumount
+bindsym $mod+F10	exec --no-startup-id $term -e bashmount
 ##bindsym $mod+F11
 ##bindsym $mod+F12
-# TODO: Put these below on letter key binding section
-# Print screen focused window
-bindsym Print exec scrot -u '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/Scrot'
 
-# Print screen entire view
-bindsym $mod+Print exec scrot '%Y%m%d_%Ho%M%S.png' -e 'mv $f ~/Pictures/Scrot'
+# For screenshot and recording
+# Print current window
+bindsym Print exec scrot -u '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/Scrot'
+# Print fullscreen
+bindsym Shift+Print exec scrot '%Y%m%d_%Ho%M%S.png' -e 'mv $f ~/Pictures/Scrot'
 
 # #--Workspace Bindings--# #
-# TODO: Sort the binding
 bindsym $mod+Home workspace $ws1
 bindsym $mod+Control+Home move container to  workspace $ws1
 bindsym $mod+End workspace $ws10
@@ -171,18 +171,6 @@ bindsym $mod+slash split vertical ;; exec $term
 bindsym $mod+Shift+slash	kill
 bindsym $mod+backslash workspace back_and_forth
 bindsym $mod+Tab workspace back_and_forth
-
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-# bindsym $mod+Shift+a focus parent
-
-# focus the child container
-# bindsym $mod+Shift+d focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 set $ws1 "1"
@@ -221,14 +209,14 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # #---Arrow Keys---# #
-bindsym $mod+Left		focus left
-bindsym $mod+Down		focus down
-bindsym $mod+Up			focus up
-bindsym $mod+Right 		focus right
+bindsym $mod+Left		    focus left
+bindsym $mod+Down		    focus down
+bindsym $mod+Up			    focus up
+bindsym $mod+Right 		    focus right
 bindsym $mod+Shift+Left		move left
 bindsym $mod+Shift+Down		move down
 bindsym $mod+Shift+Up		move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Right    move right
 
 # #--External Scripts--# #
 # composite manager
@@ -246,22 +234,6 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Run Polybar Script
 exec_always --no-startup-id $HOME/.config/i3/polybar.sh &
 
-for_window [instance="dropdown"] floating enable
-for_window [instance="dropdown"] resize set 625 400
-for_window [instance="dropdown"] move scratchpad
-for_window [instance="dropdown"] border pixel 5
-# Runs the tmuxinit script, which searches for an earlier tmux instance,
-# otherwise starts a new one (to prevent multiple dropdown sessions).
-exec --no-startup-id $term -n dropdown -e tmuxinit
-# Then I have a window running R I use for basic arithmetic
-# I'll later bind this to mod+a.
-for_window [instance="math"] floating enable
-for_window [instance="math"] resize set 800 300
-for_window [instance="math"] move scratchpad
-for_window [instance="math"] border pixel 5
-exec --no-startup-id $term -n math -f mono:pixelsize=24 -e dropdowncalc
-# Runs neofetch on first tmux screen if installed.
-exec_always --no-startup-id "tmux send-keys -t 0:0 'clear && neofetch 2>/dev/null' Enter"
 #bar {
 #    font pango:Hack Regular 9
 #    status_command    i3blocks
