@@ -17,7 +17,10 @@ else
 export PS1="\[$(tput setaf 1)\]┌─╼\[$(tput setaf 3)\] \u\[$(tput setaf 1)\] ╺─╸\[$(tput setaf 1)\] \H \[$(tput setaf 7)\][\[$(tput setaf 5)\]\w\[$(tput setaf 7)\]]\n\[$(tput setaf 1)\]\$(if [[ \$? == 0 ]]; then echo \"\[$(tput setaf 1)\]└────╼\"; else echo \"\[$(tput setaf 1)\]└╼\"; fi) \[$(tput setaf 7)\]"
 fi
 
-#Generic shortcuts:
+# Welcome
+echo "Welcome $USER." | lolcat # You need to install lolcat to make it working
+
+# Daily shortcuts:
 alias music="ncmpcpp"
 alias clock="ncmpcpp -s clock"
 alias visualizer="ncmpcpp -s visualizer"
@@ -36,10 +39,13 @@ alias sv="sudo vim"
 alias r="ranger"
 alias sr="sudo ranger"
 alias ka="killall"
-alias g="git"
-alias gitup="git push origin master"
 alias trem="transmission-remote"
 alias mkd="mkdir -pv"
+
+# Version control
+alias gs="git status"
+alias gd="git add ."
+alias gp="git push -u origin master"
 
 # Internet
 alias yt="youtube-dl --add-metadata -ic" # Download video link
@@ -48,13 +54,12 @@ alias YT="youtube-viewer"
 alias starwars="telnet towel.blinkenlights.nl"
 alias myip="curl http://ipecho.net/plain; echo"
 
-# Audio and Music
-alias pause="mpc toggle"
-alias next="mpc next"
-alias prev="mpc prev"
-alias trupause="mpc pause"
-alias beg="mpc seek 0%"
-alias lilbak="mpc seek -10"
-alias lilfor="mpc seek +10"
-alias bigbak="mpc seek -120"
-alias bigfor="mpc seek +120"
+# Multiple commands
+
+function gitAll() {
+    git add .
+    git commit -a -m "$1"
+    git push -u origin master
+}
+
+alias="git add . && git commit -a -m '$i' && git push -u origin master"
