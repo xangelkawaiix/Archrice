@@ -10,7 +10,7 @@
 set $mod Mod4
 font pango:hack 10
 for_window [class=".*"] border pixel 3
-set $term --no-startup-id urxvt
+set $term --no-startup-id st
 
 
 # i3volume
@@ -20,7 +20,7 @@ set $statussig SIGUSR1
 set $volumestep 5
 set $alsacard 1
 
-bindsym $ mod+Shift+Escape exec "i3-nagbar -t warning -m 'Do you really want to quit?' -b 'Quit Already!' 'i3-msg exit'"
+# bindsym $ mod+Shift+Delete exec "i3-nagbar -t warning -m 'Do you really want to quit?' -b 'Quit Already!' 'i3-msg exit'"
 
 floating_modifier 	$mod
 hide_edge_borders 	both
@@ -64,8 +64,8 @@ bindsym XF86AudioMute        exec $volumepath/volume -amn -t $statuscmd -u $stat
 bindsym $mod+q kill
 #bindsym $mod+Shift+q kill 
 
-bindsym $mod+w exec --no-startup-id qutebrowser
-bindsym $mod+Shift+w exec --no-startup-id firefox
+bindsym $mod+w exec --no-startup-id firefox
+bindsym $mod+Shift+w exec $term -e wifi-menu
 
 bindsym $mod+e exec $term -e neomutt
 #bindsym $mod+Shift+e 
@@ -76,10 +76,10 @@ bindsym $mod+Shift+r exec $term -e sudo ranger /
 bindsym $mod+t exec thunar	    
 #bindsym $mod+Shift+t gaps inner current set 15; gaps outer current set 15
 
-#bindsym $mod+y  exec $term calcurse
+bindsym $mod+y  exec $term -e calcurse
 #bindsym $mod+Shift+y 
 
-#bindsym $mod+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
+#bindsym $mod+u
 #bindsym $mod+Shift+u
 
 bindsym $mod+i exec $term -e htop
@@ -92,7 +92,7 @@ bindsym $mod+i exec $term -e htop
 #bindsym $mod+Shift+p 
 
 # Row second
-bindsym $mod+a bindsym $mod+a [instance="math"] scratchpad show; [instance="math"] move position center
+#bindsym $mod+a 
 #bindsym $mod+Shift+a 
 
 bindsym $mod+s gaps inner current plus 5
@@ -129,7 +129,7 @@ bindsym $mod+x exec --no-startup-id i3lock
 #bindsym $mod+c
 #bindsym $mod+Shift+c 
 
-#bindsym $mod+v exec $term -e ncmpcpp -s visualizer
+bindsym $mod+v exec $term -e ncmpcpp -s visualizer
 #bindsym $mod+Shift+v
 
 #bindsym $mod+b
@@ -144,13 +144,13 @@ bindsym $mod+Shift+m exec $volumepath/volume -amn -t $statuscmd -u $statussig
 # #---Function Buttons---# #
 #bindsym $mod+F1
 bindsym $mod+F2		restart
-#bindsym $mod+F3		exec --no-startup-id displayselect
+#bindsym $mod+F3	
 bindsym $mod+F4		exec --no-startup-id $hibernate
 bindsym $mod+F5		exec --no-startup-id $netrefresh
 bindsym $mod+F6		exec --no-startup-id $term -e transmission-remote-cli
 ##bindsym $mod+F7
 ##bindsym $mod+F8
-bindsym $mod+F9		exec --no-startup-id dmenumount
+#bindsym $mod+F9	
 bindsym $mod+F10	exec --no-startup-id $term -e bashmount
 ##bindsym $mod+F11
 ##bindsym $mod+F12
