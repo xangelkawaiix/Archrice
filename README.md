@@ -7,15 +7,16 @@ This ricing setup will **work** on any Linux distro, so you don't need to instal
 
 ## Programs that i bind are listed in here:
 * ncmpcpp & mpd.
-* urxvt (rxvt-unicode).
+* [pywal](https://github.com/dylanaraps/pywal/)
+* urxvt (Default Terminal).
 * vim.
+* [rtv](https://github.com/michael-lazar/rtv)
 * newsboat.
 * polybar.
 * rofi.
 * mpd.
 * neofetch.
 * [betterlockscreen](https://github.com/pavanjadhaw/betterlockscreen).
-* And many more!
 
 ## Like my rice?
 You can push that star button if you find it awesome!, Also check this [guy](https://www.github.com/lukesmithxyz) out! Without him, i might not create this cool Repo.
