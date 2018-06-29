@@ -1,95 +1,80 @@
-!-------------------------------------------------------------------------------
-! Xft settings
-!-------------------------------------------------------------------------------
+! ____              _          _   _ _     _                   _      __  __   _       __             _ _       
+!|  _ \  __ _ _ __ | | _____  | | | (_) __| | __ _ _   _  __ _| |_    \ \/ /__| | ___ / _| __ _ _   _| | |_ ___ 
+!| | | |/ _` | '_ \| |/ / _ \ | |_| | |/ _` |/ _` | | | |/ _` | __|    \  // _` |/ _ \ |_ / _` | | | | | __/ __|
+!| |_| | (_| | | | |   <  __/ |  _  | | (_| | (_| | |_| | (_| | |_   _ /  \ (_| |  __/  _| (_| | |_| | | |_\__ \
+!|____/ \__,_|_| |_|_|\_\___| |_| |_|_|\__,_|\__,_|\__, |\__,_|\__| (_)_/\_\__,_|\___|_|  \__,_|\__,_|_|\__|___/
+!                                                  |___/                                                        
 
-Xft.dpi:                    96
-Xft.antialias:              true
-Xft.rgba:                   rgb
-Xft.hinting:                true
-Xft.hintstyle:              hintslight
 
-!-------------------------------------------------------------------------------
-! URxvt settings
-! Colours lifted from Solarized (http://ethanschoonover.com/solarized)
-! More info at:
-! http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod
-!-------------------------------------------------------------------------------
+URxvt.background: #182225
+URxvt.foreground: #F9B0C2
 
-URxvt.depth:                32
-URxvt.geometry:             90x30
-URxvt.transparent:          false
-URxvt.fading:               0
-! URxvt.urgentOnBell:         true
-! URxvt.visualBell:           true
-URxvt.loginShell:           true
-URxvt.saveLines:            50
-URxvt.internalBorder:       3
-URxvt.lineSpace:            0
+URxvt.colorBD:    #CFCFCF
+URxvt.colorUL:    #A0A0A0
+URxvt.colorIT:    #686868
 
-! Fonts
-URxvt.allow_bold:           false
-/* URxvt.font:                 -*-terminus-medium-r-normal-*-12-120-72-72-c-60-iso8859-1 */
-URxvt*font: xft:Hack Regular:size=10
-URxvt*boldFont: xft:Hack Regular:size=10
+!BLK
+URxvt.color0:     #303030
+URxvt.color8:     #686868
 
-! Fix font space
-URxvt*letterSpace: -1
+!RED
+URxvt.color9:     #DC143C
+URxvt.color1:     #D370A3
 
-! Scrollbar
-URxvt.scrollStyle:          rxvt
-URxvt.scrollBar:            false
+!GRN
+URxvt.color10:    #00FA9A
+URxvt.color2:     #00FF7F
 
-! Perl extensions
-URxvt.perl-ext-common:      default,matcher
-URxvt.matcher.button:       1
-URxvt.urlLauncher:          firefox
+!BLU
+URxvt.color12:    #00BFFF
+URxvt.color4:     #FFFF00
 
-! Cursor
-URxvt.cursorBlink:          true
-URxvt.cursorColor:          #657b83
-URxvt.cursorUnderline:      false
+!YEL
+URxvt.color11:    #F0E68C
+URxvt.color3:     #B58858
 
-! Pointer
-URxvt.pointerBlank:         true
+!CYN
+URxvt.color14:    #75DAA9
+URxvt.color6:     #3BA275
 
-!!Source http://github.com/altercation/solarized
+!MAG
+URxvt.color13:    #E5B0FF
+URxvt.color5:     #AC7BDE
 
-*background: #002b36
-*foreground: #657b83
-!!*fading: 40
-*fadeColor: #002b36
-*cursorColor: #93a1a1
-*pointerColorBackground: #586e75
-*pointerColorForeground: #93a1a1
+!WHT
+URxvt.color7:     #FFFFF0
+URxvt.color15:    #F8F8FF
 
-!! black dark/light
-*color0: #073642
-*color8: #002b36
+!! You need compton compositor to enable transparency
+URxvt.intensityStyles:	false
+URxvt.depth:		    92
+URxvt.font: 		    xft:Hack:size=11
+URxvt.scrollBar:	    false
+URxvt.cursorColor:	    #F9B0C2
+!URxvt*transparent:      true
+!URxvt*shading:          35
+URxvt.background:       #182225
+URxvt.depth: 32
 
-!! red dark/light
-*color1: #dc322f
-*color9: #cb4b16
 
-!! green dark/light
-*color2: #859900
-*color10: #586e75
 
-!! yellow dark/light
-*color3: #b58900
-*color11: #657b83
+!! Extensions
+URxvt.perl-ext-common:	default,matcher,resize-font,url-select,keyboard-select
+URxvt.colorUL:		    #4682B4
 
-!! blue dark/light
-*color4: #268bd2
-*color12: #839496
+!! url-select
+URxvt.keysym.M-u:	        perl:url-select:select_next
+URxvt.url-select.launcher:  linkhandler
+URxvt.url-select.underline: true
 
-!! magenta dark/light
-*color5: #d33682
-*color13: #6c71c4
+!! keyboard-select:
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
 
-!! cyan dark/light
-*color6: #2aa198
-*color14: #93a1a1
+!! resize-font
+URxvt.resize-font.smaller:	C-Down
+URxvt.resize-font.bigger:	C-Up
 
-!! white dark/light
-*color7: #eee8d5
-*color15: #fdf6e3
+!! Matcher
+URxvt.url-launcher:	        linkhandler
+URxvt.matcher.button:	    1
+

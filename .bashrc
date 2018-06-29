@@ -10,41 +10,19 @@
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+(cat ~/.cache/wal/sequences &)
 
-# Welcome
-echo "Welcome $USER." | lolcat # You need to install lolcat to make it working
+# Alternative (blocks terminal for 0-3ms)
+cat ~/.cache/wal/sequences
 
 # #--Bash Theme--# #
-#Dark Gray
-#PS1="\[\033[0;90m\]\[$(tput bold)\][\[$(tput sgr0)\]\[\033[0;90m\]\u@\h:\W\[$(tput bold)\]]\[$(tput sgr0)\] "
-#Light Gray
-#PS1="\[\033[0;37m\]\[$(tput bold)\][\[$(tput sgr0)\]\[\033[0;37m\]\u@\h:\W\[$(tput bold)\]]\[$(tput sgr0)\] "
-#Cyan
-#PS1="\[\033[0;36m\]\[$(tput bold)\][\[$(tput sgr0)\]\[\033[0;36m\]\u@\h:\W\[$(tput bold)\]]\[$(tput sgr0)\] "
-#Light Cyan
-#PS1="\[\033[0;96m\]\[$(tput bold)\][\[$(tput sgr0)\]\[\033[0;96m\]\u@\h:\W\[$(tput bold)\]]\[$(tput sgr0)\] "
-#Green
-#PS1="\[\033[0;32m\]\[$(tput bold)\][\[$(tput sgr0)\]\[\033[0;32m\]\u@\h:\W\[$(tput bold)\]]\[$(tput sgr0)\] "
-#Light Green
-#PS1="\[\033[0;92m\]\[$(tput bold)\][\[$(tput sgr0)\]\[\033[0;92m\]\u@\h:\W\[$(tput bold)\]]\[$(tput sgr0)\] "
-#Yellow/Orange
-#PS1="\[\033[0;33m\]\[$(tput bold)\][\[$(tput sgr0)\]\[\033[0;33m\]\u@\h:\W\[$(tput bold)\]]\[$(tput sgr0)\] "
-#Light Yellow/Orange
-#PS1="\[\033[0;93m\]\[$(tput bold)\][\[$(tput sgr0)\]\[\033[0;93m\]\u@\h:\W\[$(tput bold)\]]\[$(tput sgr0)\] "
-#Blue
-#PS1="\[\033[0;34m\]\[$(tput bold)\][\[$(tput sgr0)\]\[\033[0;34m\]\u@\h:\W\[$(tput bold)\]]\[$(tput sgr0)\] "
-#Light Blue
-#PS1="\[\033[0;94m\]\[$(tput bold)\][\[$(tput sgr0)\]\[\033[0;94m\]\u@\h:\W\[$(tput bold)\]]\[$(tput sgr0)\] "
 #Magenta
 #PS1="\[\033[0;35m\]\[$(tput bold)\][\[$(tput sgr0)\]\[\033[0;35m\]\u@\h:\W\[$(tput bold)\]]\[$(tput sgr0)\] "
 #Light Magenta
-#PS1="\[\033[0;95m\]\[$(tput bold)\][\[$(tput sgr0)\]\[\033[0;95m\]\u@\h:\W\[$(tput bold)\]]\[$(tput sgr0)\] "
-#Red
-PS1="\[\033[0;31m\]\[$(tput bold)\][\[$(tput sgr0)\]\[\033[0;31m\]\u@\h:\W\[$(tput bold)\]]\[$(tput sgr0)\] "
-#Light Red
-#PS1="\[\033[0;91m\]\[$(tput bold)\][\[$(tput sgr0)\]\[\033[0;91m\]\u@\h:\W\[$(tput bold)\]]\[$(tput sgr0)\] "
-
-### dot file source: http://dotshare.it/dots/8295/ ###
+PS1="\[\033[0;95m\]\[$(tput bold)\][\[$(tput sgr0)\]\[\033[0;95m\]\u@\h:\W\[$(tput bold)\]]\[$(tput sgr0)\] "
 
 # Daily shortcuts.
 alias music="ncmpcpp"
@@ -104,3 +82,8 @@ function lazygit() {
 }
 
 alias="git add . && git commit -a -m '$i' && git push -u origin master"
+
+# systemctl
+alias reboot="sudo systemctl reboot"
+alias poweroff="sudo systemctl poweroff"
+alias halt="sudo systemctl halt"

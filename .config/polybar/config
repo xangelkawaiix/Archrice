@@ -40,7 +40,7 @@ font-3 = FontAwesome:pixelsize=11;0
 
 modules-left = bspwm i3 mpd
 modules-center = 
-modules-right = filesystem xbacklight alsa pulseaudio memory cpu wlan eth battery temperature date powermenu
+modules-right = filesystem xbacklight alsa pulseaudio memory cpu wlan eth battery temperature date
 
 tray-position = right
 tray-padding = 2
@@ -406,7 +406,7 @@ menu-1-1 = reboot
 menu-1-1-exec = sudo reboot
 
 menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
+menu-2-0-exec = sudo shutdown -h now
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
