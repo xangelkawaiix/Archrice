@@ -10,6 +10,7 @@
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
+
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
@@ -51,8 +52,13 @@ alias gs="git status"
 alias gd="git add ."
 alias gp="git push -u origin master"
 
+# ls aliases
+alias ll="ls -alF"
+alias la="ls -A"
+alias l="ls -CF"
+
 # System maintenance & management.
-alias cleancache="sudo pacman -Scc"
+alias clean="sudo pacman -Scc"
 alias upgrade="sudo pacman -Syu"
 alias sysupgrade="sudo pacman -Syuu"
 alias install="sudo pacman -S"
@@ -65,14 +71,10 @@ alias YT="youtube-viewer"
 alias starwars="telnet towel.blinkenlights.nl"
 alias myip="curl http://ipecho.net/plain; echo"
 
-# Education
-alias math="python"
+# Development
+alias liveserver="python3 -m http.server"
 
-# Entertainment
-alias choo="sl"
-alias matrix="cmatrix"
-
-# Multiple commands
+# #-- Multiple commands--# #
 
 # Deploy your code straight into Git hosting site with. 
 function lazygit() {
