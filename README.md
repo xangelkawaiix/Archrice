@@ -1,5 +1,5 @@
 # Archrice
-![comfy AF](comfy.png)
+![Minimalist](Anime.png)
 
 These are my config file. I make this repo because i was inspired by [luke smith](https://www.github.com/lukesmithxyz). He's the one reason why i'm starting to use i3 as my Go-to DE (Desktop Environment).
 
