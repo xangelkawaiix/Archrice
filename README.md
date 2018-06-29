@@ -1,5 +1,5 @@
 # Archrice
-![Minimalist](Anime.png)
+![Minimalist](Minimalist.png)
 
 These are my config file. I make this repo because i was inspired by [luke smith](https://www.github.com/lukesmithxyz). He's the one reason why i'm starting to use i3 as my Go-to DE (Desktop Environment).
 
@@ -7,12 +7,12 @@ This ricing setup will **work** on any Linux distro, so you don't need to instal
 
 ## Programs that i bind are listed in here:
 * ncmpcpp & mpd.
-* [pywal](https://github.com/dylanaraps/pywal/)
+* [pywal](https://github.com/dylanaraps/pywal/).
 * urxvt (Default Terminal).
 * vim.
-* [rtv](https://github.com/michael-lazar/rtv)
+* [rtv](https://github.com/michael-lazar/rtv).
 * newsboat.
-* polybar.
+* [polybar](https://github.com/jaagr/polybar).
 * rofi.
 * mpd.
 * neofetch.
