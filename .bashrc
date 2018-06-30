@@ -11,14 +11,6 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
-# Import colorscheme from 'wal' asynchronously
-# &   # Run the process in the background.
-# ( ) # Hide shell job control messages.
-(cat ~/.cache/wal/sequences &)
-
-# Alternative (blocks terminal for 0-3ms)
-cat ~/.cache/wal/sequences
-
 # #--Bash Theme--# #
 #Magenta
 #PS1="\[\033[0;35m\]\[$(tput bold)\][\[$(tput sgr0)\]\[\033[0;35m\]\u@\h:\W\[$(tput bold)\]]\[$(tput sgr0)\] "
