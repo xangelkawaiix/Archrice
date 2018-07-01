@@ -1,5 +1,5 @@
 # Archrice
-![Setup 1](Screenshot/2018_07_1.png)
+![Setup 1](2018_07_1.png)
 
 These are my config file. I make this repo because i was inspired by [luke smith](https://www.github.com/lukesmithxyz). He's the one reason why i'm starting to use i3 as my Go-to DE (Desktop Environment).
 
