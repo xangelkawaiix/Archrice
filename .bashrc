@@ -8,8 +8,11 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
-PS1='[\u@\h \W]\$ '
+alias ls='ls -hN --color=auto --group-directories-first'
+if [ "$EUID" -ne 0 ]
+	then export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
+	else export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]ROOT\[$(tput setaf 2)\]@\[$(tput setaf 4)\]$(hostname | awk '{print toupper($0)}') \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
+fi
 
 # #--Bash Theme--# #
 #Magenta
@@ -24,7 +27,7 @@ alias visualizer="ncmpcpp -s visualizer"
 alias news="newsboat"
 alias email="neomutt"
 alias files="ranger"
-alias chat="weechat"
+alias chat="irssi"
 alias audio="alsamixer"
 alias calender="calcurse"
 
@@ -38,7 +41,8 @@ alias sr="sudo ranger"
 alias ka="killall"
 alias trem="transmission-remote"
 alias mkd="mkdir -pv"
-
+alias bw="wal -i"
+alias sw="sudo wifi-menu"
 # Version control.
 alias gs="git status"
 alias gd="git add ."
@@ -50,11 +54,13 @@ alias la="ls -A"
 alias l="ls -CF"
 
 # System maintenance & management.
-alias clean="sudo pacman -Scc"
-alias upgrade="sudo pacman -Syu"
-alias sysupgrade="sudo pacman -Syuu"
-alias install="sudo pacman -S"
-alias remove="sudo pacman -R"
+alias cln="sudo pacman -Scc"
+alias upgr="sudo pacman -Syu"
+alias sysupgr="sudo pacman -Syuu"
+alias inst="sudo pacman -S"
+alias rmv="sudo pacman -R"
+alias nf="clear && neofetch"
+alias sdn="sudo shutdown -h now"
 
 # Internet
 alias yt="youtube-dl --add-metadata -ic" # Download video link
@@ -64,12 +70,12 @@ alias starwars="telnet towel.blinkenlights.nl"
 alias myip="curl http://ipecho.net/plain; echo"
 
 # Development
-alias liveserver="python3 -m http.server"
+alias live="python3 -m http.server"
 
 # #-- Multiple commands--# #
 
-# Deploy your code straight into Git hosting site with. 
-function lazygit() {
+# Push your code straight into Github. 
+function gt() {
     git add .
     git commit -a -m "$1"
     git push -u origin master
@@ -77,7 +83,3 @@ function lazygit() {
 
 alias="git add . && git commit -a -m '$i' && git push -u origin master"
 
-# systemctl
-alias reboot="sudo systemctl reboot"
-alias poweroff="sudo systemctl poweroff"
-alias halt="sudo systemctl halt"
