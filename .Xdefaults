@@ -50,11 +50,7 @@ URxvt.depth:		    92
 URxvt.font: 		    xft:Hack:size=11
 URxvt.scrollBar:	    false
 URxvt.cursorColor:	    #6EB8D0
-!URxvt*transparent:      true
-!URxvt*shading:          35
 URxvt.depth: 32
-
-
 
 !! Extensions
 URxvt.perl-ext-common:	default,matcher,resize-font,url-select,keyboard-select
@@ -74,4 +70,4 @@ URxvt.resize-font.bigger:	C-Up
 
 !! Matcher
 URxvt.url-launcher:	        linkhandler
-URxvt.matcher.button: 1
+URxvt.matcher.button:       1

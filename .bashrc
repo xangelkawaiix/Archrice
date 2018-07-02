@@ -43,6 +43,10 @@ alias trem="transmission-remote"
 alias mkd="mkdir -pv"
 alias bw="wal -i"
 alias sw="sudo wifi-menu"
+alias vb="vim ~/.bashrc"
+alias vc="vim ~/.config/i3/config"
+alias vp="vim ~/.config/polybar/config"
+
 # Version control.
 alias gs="git status"
 alias gd="git add ."
@@ -81,5 +85,15 @@ function gt() {
     git push -u origin master
 }
 
-alias="git add . && git commit -a -m '$i' && git push -u origin master"
+# Copying any config folder into Archrice repo, and then push it into Github
 
+function rice(){
+    cp -r -f {.config/i3,.config/polybar/config,.config/mpd,.config/neofetch,.config/moc,.config/dunst,.config/rofi,.config/rtv} Repos/Archrice/.config
+    cp -r {.bashrc,.bash_profile,.Xdefaults,.ncmpcpp,.newsboat,.moc} Repos/Archrice
+    cd ~/Repos/Archrice
+    git add .
+    git commit -a -m "$1"
+    git push -u origin master
+}
+
+alias="git add . && git commit -a -m '$i' && git push -u origin master"
