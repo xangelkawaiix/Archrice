@@ -1,7 +1,7 @@
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #1C1C1C
-background-alt = #333
+background = #B95773
+background-alt = #EAB19F
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #b5b5b5
