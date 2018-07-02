@@ -89,7 +89,8 @@ function gt() {
 
 function rice(){
     cp -r -f {.config/i3,.config/polybar/config,.config/mpd,.config/neofetch,.config/moc,.config/dunst,.config/rofi,.config/rtv} Repos/Archrice/.config
-    cp -r {.bashrc,.bash_profile,.Xdefaults,.ncmpcpp,.newsboat,.moc} Repos/Archrice
+    cp -r {.ncmpcpp,.newsboat,.moc} Repos/Archrice
+    cp {.bashrc,.bash_profile,.Xdefaults,.vimrc} Repos/Archrice
     cd ~/Repos/Archrice
     git add .
     git commit -a -m "$1"
