@@ -85,12 +85,12 @@ function gt() {
     git push -u origin master
 }
 
-# Copying any config folder into Archrice repo, and then push it into Github
+# Copying specific config folder into Archrice repo folder, and then push it into Github.
 
 function rice(){
-    cp -r -f {.config/i3,.config/polybar/config,.config/mpd,.config/neofetch,.config/moc,.config/dunst,.config/rofi,.config/rtv} Repos/Archrice/.config
-    cp -r {.ncmpcpp,.newsboat,.moc} Repos/Archrice
-    cp {.bashrc,.bash_profile,.Xdefaults,.vimrc} Repos/Archrice
+    cp -r -f {.config/i3,.config/polybar,.config/mpd,.config/neofetch,.config/moc,.config/dunst,.config/rofi,.config/rtv} ~/Repos/Archrice/.config
+    cp -r {.ncmpcpp,.newsboat,.moc} ~/Repos/Archrice/
+    cp {.bashrc,.bash_profile,.Xdefaults,.vimrc} ~/Repos/Archrice/
     cd ~/Repos/Archrice
     git add .
     git commit -a -m "$1"
