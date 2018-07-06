@@ -2,32 +2,33 @@ sw_volume: 99
 audio_device_state:1:ALSA sound card
 audio_device_state:1:toggle_visualizer
 state: play
-current: 6
-time: 3.854000
+current: 14
+time: 54.056000
 random: 0
 repeat: 0
 single: 0
 consume: 0
-crossfade: 5
+crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:HC89-F/HC89-F/01 僕が名前を呼ぶ日.flac
-1:HC89-F/HC89-F/02 私が恋を知る日.flac
-2:HC90-F/HC90-F/01 テレカクシ記念日.flac
-3:HC90-F/HC90-F/02 可愛くなりたい.flac
-4:HC91-F/01 大好きな事って口に出して言いたいじゃん？.flac
-5:HC91-F/02 ハローアクター！.flac
-6:HC91-F/SGSGN [MP3]/SGSGN [MP3]/01. アトランティスのフタリ.mp3
-7:HC91-F/SGSGN [MP3]/SGSGN [MP3]/02. Last Regret.mp3
-8:HC91-F/SGSGN [MP3]/SGSGN [MP3]/03. Last Answer.mp3
-9:HC91-F/SGSGN [MP3]/SGSGN [MP3]/04. 撲滅なのです！.mp3
-10:HC91-F/SGSGN [MP3]/SGSGN [MP3]/05. マジカルステッキ☆.mp3
-11:HC91-F/SGSGN [MP3]/SGSGN [MP3]/06. ドリーム☆クッキング.mp3
-12:HC91-F/SGSGN [MP3]/SGSGN [MP3]/07. RyB.mp3
-13:HC91-F/SGSGN [MP3]/SGSGN [MP3]/08. 眠り星.mp3
-14:HC92-F/01. ジャッジ☆.flac
-15:HC92-F/02. 月の姫.flac
-16:HC93-F/HC93-F/01 チョコカノ.flac
-17:HC93-F/HC93-F/02 ホワイトデーキッス.flac
+0:BLACK STAR -CD1-/01. Kimagure Mercy.flac
+1:BLACK STAR -CD1-/02. Sweet Devil (Eight Mix).flac
+2:BLACK STAR -CD1-/03. Baby Maniacs (Eight Mix).flac
+3:BLACK STAR -CD1-/04. fake doll.flac
+4:BLACK STAR -CD1-/05. Little Scarlet Bad Girl.flac
+5:BLACK STAR -CD1-/06. Carry Me Off.flac
+6:BLACK STAR -CD1-/07. KiLLER LADY (Eight Mix).flac
+7:BLACK STAR -CD1-/08. GAME OVER.flac
+8:BLACK STAR -CD1-/09. Heart Chrome.flac
+9:BLACK STAR -CD1-/10. Mad Lovers (Eight Mix).flac
+10:BLACK STAR -CD1-/11. Free (Eight Mix).flac
+11:BLACK STAR -CD1-/12. candii (Eight Mix).flac
+12:BLACK STAR -CD1-/13. REWRITER.flac
+13:BLACK STAR -CD1-/14. rock (Eight Mix).flac
+14:BLACK STAR -CD1-/15. Distorted Princess (Eight Mix).flac
+15:BLACK STAR -CD1-/16. Dream Creator.flac
+16:BLACK STAR -CD1-/17. Beautiful Nightmare.flac
+17:BLACK STAR -CD1-/18. Queen of the Night.flac
+18:BLACK STAR -CD1-/19. Eight Megamix -Black Star-.flac
 playlist_end

@@ -89,7 +89,7 @@ function gt() {
 
 function rice(){
     cp -r -f {.config/i3,.config/polybar,.config/mpd,.config/neofetch,.config/moc,.config/dunst,.config/rofi,.config/rtv} ~/Repos/Archrice/.config
-    cp -r {.ncmpcpp,.newsboat,.moc} ~/Repos/Archrice/
+    cp -r {.ncmpcpp,.newsboat} ~/Repos/Archrice/
     cp {.bashrc,.bash_profile,.Xdefaults,.vimrc} ~/Repos/Archrice/
     cd ~/Repos/Archrice
     git add .

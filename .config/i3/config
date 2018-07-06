@@ -151,8 +151,8 @@ bindsym $mod+F5		exec --no-startup-id $netrefresh
 bindsym $mod+F6		exec --no-startup-id $term -e transmission-remote-cli
 ##bindsym $mod+F7
 ##bindsym $mod+F8
-##bindsym $mod+F9
-bindsym $mod+F10	exec --no-startup-id $term -e bashmount
+bindsym $mod+F9     exec $term -e vim .config/i3/config
+bindsym $mod+F10	exec $term -e bashmount
 ##bindsym $mod+F11
 ##bindsym $mod+F12
 
