@@ -9,7 +9,7 @@
 # #--Basic Definition--# #
 set $mod Mod4
 font pango:hack 10
-for_window [class=".*"] border pixel 5
+for_window [class=".*"] border pixel 3
 set $term --no-startup-id urxvt
 set $BROWSER --no-startup-id firefox
 
