@@ -50,8 +50,8 @@ URxvt.depth:		    92
 URxvt.font: 		    xft:Hack:size=11
 URxvt.scrollBar:	    false
 URxvt.cursorColor:	    #6EB8D0
-URxvt.depth: 32
-
+URxvt.depth:            32
+URxvt.internalBorder:   30
 !! Extensions
 URxvt.perl-ext-common:	default,matcher,resize-font,url-select,keyboard-select
 URxvt.colorUL:		    #4682B4
