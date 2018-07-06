@@ -52,6 +52,10 @@ URxvt.scrollBar:	    false
 URxvt.cursorColor:	    #6EB8D0
 URxvt.depth:            32
 URxvt.internalBorder:   30
+
+! Catch ugly URLs                                                                                                              
+URxvt*cutchars: '"'()*<>[]{|}       
+
 !! Extensions
 URxvt.perl-ext-common:	default,matcher,resize-font,url-select,keyboard-select
 URxvt.colorUL:		    #4682B4
@@ -60,14 +64,3 @@ URxvt.colorUL:		    #4682B4
 URxvt.keysym.M-u:	        perl:url-select:select_next
 URxvt.url-select.launcher:  linkhandler
 URxvt.url-select.underline: true
-
-!! keyboard-select:
-URxvt.keysym.M-Escape: perl:keyboard-select:activate
-
-!! resize-font
-URxvt.resize-font.smaller:	C-Down
-URxvt.resize-font.bigger:	C-Up
-
-!! Matcher
-URxvt.url-launcher:	        linkhandler
-URxvt.matcher.button:       1
