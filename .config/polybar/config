@@ -316,9 +316,9 @@ bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
 bar-volume-indicator = | 
 bar-volume-indicator-font = 2
-bar-volume-fill = =
+bar-volume-fill = -
 bar-volume-fill-font = 2
-bar-volume-empty = =
+bar-volume-empty = -
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
@@ -365,7 +365,7 @@ animation-discharging-framerate = 1200
 type = internal/temperature
 thermal-zone = 0
 units = true
-warn-temperature = 80
+warn-temperature = 90
 
 format = <ramp> <label>
 format-underline = #f50a4d
