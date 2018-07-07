@@ -6,7 +6,12 @@ These are my config file. I make this repo because i was inspired by [luke smith
 This ricing setup will **work** on any Linux distro, so you don't need to install Arch as long as you have i3wm installed.
 
 ## Dependencies
-* ncmpcpp & mpd.
+### Programs
+* ncmpcpp.
+* mpd.
+* neomutt.
+* calcurse.
+* dmenu.
 * [pywal](https://github.com/dylanaraps/pywal/).
 * urxvt (Default Terminal).
 * vim.
@@ -14,11 +19,22 @@ This ricing setup will **work** on any Linux distro, so you don't need to instal
 * newsboat.
 * [polybar](https://github.com/jaagr/polybar).
 * rofi.
-* mpd.
 * neofetch.
 * [betterlockscreen](https://github.com/pavanjadhaw/betterlockscreen).
-* i3-gaps
-
+* [i3 Gaps](https://github.com/Airblader/i3).
+### Other
+#### Fonts:
+* [Hack](https://github.com/source-foundry/Hack).
+* [Source Code Pro](https://typekit.com/fonts/source-code-pro).
+* [Roboto](https://github.com/google/roboto).
+* [Meslo](https://github.com/andreberg/Meslo-Font).
+#### GTKs:
+* [Adapta Nokto](https://github.com/adapta-project/adapta-gtk-theme)
+* [Arc](https://github.com/horst3180/Arc-theme)
+#### Icons:
+* [Plane](https://www.opendesktop.org/c/1499721142)
+* [Papirus](https://www.opendesktop.org/p/1166289/)
+*
 ## Like my rice?
 Click the star button if you find it Awesome!, Also check this cool [guy](https://www.github.com/lukesmithxyz).
 
