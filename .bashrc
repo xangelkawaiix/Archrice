@@ -17,9 +17,6 @@ if [ "$EUID" -ne 0 ]
 	else export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]ROOT\[$(tput setaf 2)\]@\[$(tput setaf 4)\]$(hostname | awk '{print toupper($0)}') \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
 fi
 
-# Basic
-set history=5000
-
 # Daily shortcuts.
 alias music="ncmpcpp"
 alias clock="ncmpcpp -s clock"
@@ -46,7 +43,7 @@ alias sw="sudo wifi-menu"
 alias vb="vim ~/.bashrc"
 alias vc="vim ~/.config/i3/config"
 alias vp="vim ~/.config/polybar/config"
-
+alias vv="vim .vimrc"
 # Version control.
 alias gs="git status"
 alias gd="git add ."
@@ -56,6 +53,7 @@ alias gp="git push -u origin master"
 alias ll="ls -alF"
 alias la="ls -A"
 alias l="ls -CF"
+alias lah="ls -lah"
 
 # System maintenance & management.
 alias cln="sudo pacman -Scc"

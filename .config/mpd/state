@@ -1,9 +1,9 @@
-sw_volume: 100
+sw_volume: 88
 audio_device_state:1:ALSA sound card
 audio_device_state:1:toggle_visualizer
-state: play
-current: 2
-time: 4.249000
+state: pause
+current: 5
+time: 82.686000
 random: 0
 repeat: 0
 single: 0
@@ -12,7 +12,23 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:BLACK STAR -CD1-/03. Baby Maniacs (Eight Mix).flac
-1:BLACK STAR -CD1-/02. Sweet Devil (Eight Mix).flac
-2:BLACK STAR -CD1-/01. Kimagure Mercy.flac
+0:WHITE MOON -CD2-/01. Blue Star.flac
+1:WHITE MOON -CD2-/02. Weekender Girl.flac
+2:WHITE MOON -CD2-/03. Electric Love (Eight Mix).flac
+3:WHITE MOON -CD2-/04. Desktop Cinderella.flac
+4:WHITE MOON -CD2-/05. Twinkle World.flac
+5:WHITE MOON -CD2-/06. HORIZON.flac
+6:WHITE MOON -CD2-/07. Shooting Star.flac
+7:WHITE MOON -CD2-/08. Keep Only One Love (Eight Mix).flac
+8:WHITE MOON -CD2-/09. Tomorrow.flac
+9:WHITE MOON -CD2-/10. TRAP x TRAP.flac
+10:WHITE MOON -CD2-/11. Electric Star (Eight Mix).flac
+11:WHITE MOON -CD2-/12. FUTURE DRIVER.flac
+12:WHITE MOON -CD2-/13. Electric Magic.flac
+13:WHITE MOON -CD2-/14. whiteout (Eight Mix).flac
+14:WHITE MOON -CD2-/15. Fukayomi.flac
+15:WHITE MOON -CD2-/16. Yowamushi Rocket.flac
+16:WHITE MOON -CD2-/17. Yeah! Yeah!! Yeah!!!.flac
+17:WHITE MOON -CD2-/18. Step To Tomorrow.flac
+18:WHITE MOON -CD2-/19. Eight Megamix -White Moon-.flac
 playlist_end
