@@ -34,7 +34,6 @@ This ricing setup will **work** on any Linux distro, so you don't need to instal
 #### Icons:
 * [Plane](https://www.opendesktop.org/c/1499721142)
 * [Papirus](https://www.opendesktop.org/p/1166289/)
-*
 ## Like my rice?
 Click the star button if you find it Awesome!, Also check this cool [guy](https://www.github.com/lukesmithxyz).
 
