@@ -94,7 +94,7 @@ function rice(){
     git add .
     git commit -a -m "$1"
     git push -u origin master
-    cd ~
+    cd ~/
 }
 
 alias="git add . && git commit -a -m '$i' && git push -u origin master"
