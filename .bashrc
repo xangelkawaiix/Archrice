@@ -44,6 +44,7 @@ alias vb="vim ~/.bashrc"
 alias vc="vim ~/.config/i3/config"
 alias vp="vim ~/.config/polybar/config"
 alias vv="vim .vimrc"
+
 # Version control.
 alias gs="git status"
 alias gd="git add ."
@@ -93,6 +94,7 @@ function rice(){
     git add .
     git commit -a -m "$1"
     git push -u origin master
+    cd ~
 }
 
 alias="git add . && git commit -a -m '$i' && git push -u origin master"
