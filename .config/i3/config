@@ -21,8 +21,6 @@ set $statussig SIGUSR1
 set $volumestep 5
 set $alsacard 1
 
-# bindsym $ mod+Shift+Delete exec "i3-nagbar -t warning -m 'Do you really want to quit?' -b 'Quit Already!' 'i3-msg exit'"
-
 floating_modifier 	$mod
 hide_edge_borders 	both
 
@@ -62,10 +60,10 @@ bindsym XF86AudioMute        exec $volumepath/volume -amn -t $statuscmd -u $stat
 # #--Application launcher--# #
 # Row First
 bindsym $mod+q kill
-#bindsym $mod+Shift+q kill 
+bindsym $mod+Shift+q kill 
 
 bindsym $mod+w exec --no-startup-id $BROWSER
-bindsym $mod+Shift+w exec $BROWSER
+bindsym $mod+Shift+w exec qutebrowser
 
 bindsym $mod+e exec $term -e neomutt
 #bindsym $mod+Shift+e 
