@@ -10,8 +10,8 @@
 set $mod Mod4
 font pango:hack 10
 for_window [class=".*"] border pixel 3
-set $term --no-startup-id urxvt
-set $BROWSER --no-startup-id firefox
+set $term --no-startup-id       urxvt
+set $BROWSER --no-startup-id    firefox
 
 # i3volume
 # I use ALSA driver, you might change it if you use Pulseaudio
@@ -49,6 +49,9 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+space    floating toggle
 bindysm $mod+space          focus mode_toggle
 
+# Live Saver
+bindsym $mod+Shift+Delete exec --no-startup-id $volumepath/volume -amn -t $statuscmd -u $statussig ; workspace 11 ; exec $term -e ranger 
+
 # #--Extra XF86 keys--# #
 
 bindsym XF86AudioRaiseVolume exec $volumepath/volume -anp -i $volumestep -t $statuscmd -u $statussig
@@ -66,7 +69,7 @@ bindsym $mod+w exec --no-startup-id $BROWSER
 bindsym $mod+Shift+w exec qutebrowser
 
 bindsym $mod+e exec $term -e neomutt
-#bindsym $mod+Shift+e 
+#bindsym $mod+Shift+e
 
 bindsym $mod+r exec  $term -e ranger 
 bindsym $mod+Shift+r exec $term -e sudo ranger /
@@ -148,7 +151,7 @@ bindsym $mod+F5		exec --no-startup-id $netrefresh
 bindsym $mod+F6		exec --no-startup-id $term -e transmission-remote-cli
 ##bindsym $mod+F7
 ##bindsym $mod+F8
-bindsym $mod+F9     exec $term -e vim .config/i3/config
+##bindsym $mod+F9     
 bindsym $mod+F10	exec $term -e bashmount
 ##bindsym $mod+F11
 ##bindsym $mod+F12
