@@ -25,8 +25,8 @@ floating_modifier 	$mod
 hide_edge_borders 	both
 
 # Needed for i3 gaps
-gaps inner 15
-gaps outer 15
+gaps inner 10
+gaps outer 10
 
 # System Menu #
 set $sysmenu "[p]oweroff  re[b]oot  [r]eload [s]uspend  [l]ogout  "
