@@ -30,17 +30,14 @@ This ricing setup will **work** on any Linux distro, so you don't need to instal
 * [Roboto](https://github.com/google/roboto).
 * [Meslo](https://github.com/andreberg/Meslo-Font).
 #### GTKs:
-* [Adapta Nokto](https://github.com/adapta-project/adapta-gtk-theme)
+* [Adapta Nokto](https://github.com/adapta-project/adapta-gtk-theme) (Currently Used)
 * [Arc](https://github.com/horst3180/Arc-theme)
 #### Icons:
-* [Plane](https://www.opendesktop.org/c/1499721142)
+* [Plane](https://www.opendesktop.org/c/1499721142) (Currently Used)
 * [Papirus](https://www.opendesktop.org/p/1166289/)
 ## Like my rice?
 Click the star button if you find it Awesome!, Also check this cool [guy](https://www.github.com/lukesmithxyz).
 
-## Extra Information:
-* The program that i use, always changed. 
-* You need to edit some dotfile to fit your need.
-* feel free to make pull request.
-* Setup might change from time to time, You can see all the setup on Screenshot Folder
+## Additional Notes:
+Feel free to make pull request as i may implement them, if it's fit my need.
 
