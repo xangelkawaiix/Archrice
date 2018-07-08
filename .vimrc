@@ -19,25 +19,53 @@ let mapleader =" "
 	set nocompatible
 	filetype plugin on
 	syntax on
+    color dracula
 	set encoding=utf-8
 	set number
 	set relativenumber
 
-    " Open NerdTree when vim starts up on opening a directory
+"""" Vim plugin
+"" Nerdtree
+" Open NerdTree when vim starts up on opening a directory
     autocmd StdinReadPre * let s:std_in=1
     autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
-" For live latex preview
+"" Live latex preview
 let g:livepreview_previewer = 'mupdf'
 
-" Powerline theme
-let g:airline_theme='minimalist'
+"" Nerd commenter
+    " Add spaces after comment delimiters by default
+    let g:NERDSpaceDelims = 1
+
+    "Use compact syntax for prettified multi-line comments
+    let g:NERDCompactSexyComs = 1
+
+    " Align line-wise comment delimiters flush left instead of following code indentation
+    let g:NERDDefaultAlign = 'left'
+
+    " Set a language to use its alternate delimiters by default
+    let g:NERDAltDelims_java = 1
+
+    " Add your own custom formats or override the defaults
+    let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+
+    " Allow commenting and inverting empty lines (useful when commenting a region)
+    let g:NERDCommentEmptyLines = 1
+
+    " Enable trimming of trailing whitespace when uncommenting
+    let g:NERDTrimTrailingWhitespace = 1
+
+    " Enable NERDCommenterToggle to check all selected lines is commented or not 
+    let g:NERDToggleCheckAllLines = 1
+
+"" Powerline theme
+let g:airline_theme='deus'
 let g:airline_powerline_fonts = 1
  if !exists('g:airline_symbols')
         let g:airline_symbols = {}
     endif
 
-    " unicode symbols
+    "" unicode symbols
     let g:airline_left_sep = '»'
     let g:airline_left_sep = '▶'
     let g:airline_right_sep = '«'
@@ -57,7 +85,7 @@ let g:airline_powerline_fonts = 1
     let g:airline_symbols.notexists = 'Ɇ'
     let g:airline_symbols.whitespace = 'Ξ'
 
-    " powerline symbols
+    "" powerline symbols
     let g:airline_left_sep = ''
     let g:airline_left_alt_sep = ''
     let g:airline_right_sep = ''

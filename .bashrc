@@ -72,6 +72,7 @@ alias YT="youtube-viewer"
 alias starwars="telnet towel.blinkenlights.nl"
 alias myip="curl http://ipecho.net/plain; echo"
 alias wttr="curl http://wttr.in/"
+
 # Development
 alias live="python3 -m http.server"
 
