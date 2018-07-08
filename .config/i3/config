@@ -54,9 +54,9 @@ bindsym $mod+Shift+Delete exec --no-startup-id $volumepath/volume -amn -t $statu
 
 # #--Extra XF86 keys--# #
 
-bindsym XF86AudioRaiseVolume exec $volumepath/volume -anp -i $volumestep -t $statuscmd -u $statussig
-bindsym XF86AudioLowerVolume exec $volumepath/volume -anp -d $volumestep -t $statuscmd -u $statussig
-bindsym XF86AudioMute        exec $volumepath/volume -amn -t $statuscmd -u $statussig
+bindsym XF86AudioRaiseVolume exec $volumepath/volume -np -i $volumestep -t $statuscmd -u $statussig
+bindsym XF86AudioLowerVolume exec $volumepath/volume -np -d $volumestep -t $statuscmd -u $statussig
+bindsym XF86AudioMute        exec $volumepath/volume -mn -t $statuscmd -u $statussig
 #bindsym XF86MonBrightnessUp exec xbacklight +20 # increase screen brightness
 #bindsym XF86MonBrightnessDown exec xbacklight -20 # decrease screen brightness
 

@@ -2,8 +2,8 @@ sw_volume: 99
 audio_device_state:1:ALSA sound card
 audio_device_state:1:toggle_visualizer
 state: play
-current: 1
-time: 4.156000
+current: 0
+time: 41.004000
 random: 0
 repeat: 0
 single: 0
@@ -12,68 +12,5 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:Portal2-OST-Complete/Portal2-01-Science_is_Fun.mp3
-1:Portal2-OST-Complete/Portal2-02-Concentration_Enhancing_Menu_Initialiser.mp3
-2:Portal2-OST-Complete/Portal2-03-999999.mp3
-3:Portal2-OST-Complete/Portal2-04-The_Courtesy_Call.mp3
-4:Portal2-OST-Complete/Portal2-05-Technical_Difficulties.mp3
-5:Portal2-OST-Complete/Portal2-06-Overgrowth.mp3
-6:Portal2-OST-Complete/Portal2-07-Ghost_of_Rattman.mp3
-7:Portal2-OST-Complete/Portal2-08-Haunted_Panels.mp3
-8:Portal2-OST-Complete/Portal2-09-The_Future_Starts_With_You.mp3
-9:Portal2-OST-Complete/Portal2-10-There_She_Is.mp3
-10:Portal2-OST-Complete/Portal2-11-You_Know_Her.mp3
-11:Portal2-OST-Complete/Portal2-12-The_Friendly_Faith_Plate.mp3
-12:Portal2-OST-Complete/Portal2-13-15_Acres_of_Broken_Glass.mp3
-13:Portal2-OST-Complete/Portal2-14-Love_as_a_Construct.mp3
-14:Portal2-OST-Complete/Portal2-15-I_Saw_a_Deer_Today.mp3
-15:Portal2-OST-Complete/Portal2-16-Hard_Sunshine.mp3
-16:Portal2-OST-Complete/Portal2-17-I_Am_Different.mp3
-17:Portal2-OST-Complete/Portal2-18-Adrenal_Vapor.mp3
-18:Portal2-OST-Complete/Portal2-19-Turret_Wife_Serenade.mp3
-19:Portal2-OST-Complete/Portal2-20-I_Made_It_All_Up.mp3
-20:Portal2-OST-Complete/Portal2-21-Comedy_Equals_Tragedy_Plus_Time.mp3
-21:Portal2-OST-Complete/Portal2-22-Triple_Laser_Phase.mp3
-22:Portal2-OST-Complete/Portal2-01-You_Will_Be_Perfect.mp3
-23:Portal2-OST-Complete/Portal2-02-Halls_Of_Science_4.mp3
-24:Portal2-OST-Complete/Portal2-03-Bots_Build_Bots.mp3
-25:Portal2-OST-Complete/Portal2-04-An_Accent_Beyond.mp3
-26:Portal2-OST-Complete/Portal2-05-Robot_Ghost_Story.mp3
-27:Portal2-OST-Complete/Portal2-06-Die_Cut_Laser_Dance.mp3
-28:Portal2-OST-Complete/Portal2-07-Turret_Redemption_Line.mp3
-29:Portal2-OST-Complete/Portal2-08-Bring_Your_Daughter_To_Work_Day.mp3
-30:Portal2-OST-Complete/Portal2-09-Almost_At_Fifty_Percent.mp3
-31:Portal2-OST-Complete/Portal2-10-Dont_Do_It.mp3
-32:Portal2-OST-Complete/Portal2-11-I_AM_NOT_A_MORON.mp3
-33:Portal2-OST-Complete/Portal2-12_Vitrification_Order.mp3
-34:Portal2-OST-Complete/Portal2-13-Music_Of_The_Spheres.mp3
-35:Portal2-OST-Complete/Portal2-14-You_Are_Not_Part_Of_The_Control_Group.mp3
-36:Portal2-OST-Complete/Portal2-15-Forwarding_The_Cause_Of_Science.mp3
-37:Portal2-OST-Complete/Portal2-16-PotatOS_Lament.mp3
-38:Portal2-OST-Complete/Portal2-17-The_Reunion.mp3
-39:Portal2-OST-Complete/Portal2-18-Music_Of_The_Spheres_2(Incendiary_Lemons).mp3
-40:Portal2-OST-Complete/Portal2-01-Reconstructing_More_Science.mp3
-41:Portal2-OST-Complete/Portal2-02-Wheatley_Science.mp3
-42:Portal2-OST-Complete/Portal2-03-FrankenTurrets.mp3
-43:Portal2-OST-Complete/Portal2-04-Machiavellian_Bach.mp3
-44:Portal2-OST-Complete/Portal2-05-Excursion_Funnel.mp3
-45:Portal2-OST-Complete/Portal2-06-TEST.mp3
-46:Portal2-OST-Complete/Portal2-07-The_Part_Where_He_Kills_You.mp3
-47:Portal2-OST-Complete/Portal2-08-Omg_What_has_He_Done_.mp3
-48:Portal2-OST-Complete/Portal2-09-Bombs_for_Throwing_at_You.mp3
-49:Portal2-OST-Complete/Portal2-10-Your_Precious_Moon.mp3
-50:Portal2-OST-Complete/Portal2-11-Caroline_Deleted.mp3
-51:Portal2-OST-Complete/Portal2-12-Cara_Mia_Addio.mp3
-52:Portal2-OST-Complete/Portal2-13-Want_You_Gone.mp3
-53:Portal2-OST-Complete/Portal2-14-Spaaaaace.mp3
-54:Portal2-OST-Complete/Portal2-15-Space_Phase.mp3
-55:Portal2-OST-Complete/Portal2-16-Some_Assembly_Required.mp3
-56:Portal2-OST-Complete/Portal2-17-Robot_Waiting_Room_#1.mp3
-57:Portal2-OST-Complete/Portal2-18-Robot_Waiting_Room_#2.mp3
-58:Portal2-OST-Complete/Portal2-19-Robot_Waiting_Room_#3.mp3
-59:Portal2-OST-Complete/Portal2-20-Robot_Waiting_Room_#4.mp3
-60:Portal2-OST-Complete/Portal2-21-Robot_Waiting_Room_#5.mp3
-61:Portal2-OST-Complete/Portal2-22-Robot_Waiting_Room_#6.mp3
-62:Portal2-OST-Complete/Portal2-23-You_Saved_Science.mp3
-63:Portal2-OST-Complete/Portal2-24-Robots_FTW.mp3
+0:WHITE MOON -CD2-/01. Blue Star.flac
 playlist_end
