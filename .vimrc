@@ -240,4 +240,4 @@ map <leader>c :!compiler <c-r>%<CR>
 	autocmd Filetype markdown map <F5> :!pandoc<space><C-r>%<space>--pdf-engine=xelatex<space>-o<space><C-r>%.pdf<Enter><Enter>
 	autocmd Filetype rmd map <F5> :!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
 	autocmd Filetype rmd inoremap ;r ```{r}<CR>```<CR><CR><esc>2kO
-autocmd Filetype rmd inoremap ;p ```{python}<CR>```<CR><CR><esc>2kO
+    autocmd Filetype rmd inoremap ;p ```{python}<CR>```<CR><CR><esc>2kO

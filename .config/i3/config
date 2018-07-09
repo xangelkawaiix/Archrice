@@ -143,8 +143,8 @@ bindsym $mod+m exec --no-startup-id $term -e ncmpcpp
 bindsym $mod+Shift+m exec $volumepath/volume -amn -t $statuscmd -u $statussig
 
 # #---Function Buttons---# #
-bindsym $mod+F1     exec shutdown -P now
-bindsym $mod+F2		exec shutdown -r now
+#bindsym $mod+F1     
+#bindsym $mod+F2		
 bindsym $mod+F3	    restart
 bindsym $mod+F4		exec --no-startup-id $hibernate
 bindsym $mod+F5		exec --no-startup-id $netrefresh
@@ -153,8 +153,8 @@ bindsym $mod+F6		exec --no-startup-id $term -e transmission-remote-cli
 ##bindsym $mod+F8
 ##bindsym $mod+F9     
 bindsym $mod+F10	exec $term -e bashmount
-##bindsym $mod+F11
-##bindsym $mod+F12
+bindsym $mod+F11    exec sudo reboot
+bindsym $mod+F12    exec shutdown -P
 
 # For screenshot and recording
 # Print current window
