@@ -11,11 +11,26 @@
 stty -ixon
 shopt -s autocd #Allows you to cd into directory merely by typing the directory name.
 
-# Setting Bash prompt. Capitalizes username and host if root user (my root user uses this same config file).
-if [ "$EUID" -ne 0 ]
-	then export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
-	else export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]ROOT\[$(tput setaf 2)\]@\[$(tput setaf 4)\]$(hostname | awk '{print toupper($0)}') \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
-fi
+_PROMPT() {
+    _EXIT_STATUS=$?
+    [ $_EXIT_STATUS != 0 ] && _EXIT_STATUS_STR=" \[\033[38;5;7m\][\[$(tput sgr0)\]\[\033[38;5;9m\]$_EXIT_STATUS\[$(tput sgr0)\]\[\033[38;5;7m\]]\[$(tput sgr0)\]"
+
+	_BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+	if [ ! $_BRANCH == "" ]
+	then
+		_BRANCH_STR="[\[$(tput sgr0)\]\[\033[38;5;11m\]$_BRANCH\[$(tput sgr0)\]\[\033[38;5;7m\]]"
+	else
+		_BRANCH_STR=""
+	fi
+
+    PS1="\[\033[38;5;14m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput sgr0)\]\[\033[38;5;6m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;7m\]╺─╸\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;7m\][\[$(tput sgr0)\]\[\033[38;5;14m\]\W\[$(tput sgr0)\]\[\033[38;5;7m\]]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;7m\]$_BRANCH_STR\[$(tput sgr0)\]\[\033[38;5;15m\] \n\[$(tput sgr0)\]\[\033[38;5;7m\][\[$(tput sgr0)\]\[\033[38;5;11m\]\A\[$(tput sgr0)\]\[\033[38;5;7m\]]\[$(tput sgr0)\]\[\033[38;5;15m\]$_EXIT_STATUS_STR \[$(tput sgr0)\]\[\033[38;5;7m\]>>\[$(tput sgr0)\] "
+    unset _EXIT_STATUS_STR
+	unset _EXIT_STATUS
+	unset _BRANCH_STR
+	unset _BRANCH
+}
+
+PROMPT_COMMAND=_PROMPT
 
 # Daily shortcuts.
 alias music="ncmpcpp"
@@ -98,3 +113,34 @@ function rice(){
 }
 
 alias="git add . && git commit -a -m '$i' && git push -u origin master"
+
+function extract {
+    if [ -z "$1" ]; then
+        echo "Usage: extract <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
+    else
+        if [ -f $1 ] ; then
+            case $1 in
+                *.tar.bz2)   tar xvjf ./$1    ;;
+                *.tar.gz)    tar xvzf ./$1    ;;
+                *.tar.xz)    tar xvJf ./$1    ;;
+                *.lzma)      unlzma ./$1      ;;
+                *.bz2)       bunzip2 ./$1     ;;
+                *.rar)       unrar x -ad ./$1 ;;
+                *.gz)        gunzip ./$1      ;;
+                *.tar)       tar xvf ./$1     ;;
+                *.tbz2)      tar xvjf ./$1    ;;
+                *.tgz)       tar xvzf ./$1    ;;
+                *.zip)       unzip ./$1       ;;
+                *.Z)         uncompress ./$1  ;;
+                *.7z)        7z x ./$1        ;;
+                *.xz)        unxz ./$1        ;;
+                *.exe)       cabextract ./$1  ;;
+                *)           echo "extract: '$1' - unknown archive method" ;;
+            esac
+        else
+            echo "$1 - file does not exist"
+        fi
+    fi
+}
+
+
