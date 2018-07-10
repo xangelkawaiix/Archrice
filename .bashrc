@@ -102,7 +102,7 @@ function gt() {
 # Copying specific config folder into Archrice repo folder, and then push it into Github.
 
 function rice(){
-    cp -r -f {.config/i3,.config/polybar,.config/mpd,.config/neofetch,.config/moc,.config/dunst,.config/rofi,.config/rtv} ~/Repos/Archrice/.config
+    cp -r -f {.config/i3,.config/polybar,.config/mpd,.config/neofetch,.config/moc,.config/dunst,.config/rofi,.config/rtv,.config/gtk-3.0} ~/Repos/Archrice/.config
     cp -r {.ncmpcpp,.newsboat} ~/Repos/Archrice/
     cp {.bashrc,.bash_profile,.Xdefaults,.vimrc} ~/Repos/Archrice/
     cd ~/Repos/Archrice
@@ -143,4 +143,5 @@ function extract {
     fi
 }
 
+## Or use 7zip to unpack file
 
