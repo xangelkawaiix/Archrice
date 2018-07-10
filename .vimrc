@@ -64,7 +64,7 @@ let g:tex_flavor = 'latex'
     let g:NERDToggleCheckAllLines = 1
 
 "" Powerline theme
-let g:airline_theme='deus'
+let g:airline_theme='bubblegum'
 let g:airline_powerline_fonts = 1
  if !exists('g:airline_symbols')
         let g:airline_symbols = {}
