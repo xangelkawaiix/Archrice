@@ -30,6 +30,7 @@ let mapleader =" "
     autocmd StdinReadPre * let s:std_in=1
     autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
+    map <F6> :NERDTreeToggle<CR>
 "" Live latex preview
 "let g:livepreview_engine = 'xelatex'
 "let g:livepreview_previewer = 'evince'
