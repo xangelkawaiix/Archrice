@@ -57,7 +57,7 @@ alias sw="sudo wifi-menu"
 alias vbr="vim ~/.bashrc"
 alias vic="vim ~/.config/i3/config"
 alias vpC="vim ~/.config/polybar/config"
-alias vrc="vim .vimrc"
+alias vrc="vim ~/.vimrc"
 
 # Version control.
 alias gs="git status"
