@@ -9,7 +9,7 @@
 # #--Basic Definition--# #
 set $mod Mod4
 font pango:hack 10
-for_window [class=".*"] border pixel 3
+for_window [class=".*"] border pixel 2
 set $term --no-startup-id       urxvt
 set $BROWSER --no-startup-id    firefox
 
@@ -63,10 +63,10 @@ bindsym XF86AudioMute        exec $volumepath/volume -mn -t $statuscmd -u $statu
 # #--Application launcher--# #
 # Row First
 bindsym $mod+q kill
-bindsym $mod+Shift+q kill 
+#bindsym $mod+Shift+q
 
 bindsym $mod+w exec --no-startup-id $BROWSER
-bindsym $mod+Shift+w exec qutebrowser
+#bindsym $mod+Shift+w exec 
 
 bindsym $mod+e exec $term -e neomutt
 #bindsym $mod+Shift+e
@@ -78,16 +78,16 @@ bindsym $mod+t exec nautilus
 bindsym $mod+Shift+t gaps inner current set 15; gaps outer current set 15
 
 bindsym $mod+y  exec $term -e calcurse
-#bindsym $mod+Shift+y 
+bindsym $mod+Shift+y exec --no-startup-id "bash ~/.scripts/i3resize left"
 
 #bindsym $mod+u
-#bindsym $mod+Shift+u
+bindsym $mod+Shift+u exec --no-startup-id "bash ~/.scripts/i3resize down"
 
 bindsym $mod+i exec $term -e htop
-#bindsym $mod+Shift+i
+bindsym $mod+Shift+i exec --no-startup-id "bash ~/.scripts/i3resize up"
 
-#bindsym $mod+o 
-#bindsym $mod+Shift+o 
+bindsym $mod+o exec subl #Run Sublime text
+bindsym $mod+Shift+o exec --no-startup-id "bash ~/.scripts/i3resize right"
 
 #bindsym $mod+p 
 #bindsym $mod+Shift+p 
