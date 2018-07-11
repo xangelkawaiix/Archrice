@@ -63,6 +63,7 @@ alias vrc="vim ~/.vimrc"
 alias gs="git status"
 alias gd="git add ."
 alias gp="git push -u origin master"
+alias gc="git clone"
 
 # ls aliases
 alias ll="ls -alF"
