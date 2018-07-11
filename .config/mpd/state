@@ -1,9 +1,7 @@
 sw_volume: 100
 audio_device_state:1:pulse audio
 audio_device_state:1:toggle_visualizer
-state: pause
-current: 11
-time: 61.416000
+state: stop
 random: 0
 repeat: 0
 single: 0
@@ -12,16 +10,4 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:ONE01/01. ミライ.mp3
-1:ONE01/02. CITRUS.mp3
-2:ONE01/03. 前夜.mp3
-3:ONE01/04. 星の後日談.mp3
-4:ONE01/05. LOVEマシーン.mp3
-5:ONE01/06. おねがいダーリン.mp3
-6:ONE01/07. カピパラではなく、カピバラです。.mp3
-7:ONE01/08. てるみい.mp3
-8:ONE01/09. 君ノ言葉.mp3
-9:ONE01/10. 延命治療.mp3
-10:ONE01/11. アウターサイエンス.mp3
-11:ONE01/12. Into Starlight.mp3
 playlist_end

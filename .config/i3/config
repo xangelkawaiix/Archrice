@@ -133,7 +133,7 @@ bindsym $mod+x exec --no-startup-id betterlockscreen -l dim
 bindsym $mod+v exec $term -e ncmpcpp -s visualizer
 #bindsym $mod+Shift+v
 
-#bindsym $mod+b
+#bindsym $mod+b 
 #bindsym $mod+Shift+b
 
 bindsym $mod+n exec $term -e newsboat
@@ -143,16 +143,16 @@ bindsym $mod+m exec --no-startup-id $term -e ncmpcpp
 bindsym $mod+Shift+m exec $volumepath/volume -amn -t $statuscmd -u $statussig
 
 # #---Function Buttons---# #
-#bindsym $mod+F1     
-#bindsym $mod+F2		
+##bindsym $mod+F1     
+##bindsym $mod+F2		
 bindsym $mod+F3	    restart
-bindsym $mod+F4		exec --no-startup-id $hibernate
-bindsym $mod+F5		exec --no-startup-id $netrefresh
-bindsym $mod+F6		exec --no-startup-id $term -e transmission-remote-cli
+##bindsym $mod+F4			
+bindsym $mod+F5			exec $term -e bashmount
+##bindsym $mod+F6		
 ##bindsym $mod+F7
 ##bindsym $mod+F8
-##bindsym $mod+F9     
-bindsym $mod+F10	exec $term -e bashmount
+bindsym $mod+F9     exec --no-startup-id $netrefresh
+bindsym $mod+F10	  exec --no-startup-id $hibernate
 bindsym $mod+F11    exec sudo reboot
 bindsym $mod+F12    exec shutdown -P
 
