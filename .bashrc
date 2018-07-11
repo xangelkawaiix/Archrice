@@ -22,9 +22,9 @@ _PROMPT() {
 	else
 		_BRANCH_STR=""
 	fi
-
-    PS1="\[\033[38;5;14m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput sgr0)\]\[\033[38;5;6m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;7m\]╺─╸\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;7m\][\[$(tput sgr0)\]\[\033[38;5;14m\]\W\[$(tput sgr0)\]\[\033[38;5;7m\]]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;7m\]$_BRANCH_STR\[$(tput sgr0)\]\[\033[38;5;15m\] \n\[$(tput sgr0)\]\[\033[38;5;7m\][\[$(tput sgr0)\]\[\033[38;5;11m\]\A\[$(tput sgr0)\]\[\033[38;5;7m\]]\[$(tput sgr0)\]\[\033[38;5;15m\]$_EXIT_STATUS_STR \[$(tput sgr0)\]\[\033[38;5;7m\]>>\[$(tput sgr0)\] "
-    unset _EXIT_STATUS_STR
+	
+	PS1="\[\033[38;5;14m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput sgr0)\]\[\033[38;5;6m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;7m\]╺─╸\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;7m\][\[$(tput sgr0)\]\[\033[38;5;14m\]\W\[$(tput sgr0)\]\[\033[38;5;7m\]]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;7m\]$_BRANCH_STR\[$(tput sgr0)\]\[\033[38;5;15m\] \n\[$(tput sgr0)\]\[\033[38;5;7m\][\[$(tput sgr0)\]\[\033[38;5;11m\]\A\[$(tput sgr0)\]\[\033[38;5;7m\]]\[$(tput sgr0)\]\[\033[38;5;15m\]$_EXIT_STATUS_STR \[$(tput sgr0)\]\[\033[38;5;7m\]>>\[$(tput sgr0)\] "
+  unset _EXIT_STATUS_STR
 	unset _EXIT_STATUS
 	unset _BRANCH_STR
 	unset _BRANCH
@@ -41,7 +41,7 @@ alias email="neomutt"
 alias files="ranger"
 alias chat="irssi"
 alias audio="alsamixer"
-alias calender="calcurse"
+alias calendar="calcurse"
 
 # Some aliases.
 alias p="sudo pacman"
@@ -60,10 +60,19 @@ alias vpC="vim ~/.config/polybar/config"
 alias vrc="vim ~/.vimrc"
 
 # Version control.
+## TODO: Ordering the lists
 alias gs="git status"
 alias gd="git add ."
 alias gp="git push -u origin master"
 alias gc="git clone"
+alias gp="git pull"
+alias gpm="git pull origin master"
+alias gck="git checkout"
+alias gckm="git checkout master"
+alias gi="git init"
+alias gl="git log"
+alias gls="git log --summary"
+alias gbf="git branch -d" #delete the branch that is not used any more
 
 # ls aliases
 alias ll="ls -alF"
