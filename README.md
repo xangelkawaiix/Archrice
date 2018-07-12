@@ -29,11 +29,16 @@ This ricing setup will **work** on any Linux distro, so you don't need to instal
 * [Source Code Pro](https://typekit.com/fonts/source-code-pro).
 * [Roboto](https://github.com/google/roboto).
 * [Meslo](https://github.com/andreberg/Meslo-Font).
+* [Monaco](https://github.com/cstrap/monaco-font) (For vim and sublime text)
+* [Comfortaa](https://www.dafont.com/comfortaa.font) (For System Font)
+* [Anka/Coder](https://fontlibrary.org/en/font/anka-coder) (For terminal)
 #### GTKs:
-* [Adapta Nokto](https://github.com/adapta-project/adapta-gtk-theme) (Currently Used)
+* [Adapta Nokto](https://github.com/adapta-project/adapta-gtk-theme)
+* [Matcha Dark Azul](https://www.opendesktop.org/c/1502781869) (Currently Used)
 * [Arc](https://github.com/horst3180/Arc-theme)
 #### Icons:
-* [Plane](https://www.opendesktop.org/c/1499721142) (Currently Used)
+* [Plane](https://www.opendesktop.org/c/1499721142) 
+* [Flat Remix](https://www.gnome-look.org/p/1012430/) (Currently Used)
 * [Papirus](https://www.opendesktop.org/p/1166289/)
 ## Like my rice?
 Click the star button if you find it Awesome!, Also check this cool [guy](https://www.github.com/lukesmithxyz).
