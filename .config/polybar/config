@@ -70,6 +70,7 @@ interval = 25
 spacing = 1
 
 mount-0 = /
+mount-1 = /home
 
 label-mounted = %{F#00DBD6}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted

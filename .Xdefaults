@@ -46,9 +46,9 @@ URxvt.color15:    #F8F8FF
 
 !! You need compton compositor to enable transparency
 URxvt.intensityStyles:	false
-URxvt.depth:		    92
-URxvt.font: 		    xft:Hack:size=11
-URxvt.scrollBar:	    false
+URxvt.depth:		    		92
+URxvt.font: 		    		xft:Hack:size=11
+URxvt.scrollBar:	    	false
 URxvt.cursorColor:	    #6EB8D0
 URxvt.depth:            32
 
@@ -57,9 +57,13 @@ URxvt*cutchars: '"'()*<>[]{|}
 
 !! Extensions
 URxvt.perl-ext-common:	default,matcher,resize-font,url-select,keyboard-select
-URxvt.colorUL:		    #4682B4
+URxvt.colorUL:		    	#4682B4
+
+!! resize-font
+URxvt.resize-font.smaller:	C-Down
+URxvt.resize-font.bigger: 	C-Up
 
 !! url-select
-URxvt.keysym.M-u:	        perl:url-select:select_next
+URxvt.keysym.M-u:	        	perl:url-select:select_next
 URxvt.url-select.launcher:  linkhandler
 URxvt.url-select.underline: true
