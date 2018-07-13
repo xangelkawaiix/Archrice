@@ -61,6 +61,7 @@ alias vrc="vim ~/.vimrc"
 
 # Version control.
 ## TODO: Ordering the lists
+alias gb="git branch"
 alias gs="git status"
 alias gd="git add ."
 alias gp="git push -u origin master"
