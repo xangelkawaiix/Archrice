@@ -25,6 +25,15 @@ let mapleader =" "
 	set number
 	set relativenumber
 
+" Open file as suckless sent presentation
+	map <leader>s :!sent<space><C-r>% 2>/dev/null &<CR><CR>
+
+" View an image for a suckless sent presentation:
+	map <leader>v $F@ly$:!feh --scale-down --auto-zoom --image-bg black <c-r>" &<CR><CR>
+
+" Open corresponding.pdf
+	map <leader>p :!zathura <c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
+	
 " Goyo plugin makes text more readable when writing prose:
 	map <F10> :Goyo<CR>
 	map <leader>f :Goyo \| set linebreak<CR>
