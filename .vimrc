@@ -113,11 +113,11 @@ let mapleader =" "
 	"" Powerline theme
 		let g:airline_theme='bubblegum'
 		let g:airline_powerline_fonts = 1
- 		if !exists('g:airline_symbols')
-      	 let g:airline_symbols = {}
-    	endif
+ 	if !exists('g:airline_symbols')
+        let g:airline_symbols = {}
+    endif
 
-    "" unicode symbols
+    " unicode symbols
     let g:airline_left_sep = '»'
     let g:airline_left_sep = '▶'
     let g:airline_right_sep = '«'
@@ -137,7 +137,7 @@ let mapleader =" "
     let g:airline_symbols.notexists = 'Ɇ'
     let g:airline_symbols.whitespace = 'Ξ'
 
-    "" powerline symbols
+    " powerline symbols
     let g:airline_left_sep = ''
     let g:airline_left_alt_sep = ''
     let g:airline_right_sep = ''
@@ -147,7 +147,8 @@ let mapleader =" "
     let g:airline_symbols.linenr = '☰'
     let g:airline_symbols.maxlinenr = ''
 
-" Enable autocompletion:
+
+		" Enable autocompletion:
 	set wildmode=longest,list,full
     set wildmenu
 
