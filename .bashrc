@@ -32,17 +32,6 @@ _PROMPT() {
 
 PROMPT_COMMAND=_PROMPT
 
-# Daily shortcuts.
-alias music="ncmpcpp"
-alias clock="ncmpcpp -s clock"
-alias visualizer="ncmpcpp -s visualizer"
-alias news="newsboat"
-alias email="neomutt"
-alias files="ranger"
-alias chat="irssi"
-alias audio="alsamixer"
-alias calendar="calcurse"
-
 # Some aliases.
 alias p="sudo pacman"
 alias SS="sudo systemctl"
@@ -58,9 +47,9 @@ alias vbr="vim ~/.bashrc"
 alias vic="vim ~/.config/i3/config"
 alias vpc="vim ~/.config/polybar/config"
 alias vrc="vim ~/.vimrc"
+alias vxd="vim ~/.Xdefaults"
 
 # Version control.
-## TODO: Ordering the lists
 alias gb="git branch"
 alias gs="git status"
 alias gd="git add ."
