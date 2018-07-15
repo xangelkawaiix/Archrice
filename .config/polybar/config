@@ -38,7 +38,7 @@ font-2 = Wuncon Siji:pixelsize=11;1
 font-3 = FontAwesome:pixelsize=11;0
 
 modules-left = bspwm i3 mpd
-modules-center = xwindow
+modules-center = 
 modules-right =  filesystem pulseaudio cpu wlan eth battery date
 
 tray-position = right
