@@ -51,9 +51,6 @@ let mapleader =" "
 " Readmes autowrap text:
 	autocmd BufRead,BufNewFile *README.md set tw=79
 
-" Spell-check set to F6:
-	map <F2> :setlocal spell! spelllang=en_us,id<CR>
-
 " Compile document
 	map <leader>c :!compiler <c-r>%<CR>
 
