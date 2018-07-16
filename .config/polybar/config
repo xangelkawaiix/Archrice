@@ -37,7 +37,7 @@ font-3 = FontAwesome:pixelsize=11;0
 
 modules-left = bspwm i3
 modules-center = mpd pulseaudio
-modules-right =  filesystem cpu wlan eth battery date
+modules-right =  filesystem wlan eth battery date
 
 tray-position = right
 tray-padding = 2
