@@ -44,6 +44,5 @@ This ricing setup will **work** on any Linux distro, so you don't need to instal
 Click the star button if you find it Awesome!, Also check this cool [guy](https://www.github.com/lukesmithxyz).
 
 ## Additional Notes:
-Feel free to make pull request as i may implement them, if it's fit my need.
-
-*I know you are just copying this without giving me stars ( ͡ᵔ ͜ʖ ͡ᵔ )*
+Feel free to make pull request as i may implement them, if it's fit with the
+setup.
