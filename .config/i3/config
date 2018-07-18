@@ -241,19 +241,19 @@ exec_always --no-startup-id $HOME/.config/i3/polybar.sh &
 # Run the remapping script
 exec --no-startup-id ~/.scripts/remaps
 
-bar {
-    font pango:DEC Terminal 10
-    status_command    i3blocks
-    position          bottom
-    mode              dock
-    modifier          none
-    colors {
-      separator #000000
-      background #1E1F29
-      statusline #dddddd
-      focused_workspace #0088CC #0088CC #ffffff
-      active_workspace #333333 #333333 #ffffff
-     inactive_workspace #333333 #333333 #888888
-      urgent_workspace #2f343a #900000 #ffffff
-      }        
-}
+#bar {
+#    font pango:DEC Terminal 10
+#    status_command    i3blocks
+#    position          bottom
+#    mode              dock
+#    modifier          none
+#    colors {
+#      separator #000000
+#      background #1E1F29
+#      statusline #dddddd
+#      focused_workspace #0088CC #0088CC #ffffff
+#      active_workspace #333333 #333333 #ffffff
+#     inactive_workspace #333333 #333333 #888888
+#      urgent_workspace #2f343a #900000 #ffffff
+#      }        
+#}
