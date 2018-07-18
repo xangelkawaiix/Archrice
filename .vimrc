@@ -25,6 +25,13 @@ let mapleader =" "
 	set number
 	set relativenumber
 
+" Automatically displays all buffers when there's only one tab open.
+	let g:airline#extensions#tabline#enabled = 1
+
+	let g:airline#extensions#tabline#left_sep = ' '
+	let g:airline#extensions#tabline#left_alt_sep = '|'
+	let g:airline#extensions#tabline#formatter = 'default'
+
 " Open file as suckless sent presentation
 	map <leader>s :!sent<space><C-r>% 2>/dev/null &<CR><CR>
 

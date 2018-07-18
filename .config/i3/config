@@ -115,7 +115,7 @@ bindsym $mod+Shift+g exec --no-startup-id gimp; workspace $ws5
 bindsym $mod+h focus left
 bindsym $mod+Shift+h move left 30
 
-bindsym $mod+j move down
+bindsym $mod+j focus down
 bindsym $mod+Shift+j move down 30
 
 bindsym $mod+k focus up
