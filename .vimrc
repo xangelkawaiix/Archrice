@@ -27,10 +27,37 @@ let mapleader =" "
 
 " Automatically displays all buffers when there's only one tab open.
 	let g:airline#extensions#tabline#enabled = 1
-
 	let g:airline#extensions#tabline#left_sep = ' '
 	let g:airline#extensions#tabline#left_alt_sep = '|'
 	let g:airline#extensions#tabline#formatter = 'default'
+
+" Vim JS
+	let g:javascript_plugin_jsdoc = 1
+	let g:javascript_plugin_flow = 1
+	augroup javascript_folding
+    au!
+    au FileType javascript setlocal foldmethod=syntax
+augroup END
+
+" Font glyphs
+
+	let g:javascript_conceal_function             = "ƒ"
+	let g:javascript_conceal_null                 = "ø"
+	let g:javascript_conceal_this                 = "@"
+	let g:javascript_conceal_return               = "⇚"
+	let g:javascript_conceal_undefined            = "¿"
+	let g:javascript_conceal_NaN                  = "ℕ"
+	let g:javascript_conceal_prototype            = "¶"
+	let g:javascript_conceal_static               = "•"
+	let g:javascript_conceal_super                = "Ω"
+	let g:javascript_conceal_arrow_function       = "⇒"
+	let g:javascript_conceal_noarg_arrow_function = "🞅"
+	let g:javascript_conceal_underscore_arrow_function = "🞅"
+
+" Enabling concealing
+	set conceallevel=1
+" Toggle concealing
+	map <leader>l :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<CR>
 
 " Open file as suckless sent presentation
 	map <leader>s :!sent<space><C-r>% 2>/dev/null &<CR><CR>
