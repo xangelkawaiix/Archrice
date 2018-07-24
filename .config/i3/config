@@ -202,7 +202,7 @@ client.urgent		$darkred	$darkred	$black		$darkred		$darkred
 client.background $black
 
 bar {
-	font pango:Hack regular 9
+	font pango:Source Code Pro 9
 	colors {
 			background $darkblack
 			statusline $darkwhite
