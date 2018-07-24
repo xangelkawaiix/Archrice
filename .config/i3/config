@@ -177,6 +177,49 @@ bindsym $mod+Shift+slash	kill
 bindsym $mod+backslash workspace back_and_forth
 bindsym $mod+Tab workspace back_and_forth
 
+# Set Xresources colors:
+set_from_resource $darkblack		color0  #000000
+set_from_resource $black				color8  #000000
+set_from_resource $darkred			color1  #000000
+set_from_resource $red					color9  #000000
+set_from_resource $darkgreen		color2  #000000
+set_from_resource $green				color10 #000000
+set_from_resource $darkyellow		color3  #000000
+set_from_resource $yellow				color11 #000000
+set_from_resource $darkblue			color4  #000000
+set_from_resource $blue					color12 #000000
+set_from_resource $darkmagenta 	color5  #000000
+set_from_resource $magenta			color13 #000000
+set_from_resource $darkcyan			color6  #000000
+set_from_resource $cyan					color14 #000000
+set_from_resource $darkwhite		color7  #000000
+set_from_resource $white				color15 #000000
+set $transparent												#00000000
+
+#                       BORDER		BACKGROUND	TEXT		INDICATOR   CHILD_BORDER
+client.focused		$red		$red		$magenta	$darkmagenta		$darkblue
+client.unfocused	$transparent	$blue		$white		$darkblue		$darkblack
+client.focused_inactive	$transparent	$blue		$white		$darkblue		$darkblack
+client.urgent		$darkred	$darkred	$black		$darkred		$darkred
+client.background $black
+
+bar {
+	font pango:Hack regular 9
+	colors {
+			background $darkblack
+			statusline $darkwhite
+			separator $cyan
+			focused_workspace  $blue $darkblue $darkwhite
+      active_workspace   $blue $blue $darkwhite
+      inactive_workspace $darkblack $darkblack $white
+      urgent_workspace   $darkblack $darkblack $white
+		}
+	status_command i3blocks
+	position top
+	mode dock
+	modifier None
+}
+
 # Define names for default workspaces for which we configure key bindings later on.
 set $ws1 "1"
 set $ws2 "2"
@@ -235,25 +278,8 @@ exec --no-startup-id transmission-daemon
 # Setting up the background
 exec_always --no-startup-id exec bash $HOME/.fehbg
 # Launch Polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Run Polybar Script
-exec_always --no-startup-id $HOME/.config/i3/polybar.sh &
+#exec_always --no-startup-id $HOME/.config/i3/polybar.sh &
 # Run the remapping script
 exec --no-startup-id ~/.scripts/remaps
-
-#bar {
-#    font pango:DEC Terminal 10
-#    status_command    i3blocks
-#    position          bottom
-#    mode              dock
-#    modifier          none
-#    colors {
-#      separator #000000
-#      background #1E1F29
-#      statusline #dddddd
-#      focused_workspace #0088CC #0088CC #ffffff
-#      active_workspace #333333 #333333 #ffffff
-#     inactive_workspace #333333 #333333 #888888
-#      urgent_workspace #2f343a #900000 #ffffff
-#      }        
-#}

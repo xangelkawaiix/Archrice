@@ -67,7 +67,10 @@ augroup END
 
 " Open corresponding.pdf
 	map <leader>p :!zathura <c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
-	
+
+" Compile .cpp
+	map <F8> :!g++ % && ./a.out <CR>
+
 " Goyo plugin makes text more readable when writing prose:
 	map <F10> :Goyo<CR>
 	map <leader>f :Goyo \| set linebreak<CR>

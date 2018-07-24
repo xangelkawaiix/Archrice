@@ -1,10 +1,10 @@
 [colors]
 ;background = #333
 background = #00000000
-background-alt = #222
-foreground = #dfdfdf
-foreground-alt = #AAA
-primary = #00485d
+background-alt = #161616
+foreground = #bababa
+foreground-alt = #aaaaaa
+primary = #fc255f
 
 [bar/example]
 monitor = ${env:MONITOR:LVDS-1}
@@ -79,7 +79,7 @@ type = internal/bspwm
 
 label-focused = %index%
 label-focused-background = ${colors.background}
-label-focused-underline= #628b81
+label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
 label-occupied = %index%
@@ -195,7 +195,7 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
-format-underline = ${colors.background-alt}
+format-underline = ${colors.foreground}
 label = %percentage_used%%
 
 [module/wlan]
@@ -204,7 +204,7 @@ interface = wlp2s0b1
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = ${colors.background-alt}
+format-connected-underline = ${colors.background}
 label-connected = %essid%
 
 format-disconnected =
@@ -248,7 +248,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground}
-format-underline = ${colors.background-alt}
+format-underline = ${colors.background}
 
 label = %date% %time%
 
@@ -314,7 +314,7 @@ adapter = ACAD
 full-at = 99
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #4f222c
+format-charging-underline = ${colors.background}
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
