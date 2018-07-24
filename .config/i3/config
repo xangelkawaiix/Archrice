@@ -58,11 +58,8 @@ bindsym $mod+Shift+Delete exec --no-startup-id $volumepath/volume -amn -t $statu
 
 # #--Extra XF86 keys--# #
 
-bindsym XF86AudioRaiseVolume exec $volumepath/volume -np -i $volumestep -t $statuscmd -u $statussig
-bindsym XF86AudioLowerVolume exec $volumepath/volume -np -d $volumestep -t $statuscmd -u $statussig
-bindsym XF86AudioMute        exec $volumepath/volume -mn -t $statuscmd -u $statussig
-#bindsym XF86MonBrightnessUp exec xbacklight +20 # increase screen brightness
-#bindsym XF86MonBrightnessDown exec xbacklight -20 # decrease screen brightness
+bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
+bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%-
 
 # #--Application launcher--# #
 # Row First
@@ -103,7 +100,7 @@ bindsym $mod+Shift+a exec $term -e pulsemixer
 bindsym $mod+s gaps inner current plus 5
 bindsym $mod+Shift+s gaps inner current minus 5
 
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+Shift+d gaps inner current set 0; gaps outer current set 0
 
 bindsym $mod+f fullscreen toggle
@@ -165,6 +162,7 @@ bindsym $mod+F12    exec shutdown -P
 bindsym Print exec scrot -u '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/Scrot'
 # Print fullscreen
 bindsym Shift+Print exec scrot '%Y%m%d_%Ho%M%S.png' -e 'mv $f ~/Pictures/Scrot'
+bindsym $mod+Print exec --no-startup-id bash ~/.scripts/dmenurecord
 
 # #--Workspace Bindings--# #
 bindsym $mod+Home workspace $ws1
@@ -214,7 +212,7 @@ bar {
       inactive_workspace $darkblack $darkblack $white
       urgent_workspace   $darkblack $darkblack $white
 		}
-	status_command i3blocks
+	status_command i3blocks 
 	position top
 	mode dock
 	modifier None
