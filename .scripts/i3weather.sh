@@ -1,6 +1,6 @@
 #!/bin/bash
 ### This is only if your location isn't automatically detected, otherwise you can leave it blank.
-location=""
+location="Depok, West Java"
 [[ "$location" != "" ]] && location="~${location// /+}"
 
 [[ $BLOCK_BUTTON = "1" ]] && urxvt -e popweather
