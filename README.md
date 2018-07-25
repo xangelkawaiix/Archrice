@@ -14,11 +14,13 @@ This ricing setup will **work** on any Linux distro, so you don't need to instal
 * calcurse.
 * dmenu.
 * [pywal](https://github.com/dylanaraps/pywal/).
-* urxvt (Default Terminal).
+* ~~urxvt~~
+* st (Default Terminal)
 * vim.
 * [rtv](https://github.com/michael-lazar/rtv).
 * newsboat.
-* [polybar](https://github.com/jaagr/polybar).
+* ~~[polybar](https://github.com/jaagr/polybar).~~
+* i3blocks (Minimal memory usage than Polybar)
 * rofi.
 * neofetch.
 * [betterlockscreen](https://github.com/pavanjadhaw/betterlockscreen).

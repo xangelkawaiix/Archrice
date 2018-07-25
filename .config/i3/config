@@ -12,13 +12,12 @@
 #
 # #--Basic Definition--# #
 set $mod Mod4
-font pango:hack 10
+font pango:Source Code Pro 10
 for_window [class=".*"] border pixel 2
-set $term --no-startup-id       urxvt
+set $term --no-startup-id       st
 set $BROWSER --no-startup-id    firefox
 
 # i3volume
-# I use ALSA driver, you might change it if you use Pulseaudio
 set $volumepath ~/i3-volume
 set $statuscmd i3blocks
 set $statussig SIGUSR1
@@ -29,8 +28,8 @@ floating_modifier 	$mod
 hide_edge_borders 	both
 
 # Needed for i3 gaps
-gaps inner 10
-gaps outer 10
+gaps inner 15
+gaps outer 15
 
 # System Menu #
 set $sysmenu "[p]oweroff  re[b]oot  [r]eload [s]uspend  [l]ogout  "
@@ -67,7 +66,7 @@ bindsym $mod+q kill
 #bindsym $mod+Shift+q
 
 bindsym $mod+w exec --no-startup-id $BROWSER
-#bindsym $mod+Shift+w exec 
+bindsym $mod+Shift+w exec --no-startup-id qutebrowser
 
 bindsym $mod+e exec $term -e neomutt
 #bindsym $mod+Shift+e
