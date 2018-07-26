@@ -156,6 +156,18 @@ bindsym $mod+F10	  exec --no-startup-id $hibernate
 bindsym $mod+F11    exec sudo reboot
 bindsym $mod+F12    exec shutdown -P
 
+# Floating Windows for Steam
+for_window [class="^Steam$" title="^Friends$"] floating enable
+for_window [class="^Steam$" title="Steam - News"] floating enable
+for_window [class="^Steam$" title=".* - Chat"] floating enable
+for_window [class="^Steam$" title="^Settings$"] floating enable
+for_window [class="^Steam$" title=".* - event started"] floating enable
+for_window [class="^Steam$" title=".* CD key"] floating enable
+for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
+for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
+for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
+for_window [title="^Steam Keyboard$"] floating enable
+
 # For screenshot and recording
 # Print current window
 bindsym Print exec scrot -u '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/Scrot'
@@ -254,14 +266,14 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # #---Arrow Keys---# #
-bindsym $mod+Left		    focus left
-bindsym $mod+Down		    focus down
-bindsym $mod+Up			    focus up
+bindsym $mod+Left		    	focus left
+bindsym $mod+Down		    	focus down
+bindsym $mod+Up			    	focus up
 bindsym $mod+Right 		    focus right
 bindsym $mod+Shift+Left		move left
 bindsym $mod+Shift+Down		move down
-bindsym $mod+Shift+Up		move up
-bindsym $mod+Shift+Right    move right
+bindsym $mod+Shift+Up			move up
+bindsym $mod+Shift+Right  move right
 
 # #--External Scripts--# #
 # composite manager
