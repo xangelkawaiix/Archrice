@@ -68,7 +68,7 @@ bindsym $mod+q kill
 bindsym $mod+w exec --no-startup-id $BROWSER
 bindsym $mod+Shift+w exec --no-startup-id qutebrowser
 
-bindsym $mod+e exec $term -e neomutt
+bindsym $mod+e exec sylpheed
 #bindsym $mod+Shift+e
 
 bindsym $mod+r exec  $term -e ranger 
