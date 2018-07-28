@@ -278,12 +278,14 @@ bindsym $mod+Shift+Right  move right
 # #--External Scripts--# #
 # composite manager
 exec --no-startup-id compton --xrender-sync-fence
-#Dunst for notifications:
+# Dunst for notifications:
 exec --no-startup-id dunst
-#Music player daemon:
+# Music player daemon:
 exec --no-startup-id mpd
-#Torrent daemon:
+# Torrent daemon:
 exec --no-startup-id transmission-daemon
+# Run Steam
+exec_always --no-startup-id exec Steam
 # Setting up the background
 exec_always --no-startup-id exec bash $HOME/.fehbg
 # Launch Polybar
