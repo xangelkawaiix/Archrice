@@ -284,8 +284,6 @@ exec --no-startup-id dunst
 exec --no-startup-id mpd
 # Torrent daemon:
 exec --no-startup-id transmission-daemon
-# Run Steam
-exec_always --no-startup-id exec steam
 # Setting up the background
 exec_always --no-startup-id exec bash $HOME/.fehbg
 # Launch Polybar
