@@ -13,9 +13,11 @@
 # #--Basic Definition--# #
 set $mod Mod4
 font pango:Source Code Pro 10
-for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 1
 set $term --no-startup-id       st
 set $BROWSER --no-startup-id    firefox
+set $netrefresh --no-startup-id sudo systemctl restart NetworkManager
+set $hibernate sudo systemctl suspend
 
 # i3volume
 set $volumepath ~/i3-volume
@@ -143,18 +145,22 @@ bindsym $mod+m exec --no-startup-id $term -e ncmpcpp
 bindsym $mod+Shift+m exec $volumepath/volume -amn -t $statuscmd -u $statussig
 
 # #---Function Buttons---# #
-##bindsym $mod+F1     
+bindsym $mod+F1       restart
 ##bindsym $mod+F2		
-bindsym $mod+F3	    restart
-##bindsym $mod+F4			
-bindsym $mod+F5			exec $term -e bashmount
+##bindsym $mod+F3	  
+##bindsym $mod+F4		
+##bindsym $mod+F5			
 ##bindsym $mod+F6		
-##bindsym $mod+F7
-##bindsym $mod+F8
+bindsym $mod+F7 	exec $term -e bashmount
+##bindsym $mod+F8 	
 bindsym $mod+F9     exec --no-startup-id $netrefresh
 bindsym $mod+F10	  exec --no-startup-id $hibernate
 bindsym $mod+F11    exec sudo reboot
 bindsym $mod+F12    exec shutdown -P
+
+for_window [title="GIMP Startup"] move workspace $ws5
+for_window [class="Gimp"] move workspace $ws5
+for_window [window_role="GtkFileChooserDialog"] resize shrink height 10 px
 
 # Floating Windows for Steam
 for_window [class="^Steam$" title="^Friends$"] floating enable
@@ -280,6 +286,8 @@ bindsym $mod+Shift+Right  move right
 exec --no-startup-id compton --xrender-sync-fence
 # Dunst for notifications:
 exec --no-startup-id dunst
+# Network Manager Applet
+exec --no-startup-id nm-applet
 # Music player daemon:
 exec --no-startup-id mpd
 # Torrent daemon:
