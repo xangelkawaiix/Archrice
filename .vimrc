@@ -18,10 +18,10 @@ let mapleader =" "
 " Some basics:
 	set nocompatible
 	filetype plugin on
-	syntax on
-  color dracula
+	syntax enable
+    colorscheme solarized
 	set background=dark
-  set encoding=utf-8
+    set encoding=utf-8
 	set number
 	set relativenumber
 
