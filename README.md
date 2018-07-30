@@ -1,5 +1,4 @@
 # Archrice
-![Bash](Bash.png)
 ![Desktop](general.png)
 ![sublime](subl.png)
 ![Solarized Dark](SolarizedDark.png)
