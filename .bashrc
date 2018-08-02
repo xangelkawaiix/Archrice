@@ -37,6 +37,12 @@ alias vpc="vim ~/.config/polybar/config"
 alias vrc="vim ~/.vimrc"
 alias vxd="vim ~/.Xdefaults"
 
+# Dir
+alias gtp="cd ~/Pictures"
+alias gtv="cd ~/Videos"
+alias gtm="cd ~/Musics"
+alias gtd="cd ~/Documents"
+
 # Version control.
 alias gb="git branch"
 alias gs="git status"
@@ -58,7 +64,7 @@ alias la="ls -A"
 alias l="ls -CF"
 alias lah="ls -lah"
 
-# System maintenance & management.
+# System maintenance
 alias cln="sudo pacman -Scc"
 alias upgr="sudo pacman -Syu"
 alias sysupgr="sudo pacman -Syuu"
@@ -78,7 +84,7 @@ alias wttr="curl http://wttr.in/"
 # Development
 alias live="python3 -m http.server"
 
-# #-- Multiple commands--# #
+# #-- Function --# #
 
 # Push your code straight into Github. 
 function gt() {
@@ -89,17 +95,14 @@ function gt() {
 
 # Copying specific config folder into Archrice repo folder, and then push it into Github.
 
-# Will implement this is in the next commit, if it's worked.
-cp -r -f .config/{i3,polybar,neofetch,moc,dunst,rofi,rtv,gtk-3.0,gtk-2.0,cava} ~/Repos/Archrice/.config
 function rice(){
-	  cp -r -f .config/{i3,polybar,neofetch,moc,dunst,rofi,rtv,gtk-3.0,gtk-2.0,cava} ~/Repos/Archrice/.config
+    cp -r -f .config/{i3,polybar,neofetch,moc,dunst,rofi,rtv,gtk-3.0,gtk-2.0,cava} ~/Repos/Archrice/.config
     cp -r {.bashrc,.bash_profile,.Xdefaults,.xinitrc,.vimrc,.scripts,.ncmpcpp,i3blocks.conf} ~/Repos/Archrice/
     cd ~/Repos/Archrice
     git add .
     git commit -a -m "$1"
     git push -u origin master
-    cd ~/
+    cd
 }
 
 alias="git add . && git commit -a -m '$i' && git push -u origin master"
-
