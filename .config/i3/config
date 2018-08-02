@@ -16,8 +16,6 @@ font pango:Source Code Pro 10
 for_window [class=".*"] border pixel 1
 set $term --no-startup-id       st
 set $BROWSER --no-startup-id    firefox
-set $netrefresh --no-startup-id sudo systemctl restart NetworkManager
-set $hibernate sudo systemctl suspend
 
 # i3volume
 set $volumepath ~/i3-volume
@@ -153,8 +151,8 @@ bindsym $mod+F1       restart
 ##bindsym $mod+F6		
 bindsym $mod+F7 	exec $term -e bashmount
 ##bindsym $mod+F8 	
-bindsym $mod+F9     exec --no-startup-id $netrefresh
-bindsym $mod+F10	  exec --no-startup-id $hibernate
+##bindsym $mod+F9     exec
+##bindsym $mod+F10	
 bindsym $mod+F11    exec sudo reboot
 bindsym $mod+F12    exec shutdown -P
 

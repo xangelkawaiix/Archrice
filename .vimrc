@@ -68,6 +68,8 @@ augroup END
 " Open corresponding.pdf
 	map <leader>p :!zathura <c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
 
+" Runs a script that cleans out tex build files whenever I close out of a .tex file.
+    autocmd VimLeave *.tex !texclear %
 " Compile .cpp
 	map <F8> :!g++ % && ./a.out <CR>
 
@@ -99,12 +101,12 @@ augroup END
 "" Vim plugin
 	"" Nerdtree
 		" Open NerdTree when vim starts up on opening a directory
-    	autocmd StdinReadPre * let s:std_in=1
-    	autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+    "	autocmd StdinReadPre * let s:std_in=1
+    "	autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
 	"" Live latex preview
-			let g:livepreview_engine = 'pdflatex'
-			let g:livepreview_previewer = 'mupdf'
+	"		let g:livepreview_engine = 'pdflatex'
+	"		let g:livepreview_previewer = 'mupdf'
 
 	"" Neotex
 			"let g:neotex_enabled = 2
@@ -200,8 +202,6 @@ augroup END
 	nnoremap <C-t> :tabnew<cr>
 " Open corresponding.pdf
 map <leader>p :!mupdf <c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
-" Compile document
-map <leader>c :!compiler <c-r>%<CR>
 
 """LATEX
 	" Word count:

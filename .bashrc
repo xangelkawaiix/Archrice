@@ -20,6 +20,7 @@ if [ "$EUID" -ne 0 ]
 fi
 
 # Some aliases.
+alias nn="systemctl restart NetworkManager"
 alias p="sudo pacman"
 alias SS="sudo systemctl"
 alias v="vim"
