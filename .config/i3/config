@@ -59,6 +59,8 @@ bindsym $mod+Shift+Delete exec --no-startup-id $volumepath/volume -amn -t $statu
 
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
 bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%-
+bindysm XF86AudioMute exec $volumepath/volume -amn -t $statuscmd -u $statussig
+
 
 # #--Application launcher--# #
 # Row First
@@ -139,7 +141,7 @@ bindsym $mod+v exec $term -e cava
 bindsym $mod+n exec $term -e newsboat
 #bindsym $mod+Shift+n
 
-bindsym $mod+m exec --no-startup-id $term -e ncmpcpp
+bindsym $mod+m exec --no-startup-id $term -e ncmpcpp 
 bindsym $mod+Shift+m exec $volumepath/volume -amn -t $statuscmd -u $statussig
 
 # #---Function Buttons---# #
@@ -249,9 +251,9 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 bindsym $mod+Left		    	focus left
 bindsym $mod+Down		    	focus down
 bindsym $mod+Up			    	focus up
-bindsym $mod+Right 		    focus right
-bindsym $mod+Shift+Left		move left
-bindsym $mod+Shift+Down		move down
+bindsym $mod+Right 		        focus right
+bindsym $mod+Shift+Left		    move left
+bindsym $mod+Shift+Down		    move down
 bindsym $mod+Shift+Up			move up
 bindsym $mod+Shift+Right  move right
 

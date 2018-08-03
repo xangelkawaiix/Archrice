@@ -3,7 +3,7 @@
 location="Depok, West Java"
 [[ "$location" != "" ]] && location="~${location// /+}"
 
-[[ $BLOCK_BUTTON = "1" ]] && urxvt -e popweather
+[[ $BLOCK_BUTTON = "1" ]] && st -e popweather
 
 curl -s wttr.in/$location > ~/.weatherreport
 
