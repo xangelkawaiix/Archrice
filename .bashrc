@@ -95,7 +95,7 @@ function gt() {
 # Copying specific config folder into Archrice repo folder, and then push it into Github.
 
 function rice(){
-    cp -r -f .config/{i3,polybar,neofetch,moc,dunst,rofi,rtv,gtk-3.0,gtk-2.0,cava} ~/Repos/Archrice/.config
+    cp -r -f .config/{i3,polybar,neofetch,moc,dunst,newsboat,rofi,rtv,gtk-3.0,gtk-2.0,cava} ~/Repos/Archrice/.config
     cp -r {.bashrc,.bash_profile,.Xdefaults,.xinitrc,.vimrc,.scripts,.ncmpcpp,.i3blocks.conf} ~/Repos/Archrice/
     cd ~/Repos/Archrice
     git add .
