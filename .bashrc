@@ -30,23 +30,17 @@ alias sr="sudo ranger"
 alias ka="killall"
 alias trem="transmission-remote"
 alias mkd="mkdir -pv"
-alias sw="sudo wifi-menu"
 alias vbr="vim ~/.bashrc"
 alias vic="vim ~/.config/i3/config"
 alias vpc="vim ~/.config/polybar/config"
 alias vrc="vim ~/.vimrc"
 alias vxd="vim ~/.Xdefaults"
 
-# Dir
-alias gtP="cd ~/Pictures"
-alias gtV="cd ~/Videos"
-alias gtM="cd ~/Music"
-alias gtD="cd ~/Documents"
-alias gtr="cd /"
-alias gtv="cd /var"
-alias gtu="cd /usr"
-alias gtd="cd /dev"
-alias gtm="cd /mnt"
+# FastDir
+alias gd="cd ~/Documents"
+alias gm="cd ~/Music"
+alias gp="cd ~/Pictures"
+alias gv="cd ~/Video"
 
 # Version control.
 alias gb="git branch"
