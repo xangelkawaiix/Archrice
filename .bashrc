@@ -40,7 +40,7 @@ alias vxd="vim ~/.Xdefaults"
 # Dir
 alias gtP="cd ~/Pictures"
 alias gtV="cd ~/Videos"
-alias gtM="cd ~/Musics"
+alias gtM="cd ~/Music"
 alias gtD="cd ~/Documents"
 alias gtr="cd /"
 alias gtv="cd /var"
