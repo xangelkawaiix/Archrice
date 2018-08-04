@@ -38,10 +38,15 @@ alias vrc="vim ~/.vimrc"
 alias vxd="vim ~/.Xdefaults"
 
 # Dir
-alias gtp="cd ~/Pictures"
-alias gtv="cd ~/Videos"
-alias gtm="cd ~/Musics"
-alias gtd="cd ~/Documents"
+alias gtP="cd ~/Pictures"
+alias gtV="cd ~/Videos"
+alias gtM="cd ~/Musics"
+alias gtD="cd ~/Documents"
+alias gtr="cd /"
+alias gtv="cd /var"
+alias gtu="cd /usr"
+alias gtd="cd /dev"
+alias gtm="cd /mnt"
 
 # Version control.
 alias gb="git branch"
@@ -97,7 +102,7 @@ function gt() {
 
 function rice(){
     cp -r -f .config/{i3,polybar,neofetch,moc,dunst,rofi,rtv,gtk-3.0,gtk-2.0,cava} ~/Repos/Archrice/.config
-    cp -r {.bashrc,.bash_profile,.Xdefaults,.xinitrc,.vimrc,.scripts,.ncmpcpp,i3blocks.conf} ~/Repos/Archrice/
+    cp -r {.bashrc,.bash_profile,.Xdefaults,.xinitrc,.vimrc,.scripts,.ncmpcpp,.i3blocks.conf} ~/Repos/Archrice/
     cd ~/Repos/Archrice
     git add .
     git commit -a -m "$1"
