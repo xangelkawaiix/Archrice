@@ -82,6 +82,7 @@ alias wttr="curl http://wttr.in/"
 
 # Development
 alias live="python3 -m http.server"
+alias rice="bash ~/.scripts/Autorice"
 
 # #-- Function --# #
 
@@ -90,18 +91,6 @@ function gt() {
     git add .
     git commit -a -m "$1"
     git push -u origin master
-}
-
-# Copying specific config folder into Archrice repo folder, and then push it into Github.
-
-function rice(){
-    cp -r -f .config/{i3,polybar,neofetch,moc,dunst,newsboat,rofi,rtv,gtk-3.0,gtk-2.0,cava} ~/Repos/Archrice/.config
-    cp -r {.bashrc,.bash_profile,.Xdefaults,.xinitrc,.vimrc,.scripts,.ncmpcpp,.i3blocks.conf} ~/Repos/Archrice/
-    cd ~/Repos/Archrice
-    git add .
-    git commit -a -m "$1"
-    git push -u origin master
-    cd
 }
 
 alias="git add . && git commit -a -m '$i' && git push -u origin master"
