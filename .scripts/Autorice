@@ -1,10 +1,13 @@
 #!/bin/bash
 
-cp -r -f .config/{i3,polybar,neofetch,moc,dunst,newsboat,rofi,rtv,gtk-3.0,gtk-2.0,cava} ~/Repos/Archrice/.config
-cp -r {.bashrc,.bash_profile,.Xdefaults,.xinitrc,.vimrc,.scripts,.ncmpcpp,.i3blocks.conf} ~/Repos/Archrice/
-cd ~/Repos/Archrice
+CONFIGDIR=~/Repos/Archrice/.config
+HOMEDIR=~/Repos/Archrice
+
+cp -r -f .config/{i3,polybar,neofetch,moc,dunst,newsboat,rofi,rtv,gtk-3.0,gtk-2.0,cava} $CONFIGDIR
+cp -r {.bashrc,.bash_profile,.Xdefaults,.xinitrc,.vimrc,.scripts,.ncmpcpp,.i3blocks.conf} $HOMEDIR
+cd $HOMEDIR
 git add .
 git commit -a -m "$1"
 git push -u origin master
-cd
+cd $HOME
 
