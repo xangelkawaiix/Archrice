@@ -30,11 +30,11 @@ alias sr="sudo ranger"
 alias ka="killall"
 alias trem="transmission-remote"
 alias mkd="mkdir -pv"
-alias vbr="vim ~/.bashrc"
-alias vic="vim ~/.config/i3/config"
-alias vpc="vim ~/.config/polybar/config"
-alias vrc="vim ~/.vimrc"
-alias vxd="vim ~/.Xdefaults"
+alias vb="vim ~/.bashrc"
+alias vi="vim ~/.config/i3/config"
+alias vp="vim ~/.config/polybar/config"
+alias vr="vim ~/.vimrc"
+alias vx="vim ~/.Xdefaults"
 
 # FastDir
 alias gd="cd ~/Documents"
@@ -44,18 +44,18 @@ alias gv="cd ~/Video"
 
 # Version control.
 alias gb="git branch"
+alias gcb="git checkout -b" # Create new local branch
 alias gs="git status"
 alias gd="git add ."
 alias gpm="git push -u origin master"
 alias gcl="git clone"
 alias gp="git pull"
 alias gpm="git pull origin master"
-alias gck="git checkout"
-alias gckm="git checkout master"
+alias gc="git checkout"
 alias gi="git init"
 alias gl="git log"
 alias gls="git log --summary"
-alias gbf="git branch -d" #delete the branch that is not used any more
+alias gbf="git branch -d" # Delete the branch that is not used any more
 
 # ls aliases
 alias ll="ls -alF"
