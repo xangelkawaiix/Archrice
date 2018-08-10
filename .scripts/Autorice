@@ -6,7 +6,7 @@ DESTDIR=~/Repos/Archrice
 
 cp -r $CONFDIR{compton.conf,dunst,gtk-3.0,htop,i3,ranger,neofetch,newsboat} $CONFIGDIR # Copy the conf folder.
 
-cp -r {.bash_profile,.bashrc,.calcurse/conf,.fehbg,.gtkrc-2.0,.i3blocks.conf,.icons,.scripts,.vim,.vimrc,.Xdefaults,.xinitrc} $DESTDIR # Copy the conf files
+cp -r {.bash_profile,.bashrc,.calcurse/conf,.fehbg,.gtkrc-2.0,.i3blocks.conf,.icons,.scripts,.vimrc,.Xdefaults,.xinitrc} $DESTDIR # Copy the conf files
 
 cd $DESTDIR
 git add .
