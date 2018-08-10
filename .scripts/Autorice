@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONFDIR=~/.config
+CONFDIR=~/.config/
 CONFIGDIR=~/Repos/Archrice/.config
 DESTDIR=~/Repos/Archrice
 
