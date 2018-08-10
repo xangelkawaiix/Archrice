@@ -35,6 +35,7 @@ alias vi="vim ~/.config/i3/config"
 alias vp="vim ~/.config/polybar/config"
 alias vr="vim ~/.vimrc"
 alias vx="vim ~/.Xdefaults"
+alias extract="bash ~/.scripts/extract"
 
 # FastDir
 alias gd="cd ~/Documents"

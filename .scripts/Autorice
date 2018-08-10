@@ -1,11 +1,14 @@
 #!/bin/bash
 
+CONFDIR=~/.config
 CONFIGDIR=~/Repos/Archrice/.config
-HOMEDIR=~/Repos/Archrice
+DESTDIR=~/Repos/Archrice
 
-cp -r -f .config/{i3,polybar,neofetch,moc,dunst,newsboat,rofi,rtv,gtk-3.0,gtk-2.0,cava} $CONFIGDIR
-cp -r {.bashrc,.bash_profile,.Xdefaults,.xinitrc,.vimrc,.scripts,.ncmpcpp,.i3blocks.conf} $HOMEDIR
-cd $HOMEDIR
+cp -r $CONFDIR{compton.conf,dunst,gtk-3.0,htop,i3,ranger,neofetch,newsboat} $CONFIGDIR # Copy the conf folder.
+
+cp -r {.bash_profile,.bashrc,.calcurse/conf,.fehbg,.gtkrc-2.0,.i3blocks.conf,.icons,.scripts,.vim,.vimrc,.Xdefaults,.xinitrc} $DESTDIR # Copy the conf files
+
+cd $DESTDIR
 git add .
 git commit -a -m "$1"
 git push -u origin master
