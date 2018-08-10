@@ -12,9 +12,9 @@
 #
 # #--Basic Definition--# #
 set $mod Mod4
-font pango:Source Code Pro 10
+font pango:mono 10
 for_window [class=".*"] border pixel 1
-set $term --no-startup-id       st
+set $term --no-startup-id       urxvt
 set $BROWSER --no-startup-id    firefox
 
 # i3volume
@@ -68,15 +68,15 @@ bindsym $mod+q kill
 #bindsym $mod+Shift+q
 
 bindsym $mod+w exec --no-startup-id $BROWSER
-bindsym $mod+Shift+w exec --no-startup-id qutebrowser
+#bindsym $mod+Shift+w exec --no-startup-id qutebrowser
 
-bindsym $mod+e exec sylpheed
+bindsym $mod+e exec $term -e neomutt
 #bindsym $mod+Shift+e
 
 bindsym $mod+r exec  $term -e ranger 
 bindsym $mod+Shift+r exec $term -e sudo ranger /
 
-bindsym $mod+t exec nautilus	    
+bindsym $mod+t exec caja 
 bindsym $mod+Shift+t gaps inner current set 15; gaps outer current set 15
 
 bindsym $mod+y  exec $term -e calcurse
@@ -88,7 +88,7 @@ bindsym $mod+Shift+u exec --no-startup-id "bash ~/.scripts/i3resize down"
 bindsym $mod+i exec $term -e htop
 bindsym $mod+Shift+i exec --no-startup-id "bash ~/.scripts/i3resize up"
 
-bindsym $mod+o exec subl #Run Sublime text
+#bindsym $mod+o exec subl #Run Sublime text
 bindsym $mod+Shift+o exec --no-startup-id "bash ~/.scripts/i3resize right"
 
 #bindsym $mod+p 
@@ -101,7 +101,7 @@ bindsym $mod+Shift+a exec $term -e pulsemixer
 bindsym $mod+s gaps inner current plus 5
 bindsym $mod+Shift+s gaps inner current minus 5
 
-bindsym $mod+d exec --no-startup-id dmenu_run -fn 'Source Code Pro-10'
+bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+Shift+d gaps inner current set 0; gaps outer current set 0
 
 bindsym $mod+f fullscreen toggle
@@ -132,7 +132,7 @@ bindsym $mod+x exec --no-startup-id betterlockscreen -l dim
 #bindsym $mod+c
 #bindsym $mod+Shift+c 
 
-bindsym $mod+v exec $term -e cava
+#bindsym $mod+v exec $term -e cava
 #bindsym $mod+Shift+v
 
 #bindsym $mod+b 
@@ -262,6 +262,8 @@ bindsym $mod+Shift+Right  move right
 exec --no-startup-id compton --xrender-sync-fence
 # Dunst for notifications:
 exec --no-startup-id dunst
+# cronbat
+exec --no-startup-id $HOME/.scripts/cronbat
 # Network Manager Applet
 exec --no-startup-id nm-applet
 # Music player daemon:
