@@ -20,29 +20,11 @@ This ricing setup will **work** on any Linux distro, so you don't need to instal
 * vim.
 * [rtv](https://github.com/michael-lazar/rtv).
 * newsboat.
-* ~~[polybar](https://github.com/jaagr/polybar).~~
 * i3blocks (Minimal memory usage than Polybar)
-* rofi.
 * neofetch.
 * [betterlockscreen](https://github.com/pavanjadhaw/betterlockscreen).
 * [i3 Gaps](https://github.com/Airblader/i3).
-### Other
-#### Fonts:
-* [Hack](https://github.com/source-foundry/Hack).
-* [Source Code Pro](https://typekit.com/fonts/source-code-pro).
-* [Roboto](https://github.com/google/roboto).
-* [Meslo](https://github.com/andreberg/Meslo-Font).
-* [Monaco](https://github.com/cstrap/monaco-font)
-* [Comfortaa](https://www.dafont.com/comfortaa.font)
-* [Anka/Coder](https://fontlibrary.org/en/font/anka-coder)
-#### GTKs:
-* [Adapta Nokto](https://github.com/adapta-project/adapta-gtk-theme)
-* [Matcha Dark Azul](https://www.opendesktop.org/c/1502781869)
-* [Arc](https://github.com/horst3180/Arc-theme)
-#### Icons:
-* [Plane](https://www.opendesktop.org/c/1499721142) 
-* [Flat Remix](https://www.gnome-look.org/p/1012430/)
-* [Papirus](https://www.opendesktop.org/p/1166289/)
+
 ## Like my rice?
 Click the star button if you find it Awesome!, Also check this cool [guy](https://www.github.com/lukesmithxyz).
 ## Additional Notes:
