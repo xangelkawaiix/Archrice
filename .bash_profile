@@ -1,10 +1,12 @@
-[[ -f ~/.bashrc ]] && . ~/.bashrc
-export PATH=$PATH:$HOME/.scripts
+export PATH="$PATH:$HOME/.scripts"
 export EDITOR="vim"
 export TERMINAL="urxvt"
 export BROWSER="firefox"
+export READER="zathura"
 
-if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  exec startx
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
+# Start graphical server if i3 not already running.
+if [[ "$(tty)" = "/dev/tty1" ]]; then
+	pgrep -x i3 || exec startx
 fi
-
