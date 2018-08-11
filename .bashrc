@@ -51,12 +51,11 @@ alias gd="git add ."
 alias gpm="git push -u origin master"
 alias gcl="git clone"
 alias gp="git pull"
-alias gpm="git pull origin master"
 alias gc="git checkout"
 alias gi="git init"
 alias gl="git log"
 alias gls="git log --summary"
-alias gbf="git branch -d" # Delete the branch that is not used any more
+alias gbd="git branch -d" # Delete the branch that is not used any more
 
 # ls aliases
 alias ll="ls -alF"

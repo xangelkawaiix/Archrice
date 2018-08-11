@@ -17,13 +17,6 @@ for_window [class=".*"] border pixel 1
 set $term --no-startup-id       urxvt
 set $BROWSER --no-startup-id    firefox
 
-# i3volume
-set $volumepath ~/i3-volume
-set $statuscmd i3blocks
-set $statussig SIGUSR1
-set $volumestep 5
-set $alsacard 1
-
 floating_modifier 	$mod
 hide_edge_borders 	both
 
@@ -52,16 +45,6 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+space    floating toggle
 bindysm $mod+space          focus mode_toggle
 
-# Live Saver
-bindsym $mod+Shift+Delete exec --no-startup-id $volumepath/volume -amn -t $statuscmd -u $statussig ; workspace 11 ; exec $term -e ranger 
-
-# #--Extra XF86 keys--# #
-
-bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
-bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%-
-bindysm XF86AudioMute exec $volumepath/volume -amn -t $statuscmd -u $statussig
-
-
 # #--Application launcher--# #
 # Row First
 bindsym $mod+q kill
@@ -76,7 +59,7 @@ bindsym $mod+e exec $term -e neomutt
 bindsym $mod+r exec  $term -e ranger 
 bindsym $mod+Shift+r exec $term -e sudo ranger /
 
-bindsym $mod+t exec caja 
+#bindsym $mod+t exec  
 bindsym $mod+Shift+t gaps inner current set 15; gaps outer current set 15
 
 bindsym $mod+y  exec $term -e calcurse
@@ -289,8 +272,6 @@ bindsym $mod+Shift+Right  move right
 exec --no-startup-id compton --xrender-sync-fence
 # Dunst for notifications:
 exec --no-startup-id dunst
-# cronbat
-exec --no-startup-id $HOME/.scripts/cronbat
 # Network Manager Applet
 exec --no-startup-id nm-applet
 # Music player daemon:
@@ -305,3 +286,83 @@ exec_always --no-startup-id exec bash $HOME/.fehbg
 #exec_always --no-startup-id $HOME/.config/i3/polybar.sh &
 # Run the remapping script
 exec --no-startup-id ~/.scripts/remaps
+
+# #---Extra XF86 Keys---# #
+# These are the extra media keys that some keyboards have.
+#bindsym XF86AudioMute		exec 
+bindsym XF86AudioLowerVolume	exec --no-startup-id amixer -D pulse sset Master 5%+
+bindsym XF86AudioRaiseVolume	exec --no-startup-id amixer -D pulse sset Master 5%-  
+bindsym XF86PowerOff		exec --no-startup-id prompt "Are you sure you want to shutdown?" "$shutdown"
+##bindsym XF86Copy		exec
+##bindsym XF86Open		exec
+##bindsym XF86Paste		exec
+##bindsym XF86Cut		exec
+##bindsym XF86MenuKB		exec
+#bindsym XF86Calculator		exec $term -e R -q
+##bindsym XF86Sleep		This binding is typically mapped by systemd automatically.
+##bindsym XF86WakeUp		exec
+bindsym XF86Explorer		exec $term -e ranger
+##bindsym XF86Send		exec
+##bindsym XF86Xfer		exec
+bindsym XF86WWW			exec --no-startup-id $BROWSER
+##bindsym XF86DOS		exec
+#bindsym XF86ScreenSaver		exec exec --no-startup-id lockscreen
+##bindsym XF86RotateWindows	exec
+##bindsym XF86TaskPane		exec
+##bindsym XF86Favorites		exec
+#bindsym XF86MyComputer		exec $term -e ranger
+##bindsym XF86Back		exec
+##bindsym XF86Forward		exec
+#bindsym XF86Eject		exec --no-startup-id dmenuumount
+#bindsym XF86AudioNext		exec --no-startup-id lmc next
+#bindsym XF86AudioPlay		exec --no-startup-id lmc toggle
+#bindsym XF86AudioPrev		exec --no-startup-id lmc prev
+#bindsym XF86AudioStop		exec --no-startup-id lmc toggle
+##bindsym XF86AudioRecord
+#bindsym XF86AudioRewind		exec --no-startup-id lmc back 10
+#bindsym XF86AudioForward	exec --no-startup-id lmc forward 10
+##bindsym XF86Phone		exec
+##bindsym XF86Tools		exec
+bindsym XF86HomePage		exec $BROWSER https://lukesmith.xyz
+bindsym XF86Reload		restart
+##bindsym XF86ScrollUp		exec
+##bindsym XF86ScrollDown	exec
+##bindsym XF86New		exec
+##bindsym XF86LaunchA		exec
+##bindsym XF86LaunchB		exec
+##bindsym XF86Launch2		exec
+##bindsym XF86Launch3		exec
+##bindsym XF86Launch4		exec
+##bindsym XF86Launch5		exec
+##bindsym XF86Launch6		exec
+##bindsym XF86Launch7		exec
+##bindsym XF86Launch8		exec
+##bindsym XF86Launch9		exec
+#bindsym XF86AudioMicMute	exec 
+#bindsym XF86TouchpadToggle	exec 
+#bindsym XF86TouchpadOn		exec  
+#bindsym XF86TouchpadOff	exec  
+#bindsym XF86Suspend		exec 
+#bindsym XF86Close		kill
+#bindsym XF86WebCam		exec 
+bindsym XF86Mail		exec $term -e neomutt
+#bindsym XF86Messenger		exec $term -e weechat
+bindsym XF86Search		exec $BROWSER https://duckduckgo.com
+##bindsym XF86Go		exec
+##bindsym XF86Finance		exec
+##bindsym XF86Game		exec
+#bindsym XF86Shop		exec $BROWSER https://ebay.com
+#bindsym XF86MonBrightnessDown	exec 
+#bindsym XF86MonBrightnessUp	exec 
+bindsym XF86AudioMedia		exec --no-startup-id $term -e ncmpcpp
+bindsym XF86Display		exec --no-startup-id arandr
+#bindsym XF86KbdLightOnOff	exec
+#bindsym XF86KbdBrightnessDown	exec 
+#bindsym XF86KbdBrightnessUp	exec 
+##bindsym XF86Reply		exec
+##bindsym XF86MailForward	exec
+##bindsym XF86Save		exec
+bindsym XF86Documents		exec $term -e ranger ~/Documents
+##bindsym XF86Battery		exec
+##bindsym XF86Bluetooth		exec
+#bindsym XF86WLAN 		exec
