@@ -290,8 +290,8 @@ exec --no-startup-id ~/.scripts/remaps
 # #---Extra XF86 Keys---# #
 # These are the extra media keys that some keyboards have.
 #bindsym XF86AudioMute		exec 
-bindsym XF86AudioLowerVolume	exec --no-startup-id amixer -D pulse sset Master 5%+
-bindsym XF86AudioRaiseVolume	exec --no-startup-id amixer -D pulse sset Master 5%-  
+bindsym XF86AudioLowerVolume	exec --no-startup-id amixer -D pulse sset Master 5%-
+bindsym XF86AudioRaiseVolume	exec --no-startup-id amixer -D pulse sset Master 5%+  
 bindsym XF86PowerOff		exec --no-startup-id prompt "Are you sure you want to shutdown?" "$shutdown"
 ##bindsym XF86Copy		exec
 ##bindsym XF86Open		exec
