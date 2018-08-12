@@ -82,7 +82,6 @@ alias wttr="curl http://wttr.in/"
 
 # Development
 alias live="python3 -m http.server"
-alias rice="bash ~/.scripts/Autorice"
 
 # #-- Function --# #
 
