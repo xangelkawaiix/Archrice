@@ -1,6 +1,4 @@
-source ~/.vim/autoload/pathogen.vim
-
-let mapleader =" "
+let mapleader =","
 " Load Pathogen for plugins:
 	execute pathogen#infect()
 	execute pathogen#helptags()
@@ -13,13 +11,26 @@ let mapleader =" "
 	set number
 	set relativenumber
 
+" vim-airline-themes
+let g:airline_theme='murmur'
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " Enabling concealing
 	set conceallevel=1
 " Toggle concealing
 	map <leader>l :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<CR>
 
 " Open file as suckless sent presentation
-	map <leader>s :!sent<space><C-r>% 2>/dev/null &<CR><CR>
+	map <F9> :w!<CR>:!sent <c-r>%<CR><CR>
 
 " View an image for a suckless sent presentation:
 	map <leader>v $F@ly$:!feh --scale-down --auto-zoom --image-bg black <c-r>" &<CR><CR>
@@ -27,8 +38,6 @@ let mapleader =" "
 " Open corresponding.pdf
 	map <leader>p :!zathura <c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
 
-" Runs a script that cleans out tex build files whenever I close out of a .tex file.
-    autocmd VimLeave *.tex !texclear %
 " Compile .cpp
 	map <F8> :!g++ % && ./a.out <CR>
 

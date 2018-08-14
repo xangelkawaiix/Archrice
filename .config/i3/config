@@ -125,7 +125,7 @@ bindsym $mod+n exec $term -e newsboat
 #bindsym $mod+Shift+n
 
 bindsym $mod+m exec --no-startup-id $term -e ncmpcpp 
-bindsym $mod+Shift+m exec $volumepath/volume -amn -t $statuscmd -u $statussig
+#bindsym $mod+Shift+m 
 
 # #---Function Buttons---# #
 bindsym $mod+F1       restart
@@ -134,9 +134,9 @@ bindsym $mod+F1       restart
 ##bindsym $mod+F4		
 ##bindsym $mod+F5			
 ##bindsym $mod+F6		
-bindsym $mod+F7 	exec $term -e bashmount
+#bindsym $mod+F7 
 ##bindsym $mod+F8 	
-##bindsym $mod+F9     exec
+##bindsym $mod+F9     
 ##bindsym $mod+F10	
 bindsym $mod+F11    exec sudo reboot
 bindsym $mod+F12    exec shutdown -P
