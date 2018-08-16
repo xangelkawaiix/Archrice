@@ -24,7 +24,4 @@ This ricing setup will **work** on any Linux distro, so you don't need to instal
 * [i3 Gaps](https://github.com/Airblader/i3).
 * And more.
 
-## Scripts
-
-The scripts are located on ~/.scripts. Create your custom scripts here.
 

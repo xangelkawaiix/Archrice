@@ -20,6 +20,7 @@ if [ "$EUID" -ne 0 ]
 fi
 
 # Some aliases.
+alias mw="~/.config/mutt/mutt-wizard.sh"
 alias nn="systemctl restart NetworkManager"
 alias p="sudo pacman"
 alias SS="sudo systemctl"
@@ -38,16 +39,16 @@ alias vx="vim ~/.Xdefaults"
 alias extract="bash ~/.scripts/extract"
 
 # FastDir
-alias gd="cd ~/Documents"
-alias gm="cd ~/Music"
-alias gp="cd ~/Pictures"
-alias gv="cd ~/Video"
+alias gD="cd ~/Documents"
+alias gM="cd ~/Music"
+alias gP="cd ~/Pictures"
+alias gV="cd ~/Video"
 
 # Version control.
 alias gb="git branch"
 alias gcb="git checkout -b" # Create new local branch
+alias ga="git add ."
 alias gs="git status"
-alias gd="git add ."
 alias gpm="git push -u origin master"
 alias gcl="git clone"
 alias gp="git pull"
@@ -66,7 +67,6 @@ alias lah="ls -lah"
 # System maintenance
 alias cln="sudo pacman -Scc"
 alias upgr="sudo pacman -Syu"
-alias sysupgr="sudo pacman -Syuu"
 alias inst="sudo pacman -S"
 alias rmv="sudo pacman -R"
 alias nf="clear && neofetch"
