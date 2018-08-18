@@ -42,7 +42,8 @@ alias extract="bash ~/.scripts/extract"
 alias gD="cd ~/Documents"
 alias gM="cd ~/Music"
 alias gP="cd ~/Pictures"
-alias gV="cd ~/Video"
+alias gV="cd ~/Videos"
+alias gS="cd ~/Documents/School/H.S"
 
 # Version control.
 alias gb="git branch"

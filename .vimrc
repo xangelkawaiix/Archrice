@@ -88,9 +88,9 @@ map <leader>p :!mupdf <c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
 	" Word count:
 	autocmd FileType tex map <F3> :w !detex \| wc -w<CR>
 	autocmd FileType tex inoremap <F3> <Esc>:w !detex \| wc -w<CR>
-	" Compile document using xelatex:
-	autocmd FileType tex inoremap <F5> <Esc>:!xelatex<space><c-r>%<Enter>a
-	autocmd FileType tex nnoremap <F5> :!xelatex<space><c-r>%<Enter>
+	" Compile document using pdflatex:
+	autocmd FileType tex inoremap <F5> <Esc>:!pdflatex<space><c-r>%<Enter>a
+	autocmd FileType tex nnoremap <F5> :!pdflatex<space><c-r>%<Enter>
 	" Code snippets
 	autocmd FileType tex inoremap ,fr \begin{frame}<Enter>\frametitle{}<Enter><Enter><++><Enter><Enter>\end{frame}<Enter><Enter><++><Esc>6kf}i
 	autocmd FileType tex inoremap ,fi \begin{fitch}<Enter><Enter>\end{fitch}<Enter><Enter><++><Esc>3kA
