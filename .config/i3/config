@@ -145,6 +145,9 @@ for_window [title="GIMP Startup"] move workspace $ws5
 for_window [class="Gimp"] move workspace $ws5
 for_window [window_role="GtkFileChooserDialog"] resize shrink height 10 px
 
+for_window [title="video0 - mpv"] floating enable
+for_window [title="video0 - mpv"] sticky enable
+
 # Floating Windows for Steam
 for_window [class="^Steam$" title="^Friends$"] floating enable
 for_window [class="^Steam$" title="Steam - News"] floating enable
@@ -284,8 +287,6 @@ exec_always --no-startup-id exec bash $HOME/.fehbg
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Run Polybar Script
 #exec_always --no-startup-id $HOME/.config/i3/polybar.sh &
-# Run the remapping script
-exec --no-startup-id ~/.scripts/remaps
 
 # #---Extra XF86 Keys---# #
 # These are the extra media keys that some keyboards have.
