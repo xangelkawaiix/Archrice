@@ -127,12 +127,22 @@ bindsym $mod+n exec $term -e newsboat
 bindsym $mod+m exec --no-startup-id $term -e ncmpcpp 
 #bindsym $mod+Shift+m 
 
+# #---Media---# #
+bindsym $mod+plus		exec --no-startup-id mpc volume +5
+bindsym $mod+Shift+plus		exec --no-startup-id mpc volume +15
+bindsym $mod+minus 		exec --no-startup-id mpc volume -5
+bindsym $mod+Shift+minus	exec --no-startup-id mpc volume -15
+bindsym $mod+less 		exec --no-startup-id mpc prev
+bindsym $mod+Shift+less		exec --no-startup-id mpc prev
+bindsym $mod+greater		exec --no-startup-id mpc next
+bindsym $mod+Shift+greater      exec --no-startup-id mpc next
+
 # #---Function Buttons---# #
 bindsym $mod+F1       restart
-##bindsym $mod+F2		
+bindsym $mod+F2       exec zathura ~/Documents/Documentation/Introduction_to_LaTeX.pdf
 ##bindsym $mod+F3	  
 ##bindsym $mod+F4		
-##bindsym $mod+F5			
+bindsym $mod+F5        exec --no-startup-id $term -e transmission-remote-cli
 ##bindsym $mod+F6		
 #bindsym $mod+F7 
 ##bindsym $mod+F8 	
