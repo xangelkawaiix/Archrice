@@ -14,7 +14,7 @@
 set $mod Mod4
 font pango:mono 10
 for_window [class=".*"] border pixel 1
-set $term --no-startup-id       urxvt
+set $term --no-startup-id       st
 set $BROWSER --no-startup-id    firefox
 
 floating_modifier 	$mod
