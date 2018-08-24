@@ -7,12 +7,30 @@ let mapleader =","
 	set nocompatible
 	filetype plugin on
 	syntax enable
+        set shell=bash
         colorscheme molokai
+        set termencoding=utf-8
     	set encoding=utf-8
 	set number
 	set relativenumber
-	set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
-        
+	set tabstop=8 
+        set softtabstop=0 
+        set expandtab 
+        set shiftwidth=4 
+        set smarttab
+        set nowrap
+        set autoindent
+        set copyindent
+        set showmatch
+        set undolevels=1000
+
+" Make the keyboard faaaaaaast
+     set ttyfast
+     set timeout timeoutlen=1000 ttimeoutlen=50
+
+" Latex live preview
+let g:livepreview_previewer = 'zathura'        
+
 " Vim Airlines
 let g:airline_theme='wombat'
 
@@ -73,19 +91,19 @@ let g:syntastic_check_on_wq = 0
 " Open corresponding.pdf
 	map <leader>p :!zathura <c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
 
-" Compile .cpp
-	map <F8> :!g++ % && ./a.out <CR>
-
 " Goyo plugin makes text more readable when writing prose:
 	map <F10> :Goyo<CR>
 	map <leader>f :Goyo \| set linebreak<CR>
 	inoremap <F10> <esc>:Goyo<CR>a
 
 " Spell-check set to F6:
-	map <F2> :setlocal spell! spelllang=en_us,id<CR> 
+	map <F2> :setlocal spell! spelllang=en_us<CR> 
 
 " Get line, word and character counts with F3:
 	map <F3> :!wc <C-R>%<CR>
+
+" Toggle LaTeX Preview
+        map <F7> :LLPStartPreview<CR>
 
 " Toggle NerdTree
 	map <F6> :NERDTreeToggle<CR>
@@ -117,15 +135,15 @@ let g:syntastic_check_on_wq = 0
 " C-T for new tab
 	nnoremap <C-t> :tabnew<cr>
 " Open corresponding.pdf
-map <leader>p :!mupdf <c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
+map <leader>p :!zathura <c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
 
 """LATEX
 	" Word count:
 	autocmd FileType tex map <F3> :w !detex \| wc -w<CR>
 	autocmd FileType tex inoremap <F3> <Esc>:w !detex \| wc -w<CR>
 	" Compile document using pdflatex:
-	autocmd FileType tex inoremap <F5> <Esc>:!pdflatex<space><c-r>%<Enter>a
-	autocmd FileType tex nnoremap <F5> :!pdflatex<space><c-r>%<Enter>
+	autocmd FileType tex inoremap <F5> <Esc>:!xelatex<space><c-r>%<Enter>a
+	autocmd FileType tex nnoremap <F5> :!xelatex<space><c-r>%<Enter>
 	" Code snippets
 	autocmd FileType tex inoremap ,fr \begin{frame}<Enter>\frametitle{}<Enter><Enter><++><Enter><Enter>\end{frame}<Enter><Enter><++><Esc>6kf}i
 	autocmd FileType tex inoremap ,fi \begin{fitch}<Enter><Enter>\end{fitch}<Enter><Enter><++><Esc>3kA

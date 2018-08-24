@@ -74,8 +74,8 @@ bindsym $mod+Shift+i exec --no-startup-id "bash ~/.scripts/i3resize up"
 #bindsym $mod+o exec subl #Run Sublime text
 bindsym $mod+Shift+o exec --no-startup-id "bash ~/.scripts/i3resize right"
 
-#bindsym $mod+p 
-#bindsym $mod+Shift+p 
+bindsym $mod+p exec mpc pause
+bindsym $mod+Shift+p exec mpc toggle
 
 # Row second
 #bindsym $mod+a
@@ -109,7 +109,7 @@ bindsym $mod+Shift+l move right 30
 bindsym $mod+z gaps outer current plus 5
 bindsym $mod+Shift+z gaps outer current minus 5
 
-bindsym $mod+x exec --no-startup-id betterlockscreen -l dim
+bindsym $mod+x exec --no-startup-id betterlockscreen -l
 #bindsym $mod+Shift+x
 
 #bindsym $mod+c
@@ -139,7 +139,7 @@ bindsym $mod+Shift+greater      exec --no-startup-id mpc next
 
 # #---Function Buttons---# #
 bindsym $mod+F1       restart
-bindsym $mod+F2       exec zathura ~/Documents/Documentation/Introduction_to_LaTeX.pdf
+#bindsym $mod+F2       exec 
 ##bindsym $mod+F3	  
 ##bindsym $mod+F4		
 bindsym $mod+F5        exec --no-startup-id $term -e transmission-remote-cli
@@ -214,24 +214,21 @@ client.focused_inactive	$transparent	$blue		$white		$darkblue		$darkblack
 client.urgent		$darkred	$darkred	$black		$darkred		$darkred
 client.background $black
 
-
-
-
 bar {
 	font pango:mono 10
 	colors {
-			background $darkblack
-			statusline $darkwhite
-			separator $cyan
-			focused_workspace  $blue $darkblue $darkblack
-        		active_workspace   $blue $blue $darkwhite
-      			inactive_workspace $darkblack $darkblack $white
-        		urgent_workspace   $darkblack $darkblack $white
-		}
-	status_command i3blocks
-	position top
-	mode dock
-	modifier None
+            background $darkblack
+            statusline $darkwhite
+            separator $cyan
+            focused_workspace  $blue $darkblue $darkblack
+            active_workspace   $blue $blue $darkwhite
+            inactive_workspace $darkblack $darkblack $white
+            urgent_workspace   $darkblack $darkblack $white
+    }
+    status_command i3blocks
+    position top
+    mode dock
+    modifier None
 }
 
 # Define names for default workspaces for which we configure key bindings later on.
