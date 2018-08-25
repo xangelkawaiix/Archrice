@@ -74,8 +74,8 @@ bindsym $mod+Shift+i exec --no-startup-id "bash ~/.scripts/i3resize up"
 #bindsym $mod+o exec subl #Run Sublime text
 bindsym $mod+Shift+o exec --no-startup-id "bash ~/.scripts/i3resize right"
 
-bindsym $mod+p exec mpc pause
-bindsym $mod+Shift+p exec mpc toggle
+bindsym $mod+p exec mpc toggle
+##bindsym $mod+Shift+p 
 
 # Row second
 #bindsym $mod+a
