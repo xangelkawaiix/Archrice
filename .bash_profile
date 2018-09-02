@@ -3,6 +3,7 @@ export EDITOR="vim"
 export TERMINAL="urxvt"
 export BROWSER="firefox"
 export READER="zathura"
+export BIB="$HOME/Documents/bib/sch.bib"
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 

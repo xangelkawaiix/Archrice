@@ -1,5 +1,5 @@
 [global]
-font = Hack 10
+font = mono 10
 
 # Allow a small subset of html markup:
 #   <b>bold</b>
@@ -227,7 +227,7 @@ timeout = 8
 
 [cronbat]
     summary = "*Low Battery*"
-    script = ~/.scripts/cronbat
+    script = /home/danke/.scripts/cronbat
 
 #[ignore]
 #    # This notification will not be displayed

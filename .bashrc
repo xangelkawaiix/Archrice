@@ -21,8 +21,7 @@ fi
 
 # Some aliases.
 alias mw="~/.config/mutt/mutt-wizard.sh"
-alias nn="systemctl restart NetworkManager"
-alias p="sudo pacman"
+alias Nn="systemctl restart NetworkManager"
 alias SS="sudo systemctl"
 alias v="vim"
 alias sv="sudo vim"
@@ -31,11 +30,6 @@ alias sr="sudo ranger"
 alias ka="killall"
 alias trem="transmission-remote"
 alias mkd="mkdir -pv"
-alias vb="vim ~/.bashrc"
-alias vi="vim ~/.config/i3/config"
-alias vp="vim ~/.config/polybar/config"
-alias vr="vim ~/.vimrc"
-alias vx="vim ~/.Xdefaults"
 alias extract="bash ~/.scripts/extract"
 
 # FastDir
@@ -43,7 +37,7 @@ alias gD="cd ~/Documents"
 alias gM="cd ~/Music"
 alias gP="cd ~/Pictures"
 alias gV="cd ~/Videos"
-alias gS="cd ~/Documents/School/H.S"
+alias gW="cd ~/Pictures/wallpapers"
 
 # Version control.
 alias gb="git branch"
