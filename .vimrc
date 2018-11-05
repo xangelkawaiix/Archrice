@@ -1,4 +1,4 @@
-let mapleader =","
+let mapleader =" "
 " Load Pathogen for plugins:
 	execute pathogen#infect()
 	execute pathogen#helptags()
@@ -7,83 +7,29 @@ let mapleader =","
 	set nocompatible
 	filetype plugin on
 	syntax enable
-        set shell=bash
-        colorscheme molokai
-        set termencoding=utf-8
-    	set encoding=utf-8
-	set number
-	set relativenumber
-	set tabstop=8 
-        set softtabstop=0 
-        set expandtab 
-        set shiftwidth=4 
-        set smarttab
-        set nowrap
-        set autoindent
-        set copyindent
-        set showmatch
-        set undolevels=1000
+    set shell=bash
+"    colorscheme ir_black
+    set termencoding=utf-8
+	set encoding=utf-8
+   	set number
+    set relativenumber
+    set tabstop=4
+    set softtabstop=0 
+    set expandtab 
+    set shiftwidth=4
+    set smarttab
+    set nowrap
+    set autoindent
+    set copyindent
+    set showmatch
+    set undolevels=1000
 
 " Make the keyboard faaaaaaast
      set ttyfast
-     set timeout timeoutlen=1000 ttimeoutlen=50
+     set timeout timeoutlen=1000 ttimeoutlen=5
 
 " Latex live preview
 let g:livepreview_previewer = 'zathura'        
-
-" Vim Airlines
-let g:airline_theme='wombat'
-
-if !exists('g:airline_symbols')
-        let g:airline_symbols = {}
-    endif
-
-    " unicode symbols
-    let g:airline_left_sep = '»'
-    let g:airline_left_sep = '▶'
-    let g:airline_right_sep = '«'
-    let g:airline_right_sep = '◀'
-    let g:airline_symbols.crypt = '🔒'
-    let g:airline_symbols.linenr = '☰'
-    let g:airline_symbols.linenr = '␊'
-    let g:airline_symbols.linenr = '␤'
-    let g:airline_symbols.linenr = '¶'
-    let g:airline_symbols.maxlinenr = ''
-    let g:airline_symbols.maxlinenr = '㏑'
-    let g:airline_symbols.branch = '⎇'
-    let g:airline_symbols.paste = 'ρ'
-    let g:airline_symbols.paste = 'Þ'
-    let g:airline_symbols.paste = '∥'
-    let g:airline_symbols.spell = 'Ꞩ'
-    let g:airline_symbols.notexists = 'Ɇ'
-    let g:airline_symbols.whitespace = 'Ξ'
-
-    " powerline symbols
-    let g:airline_left_sep = ''
-    let g:airline_left_alt_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_right_alt_sep = ''
-    let g:airline_symbols.branch = ''
-    let g:airline_symbols.readonly = ''
-    let g:airline_symbols.linenr = '☰'
-    let g:airline_symbols.maxlinenr = ''
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-" Enabling concealing
-	set conceallevel=1
-" Toggle concealing
-	map <leader>l :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<CR>
-
-" Open file as suckless sent presentation
-	map <F9> :w!<CR>:!sent <c-r>%<CR><CR>
 
 " View an image for a suckless sent presentation:
 	map <leader>v $F@ly$:!feh --scale-down --auto-zoom --image-bg black <c-r>" &<CR><CR>
@@ -91,23 +37,24 @@ let g:syntastic_check_on_wq = 0
 " Open corresponding.pdf
 	map <leader>p :!zathura <c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
 
-" Goyo plugin makes text more readable when writing prose:
-	map <F10> :Goyo<CR>
-	map <leader>f :Goyo \| set linebreak<CR>
-	inoremap <F10> <esc>:Goyo<CR>a
-
-" Spell-check set to F6:
+" Spell-check set to F2:
 	map <F2> :setlocal spell! spelllang=en_us<CR> 
 
 " Get line, word and character counts with F3:
 	map <F3> :!wc <C-R>%<CR>
 
-" Toggle LaTeX Preview
-        map <F7> :LLPStartPreview<CR>
-
 " Toggle NerdTree
 	map <F6> :NERDTreeToggle<CR>
-			
+
+" Toggle LaTeX Preview
+    map <F7> :LLPStartPreview<CR>
+
+" Open file as suckless sent presentation
+	map <F9> :w!<CR>:!sent <c-r>%<CR><CR>
+
+" Goyo plugin makes text more readable when writing prose:
+	map <F10> :Goyo<CR>
+
 " Readme auto wrap text:
 	autocmd BufRead,BufNewFile *README.md set tw=79
 
@@ -134,6 +81,7 @@ let g:syntastic_check_on_wq = 0
 
 " C-T for new tab
 	nnoremap <C-t> :tabnew<cr>
+
 " Open corresponding.pdf
 map <leader>p :!zathura <c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
 
@@ -141,13 +89,14 @@ map <leader>p :!zathura <c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
 	" Word count:
 	autocmd FileType tex map <F3> :w !detex \| wc -w<CR>
 	autocmd FileType tex inoremap <F3> <Esc>:w !detex \| wc -w<CR>
-	" Compile document using pdflatex:
+	" Compile document using xelatex:
 	autocmd FileType tex inoremap <F5> <Esc>:!xelatex<space><c-r>%<Enter>a
 	autocmd FileType tex nnoremap <F5> :!xelatex<space><c-r>%<Enter>
 	" Code snippets
 	autocmd FileType tex inoremap ,fr \begin{frame}<Enter>\frametitle{}<Enter><Enter><++><Enter><Enter>\end{frame}<Enter><Enter><++><Esc>6kf}i
 	autocmd FileType tex inoremap ,fi \begin{fitch}<Enter><Enter>\end{fitch}<Enter><Enter><++><Esc>3kA
 	autocmd FileType tex inoremap ,exe \begin{exe}<Enter>\ex<Space><Enter>\end{exe}<Enter><Enter><++><Esc>3kA
+	autocmd FileType tex inoremap ,eq \begin{equation}<Enter><Enter>\end{equation}<Enter><Enter><++><Esc>3kA
 	autocmd FileType tex inoremap ,em \emph{}<++><Esc>T{i
 	autocmd FileType tex inoremap ,bf \textbf{}<++><Esc>T{i
 	autocmd FileType tex vnoremap , <ESC>`<i\{<ESC>`>2la}<ESC>?\\{<Enter>a
@@ -223,6 +172,7 @@ map <leader>p :!zathura <c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
 	autocmd Filetype markdown,rmd inoremap ,1 #<Space><Enter><++><Esc>kA
 	autocmd Filetype markdown,rmd inoremap ,2 ##<Space><Enter><++><Esc>kA
 	autocmd Filetype markdown,rmd inoremap ,3 ###<Space><Enter><++><Esc>kA
+	autocmd Filetype markdown,rmd inoremap ,4 ####<Space><Enter><++><Esc>kA
 	autocmd Filetype markdown,rmd inoremap ,l --------<Enter>
 	autocmd Filetype rmd inoremap ,r ```{r}<CR>```<CR><CR><esc>2kO
 	autocmd Filetype rmd inoremap ,p ```{python}<CR>```<CR><CR><esc>2kO
@@ -240,4 +190,5 @@ vnoremap H <gv
 
 map <enter><enter> yi[:e <c-r>"<cr>
 
-"" Snippets are from Luke Smith.
+" Snippets are from Luke Smith.
+" Some are tweaked by myself

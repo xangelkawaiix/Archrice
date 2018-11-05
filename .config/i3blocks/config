@@ -2,55 +2,49 @@ command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=pango
 
-#[record]
-#command=cat ~/.scripts/.recording
-#interval=once
-#signal=9
+[mpd]
+command=i3mpd
+label=🎼
+interval=1
+align=left
 
-#[mpd]
-#label=
-#command=$HOME/.scripts/i3mpd 
-#interval=once
-#align=left
-#signal=11
-
-#[weather]
-#command=i3weather
-#interval=3600
-
-#[mail]
-#label=
-#command=i3mail
-#interval=180
-#align=left
-#signal=12
+[weather]
+command=i3weather
+interval=1800
 
 [volume]
-label=
 interval=once
-instance=Master
-#command=i3volume
-markup=pango
+command=i3volume
+interval=3
 signal=10
 
+[mail]
+label=📬
+command=i3mail
+interval=60
+align=left
+
 [iface]
-#instance=wlan0
+label=🌐
+instance=wlp2s0b1
 color=#00FF00
 interval=10
 
-[temperature]
-label=
-interval=10
-
 [wifi]
-instance=wlp2s0b1
+label=🌐
+instance=enp1s0
 interval=10
 
 [battery]
-command=acpi | cut -d " " -f3-5 |  sed -e "s/,//g;s/Discharging//;s/Charging//;s/Unknown//;s/Full//;s/ 0*/ /g;s/ :/ /g"
+command=i3battery
 interval=5
 
 [time]
-label=
-command=echo $(date '+%Y %b %d %I:%M%p') 
-interval=30
+label=📅
+command=echo $(date '+%Y %b %d %I:%M%p') 🕓
+interval=5
+
+[wifi]
+command=i3wifi
+#instance=wlp2s0b1
+interval=10

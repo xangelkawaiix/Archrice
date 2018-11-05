@@ -21,7 +21,7 @@ fi
 
 # Some aliases.
 alias mw="~/.config/mutt/mutt-wizard.sh"
-alias Nn="systemctl restart NetworkManager"
+alias rn="systemctl restart NetworkManager"
 alias SS="sudo systemctl"
 alias v="vim"
 alias sv="sudo vim"
@@ -30,14 +30,23 @@ alias sr="sudo ranger"
 alias ka="killall"
 alias trem="transmission-remote"
 alias mkd="mkdir -pv"
-alias extract="bash ~/.scripts/extract"
+alias X="extract"
+alias vrc="vim ~/.vimrc"
+alias cvb="vim ~/.bashrc"
+
+# Tex
+alias Txa="cp ~/Templates/latex-templates/article.tex"
+alias Txs="cp ~/Templates/latex-templates/beamer.tex"
+alias Txh="cp ~/Templates/latex-templates/handout.tex"
+alias TC="bash ~/.scripts/texclear"
 
 # FastDir
 alias gD="cd ~/Documents"
 alias gM="cd ~/Music"
 alias gP="cd ~/Pictures"
 alias gV="cd ~/Videos"
-alias gW="cd ~/Pictures/wallpapers"
+alias gH="cd ~/Documents/School/H.S/X/"
+
 
 # Version control.
 alias gb="git branch"
@@ -58,6 +67,7 @@ alias ll="ls -alF"
 alias la="ls -A"
 alias l="ls -CF"
 alias lah="ls -lah"
+alias ls="ls -hN --color=auto --group-directories-first"
 
 # System maintenance
 alias cln="sudo pacman -Scc"
@@ -78,10 +88,8 @@ alias wttr="curl http://wttr.in/"
 # Development
 alias live="python3 -m http.server"
 
-# #-- Function --# #
-
-# Push your code straight into Github. 
-function gt() {
+# Push code straight into Github. 
+function gitp() {
     git add .
     git commit -a -m "$1"
     git push -u origin master
