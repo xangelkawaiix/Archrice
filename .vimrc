@@ -8,7 +8,7 @@ let mapleader =" "
 	filetype plugin on
 	syntax enable
     set shell=bash
-"    colorscheme ir_black
+    colorscheme wombat
     set termencoding=utf-8
 	set encoding=utf-8
    	set number
@@ -30,6 +30,10 @@ let mapleader =" "
 
 " Latex live preview
 let g:livepreview_previewer = 'zathura'        
+
+" Copy/Paste from X11 clipboard
+    vmap <leader>xyy :!xclip -f -sel clip<CR>
+    map <leader>xpp mz:-1r !xclip -o -sel clip<CR>`z
 
 " View an image for a suckless sent presentation:
 	map <leader>v $F@ly$:!feh --scale-down --auto-zoom --image-bg black <c-r>" &<CR><CR>
