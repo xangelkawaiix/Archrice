@@ -1,10 +1,8 @@
 # Archrice
 ![Desktop](./.config/desktop.png)
-<div align="center">
 These are my config file. I make this repo because i was inspired by [Luke Smith](https://www.github.com/lukesmithxyz).
 This ricing setup should **work** on any Arch based distro. Some packages might
 be available on Debian aswell (Haven't check it out).
-</div>
 
 ## Programs
 List of the programs:
