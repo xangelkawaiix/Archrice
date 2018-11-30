@@ -1240,8 +1240,6 @@ c.url.searchengines = {
         'red': 'https://reddit.com/r/{}',
         'wt': 'http://en.wiktionary.org/?search={}',
         'osm': 'http://www.openstreetmap.org/search?query={}',
-        'art': 'http://arizona.summon.serialssolutions.com/search?q={}',
-        'book': 'http://sabio.library.arizona.edu/search/X?SEARCH={}',
         'lib': 'http://gen.lib.rus.ec/search.php?req={}',
         'tpb': 'http://thepiratebay.org/search/{}',
         'laincat': 'http://lainchan.org/{}/catalog.html',

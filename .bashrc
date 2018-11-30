@@ -1,10 +1,3 @@
-# ____              _          _   _ _     _                   _     _               _              
-#|  _ \  __ _ _ __ | | _____  | | | (_) __| | __ _ _   _  __ _| |_  | |__   __ _ ___| |__  _ __ ___ 
-#| | | |/ _` | '_ \| |/ / _ \ | |_| | |/ _` |/ _` | | | |/ _` | __| | '_ \ / _` / __| '_ \| '__/ __|
-#| |_| | (_| | | | |   <  __/ |  _  | | (_| | (_| | |_| | (_| | |_  | |_) | (_| \__ \ | | | | | (__ 
-#|____/ \__,_|_| |_|_|\_\___| |_| |_|_|\__,_|\__,_|\__, |\__,_|\__| |_.__/ \__,_|___/_| |_|_|  \___|
-#                                                  |___/                                            
-#
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -19,63 +12,54 @@ if [ "$EUID" -ne 0 ]
 	else export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]ROOT\[$(tput setaf 2)\]@\[$(tput setaf 4)\]$(hostname | awk '{print toupper($0)}') \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
 fi
 
-# Some aliases.
+# System maintenance
 alias mw="~/.config/mutt/mutt-wizard.sh"
-alias rn="systemctl restart NetworkManager"
-alias SS="sudo systemctl"
+alias nf="clear && neofetch"
+alias sdn="sudo shutdown -h now"
+alias refpg="gpg-connect-agent RELOADAGENT /bye" # Refresh gpg
+
+# Some aliases.
+alias p="sudo pacman"
 alias v="vim"
 alias sv="sudo vim"
 alias r="ranger"
 alias sr="sudo ranger"
-alias ka="killall"
 alias trem="transmission-remote"
 alias mkd="mkdir -pv"
 alias X="extract"
+alias c="compile"
 alias vrc="vim ~/.vimrc"
 alias cvb="vim ~/.bashrc"
+alias cif="vim ~/.config/i3/config"
 
 # Tex
 alias Txa="cp ~/Templates/latex-templates/article.tex"
 alias Txs="cp ~/Templates/latex-templates/beamer.tex"
 alias Txh="cp ~/Templates/latex-templates/handout.tex"
-alias TC="bash ~/.scripts/texclear"
 
 # FastDir
-alias gD="cd ~/Documents"
-alias gM="cd ~/Music"
-alias gP="cd ~/Pictures"
-alias gV="cd ~/Videos"
-alias gH="cd ~/Documents/School/H.S/X/"
+alias gd="cd ~/Documents"
+alias gm="cd ~/Music"
+alias gp="cd ~/Pictures"
+alias gv="cd ~/Videos"
+alias gs="cd ~/Documents/School/H.S/X/"
 
 
 # Version control.
-alias gb="git branch"
-alias gcb="git checkout -b" # Create new local branch
-alias ga="git add ."
-alias gs="git status"
-alias gpm="git push -u origin master"
-alias gcl="git clone"
-alias gp="git pull"
-alias gc="git checkout"
-alias gi="git init"
-alias gl="git log"
-alias gls="git log --summary"
-alias gbd="git branch -d" # Delete the branch that is not used any more
+alias gc="git checkout -b" # Create new local branch
+alias gl="git log --summary"
+alias gD="git branch -d" # Delete the branch
 
 # ls aliases
 alias ll="ls -alF"
 alias la="ls -A"
 alias l="ls -CF"
 alias lah="ls -lah"
-alias ls="ls -hN --color=auto --group-directories-first"
 
-# System maintenance
-alias cln="sudo pacman -Scc"
-alias upgr="sudo pacman -Syu"
-alias inst="sudo pacman -S"
-alias rmv="sudo pacman -R"
-alias nf="clear && neofetch"
-alias sdn="sudo shutdown -h now"
+# Adding color
+alias ls="ls -hN --color=auto --group-directories-first"
+alias ggrep="grep --color=auto" # Color grep - Highlight desired sequence
+alias ccat="highlight --out-format=ansi" # Color cat - Print file with syntax highlighting | highlight package need to be installed
 
 # Internet
 alias yt="youtube-dl --add-metadata -ic" # Download video link
@@ -84,6 +68,7 @@ alias YT="youtube-viewer"
 alias starwars="telnet towel.blinkenlights.nl"
 alias myip="curl http://ipecho.net/plain; echo"
 alias wttr="curl http://wttr.in/"
+alias lk="youtube-dl -ic --add-metadata https://youtube.com/c/LukeSmithxyz"
 
 # Development
 alias live="python3 -m http.server"
@@ -95,4 +80,16 @@ function gitp() {
     git push -u origin master
 }
 
+function mc {
+    if [ ! -n "$1" ]; then
+     echo "Enter a directory name"
+    elif [ -d $1 ]; then
+     echo "\`$1' already exists"
+    else
+     mkdir $1 && cd $1
+    fi
+}
+
 alias="git add . && git commit -a -m '$i' && git push -u origin master"
+
+shdl() { curl -O $(curl -s https://www.sci-hub.tw/"$@" | grep location.href | grep -o https.*pdf) ; } # Download article from sci-hub

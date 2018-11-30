@@ -1,4 +1,0 @@
-#!/bin/bash
-
-pkill -P $(pgrep -x screencast\|audio\|video) 2>/dev/null && sleep .5 &&
-pkill -P $(pgrep -x screencast\|audio\|video) 2>/dev/null

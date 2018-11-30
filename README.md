@@ -1,23 +1,34 @@
+<div align="center">
 # Archrice
-These are my config file. I make this repo because i was inspired by [luke smith](https://www.github.com/lukesmithxyz).
-This ricing setup will **work** on any Arch based distro. 
+![Desktop](./.config/desktop.png)
+These are my config file. I make this repo because i was inspired by [Luke Smith](https://www.github.com/lukesmithxyz).
+This ricing setup should **work** on any Arch based distro. Some packages might
+be available on Debian aswell (Haven't check it out).
+</div>
 
-### Programs
-
-* ncmpcpp.
-* mpd.
-* Zathura
+## Programs
+List of the programs:
+* st
+* urxvt (Default terminal)
+* i3-gaps
+* i3blocks
+* mpd and ncmpcpp
 * mpv
-* neomutt.
-* calcurse.
-* dmenu.
-* st (Default Terminal)
-* urxvt
-* vim.
-* [rtv](https://github.com/michael-lazar/rtv).
-* newsboat.
-* i3blocks.
-* neofetch.
-* [betterlockscreen](https://github.com/pavanjadhaw/betterlockscreen).
-* [i3 Gaps](https://github.com/Airblader/i3).
-* And many more.
+* neofetch
+* newsboat
+* polybar
+* qutebrowser
+* ranger
+* zathura
+* calcurse
+* mutt/neomutt
+* dmenu
+* betterlockscreen
+* compton
+
+## Scripts
+Most of the [scripts](./.scripts) belong to [Luke Smith](https://www.github.com/lukesmithxyz).
+Some scripts i rewrote a bit. (Because some scripts didn't worked on mine)
+
+## License
+[MIT License](./LICENSE)

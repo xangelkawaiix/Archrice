@@ -8,7 +8,7 @@ let mapleader =" "
 	filetype plugin on
 	syntax enable
     set shell=bash
-    colorscheme wombat
+    colorscheme carvedwoodcool
     set termencoding=utf-8
 	set encoding=utf-8
    	set number
@@ -83,8 +83,9 @@ let g:livepreview_previewer = 'zathura'
 	map <C-k> <C-w>k
 	map <C-l> <C-w>l
 
-" C-T for new tab
+" C-T and C-X for closing and create new tab
 	nnoremap <C-t> :tabnew<cr>
+    nnoremap <C-x> :tabclose<cr>
 
 " Open corresponding.pdf
 map <leader>p :!zathura <c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
@@ -136,6 +137,7 @@ map <leader>p :!zathura <c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
 
 """PHP/HTML
 	autocmd FileType php,html inoremap ,b <b></b><Space><++><Esc>FbT>i
+"	autocmd FileType php,html inoremap ,dv <div<Space>class="<++>"<Space>id="<++>"><Enter></div><++><Esc>2h1ki
 	autocmd FileType php,html inoremap ,it <em></em><Space><++><Esc>FeT>i
 	autocmd FileType php,html inoremap ,1 <h1></h1><Enter><Enter><++><Esc>2kf<i
 	autocmd FileType php,html inoremap ,2 <h2></h2><Enter><Enter><++><Esc>2kf<i
