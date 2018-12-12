@@ -1,21 +1,23 @@
 # vim: filetype=i3
 #
-# Basic Definition
+## Basic Definition ##
 set $mod Mod4
-font pango:mono 10
-for_window [class=".*"] border pixel 2
+font pango:Monaco 10
+for_window [class=".*"] border pixel 1
 
-set $term --no-startup-id       st
+set $term --no-startup-id       urxvt
 set $BROWSER --no-startup-id    firefox
+set $reboot sudo -A reboot
+set $shutdown sudo -A shutdown -h now
 
 floating_modifier 	$mod
 hide_edge_borders 	both
 
-# Required for i3 gaps
-gaps inner 10
-gaps outer 10
+## Required for i3 gaps ##
+gaps inner 15
+gaps outer 15
 
-# System Menu
+## System Menu ##
 set $sysmenu "[p]oweroff  re[b]oot  [r]eload [s]uspend  [l]ogout  "
 bindsym $mod+Delete   mode $sysmenu
 
@@ -29,25 +31,25 @@ mode $sysmenu {
     bindsym Escape    mode "default"
 }
 
-# Basic binding
+## Basic binding ##
 bindsym $mod+Return       exec $term
 bindsym $mod+Shift+Return exec $term -e tmux
 bindsym $mod+Shift+space  floating toggle
 bindysm $mod+space        focus mode_toggle
 
 ## Dropdown Terminal ##
-for_window [instance="dropdown"] floating enable
-for_window [instance="dropdown"] resize set 625 400
-for_window [instance="dropdown"] move scratchpad
-for_window [instance="dropdown"] border pixel 5
-exec --no-startup-id $term -n dropdown -e tmux
+#for_window [instance="tmuxdd"] floating enable
+#for_window [instance="tmuxdd"] resize set 625 400
+#for_window [instance="tmuxdd"] move scratchpad
+#for_window [instance="tmuxdd"] border pixel 2
+#exec --no-startup-id $term -n dropdown -e tmux
 
-# R 
-for_window [instance="math"] floating enable
-for_window [instance="math"] resize set 800 300
-for_window [instance="math"] move scratchpad
-for_window [instance="math"] border pixel 5
-exec --no-startup-id $term -n math -f mono:pixelsize=18 -e R -q
+# R
+#for_window [instance="dropdowncalc"] floating enable
+#for_window [instance="dropdowncalc"] resize set 800 300
+#for_window [instance="dropdowncalc"] move scratchpad
+#for_window [instance="dropdowncalc"] border pixel 2
+#exec --no-startup-id $term -n math -f mono:pixelsize=18 -e R -q
 
 
 ## Application launcher ##
@@ -61,35 +63,35 @@ bindsym $mod+Shift+w exec qutebrowser
 bindsym $mod+e exec $term -e neomutt
 #bindsym $mod+Shift+e
 
-bindsym $mod+r exec  $term -e ranger 
+bindsym $mod+r exec  $term -e ranger
 bindsym $mod+Shift+r exec $term -e sudo ranger /
 
-#bindsym $mod+t exec  
+#bindsym $mod+t exec
 bindsym $mod+Shift+t gaps inner current set 10; gaps outer current set 10
 
 bindsym $mod+y  exec $term -e calcurse
 bindsym $mod+Shift+y exec --no-startup-id i3resize left
 
-bindsym $mod+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
+#bindsym $mod+u [instance="tmuxdd"] scratchpad show; [instance="tmuxdd"] move position center
 bindsym $mod+Shift+u exec --no-startup-id i3resize down
 
 bindsym $mod+i exec $term -e htop
 bindsym $mod+Shift+i exec --no-startup-id i3resize up
 
-#bindsym $mod+o exec 
+bindsym $mod+o sticky toggle
 bindsym $mod+Shift+o exec --no-startup-id i3resize right
 
 bindsym $mod+p exec mpc toggle
-##bindsym $mod+Shift+p 
+##bindsym $mod+Shift+p
 
 # Row second
-bindsym $mod+a [instance="math"] scratchpad show; [instance="math"] move position center
+#bindsym $mod+a [instance="dropdowncalc"] scratchpad show; [instance="dropdowncalc"] move position center
 bindsym $mod+Shift+a exec $term -e pulsemixer
 
 bindsym $mod+s gaps inner current plus 5
 bindsym $mod+Shift+s gaps inner current minus 5
 
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id dmenu_run -i -fn Monaco-12
 bindsym $mod+Shift+d gaps inner current set 0; gaps outer current set 0
 
 bindsym $mod+f fullscreen toggle
@@ -110,7 +112,7 @@ bindsym $mod+Shift+k move up 30
 bindsym $mod+l focus right
 bindsym $mod+Shift+l move right 30
 
-# Row Third 
+# Row Third
 bindsym $mod+z gaps outer current plus 5
 bindsym $mod+Shift+z gaps outer current minus 5
 
@@ -118,56 +120,60 @@ bindsym $mod+x exec --no-startup-id mpc pause && betterlockscreen -l dim
 bindsym $mod+Shift+x exec shutdown -h now
 
 bindsym $mod+c exec --no-startup-id camtoggle
-#bindsym $mod+Shift+c 
+#bindsym $mod+Shift+c
 
 bindsym $mod+v exec $term -e ncmpcpp -s visualizer
 #bindsym $mod+Shift+v
 
-#bindsym $mod+b 
-#bindsym $mod+Shift+b
+#bindsym $mod+b
+bindsym $mod+Shift+b exec --no-startup-id blender; workspace $ws7
 
 bindsym $mod+n exec $term -e newsboat
 #bindsym $mod+Shift+n
 
-bindsym $mod+m exec --no-startup-id $term -e ncmpcpp 
-#bindsym $mod+Shift+m 
+bindsym $mod+m exec --no-startup-id $term -e ncmpcpp
+#bindsym $mod+Shift+m
 
-# Media
-bindsym $mod+plus		exec --no-startup-id pamixer -i 5
+## Media ##
+bindsym $mod+plus		    exec --no-startup-id pamixer -i 5
 bindsym $mod+Shift+plus		exec --no-startup-id pamixer -i 15
-bindsym $mod+minus 		exec --no-startup-id pamixer -d 5
+bindsym $mod+minus 		    exec --no-startup-id pamixer -d 5
 bindsym $mod+Shift+minus	exec --no-startup-id pamixer -d 15
-bindsym $mod+less 		exec --no-startup-id mpc prev
+bindsym $mod+less 		    exec --no-startup-id mpc prev
 bindsym $mod+Shift+less		exec --no-startup-id mpc prev
 bindsym $mod+greater		exec --no-startup-id mpc next
-bindsym $mod+Shift+greater      exec --no-startup-id mpc next
+bindsym $mod+Shift+greater  exec --no-startup-id mpc next
 
-# Function Buttons
-bindsym $mod+F1       restart
-bindsym $mod+F2       exec arandr
-##bindsym $mod+F3	    exec
-##bindsym $mod+F4	    exec	
-##bindsym $mod+F5       exec
-##bindsym $mod+F6	    exec	
+## Function Buttons ##
+##bindsym $mod+F1     exec
+bindsym $mod+F2     exec arandr
+bindsym $mod+F3     exec displayselect
+bindsym $mod+F4	    exec $term -e bashmount
+bindsym $mod+F5       restart
+#bindsym $mod+F6	    exec
 #bindsym $mod+F7        exec
-##bindsym $mod+F8 	    exec
-##bindsym $mod+F9       exec
-##bindsym $mod+F10	    exec
-bindsym $mod+F11    exec shutdown -r now
-bindsym $mod+F12    exec shutdown -h now
+#bindsym $mod+F8 	    exec
+#bindsym $mod+F9       exec
+#bindsym $mod+F10	    exec
+bindsym $mod+F11    exec $reboot
+bindsym $mod+F12    exec $shutdown
 
+## Floating Windows ##
+# Gimp
 for_window [title="GIMP Startup"] move workspace $ws5
 for_window [class="Gimp"] move workspace $ws5
 for_window [window_role="GtkFileChooserDialog"] resize shrink height 10 px
 
+## Mpv
 for_window [title="video0 - mpv"] floating enable
 for_window [title="video0 - mpv"] sticky enable
 
-# Floating Windows for Steam
+# Steam
 for_window [class="^Steam$" title="^Friends$"] floating enable
 for_window [class="^Steam$" title="Steam - News"] floating enable
 for_window [class="^Steam$" title=".* - Chat"] floating enable
 for_window [class="^Steam$" title="^Settings$"] floating enable
+for_window [class="^Steam$" title="^Steam Library Folders$"] floating enable
 for_window [class="^Steam$" title=".* - event started"] floating enable
 for_window [class="^Steam$" title=".* CD key"] floating enable
 for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
@@ -186,9 +192,11 @@ bindsym $mod+Print exec screencast
 # Kill screencast
 bindsym $mod+Shift+Print exec killrecording
 # Record audio
-#bindsym $mod+Scroll_Lock exec audio
+bindsym $mod+Insert exec audio
+# Kill audio
+bindsym $mod+Shift+Insert exec killaudio
 
-# Workspace Bindings
+## Workspace Bindings ##
 bindsym $mod+Home workspace $ws1
 bindsym $mod+Control+Home move container to  workspace $ws1
 bindsym $mod+End workspace $ws10
@@ -226,7 +234,7 @@ client.urgent		$darkred	        $darkred	$black		$darkred		$darkred
 client.background   $black
 
 bar {
-	font pango: mono 10
+	font pango: Hack 11
 	colors {
            background $darkblack
            statusline $darkwhite
@@ -242,7 +250,7 @@ bar {
     modifier None
 }
 
-# Define names for default workspaces for which we configure key bindings later on.
+## Define names for default workspaces ##
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -254,7 +262,7 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# switch to workspace
+## switch to workspace ##
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -266,7 +274,7 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
-# move focused container to workspace
+## move focused container to workspace ##
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
@@ -278,7 +286,7 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-# Arrow Keys
+## Arrow Keys ##
 bindsym $mod+Left		    	focus left
 bindsym $mod+Down		    	focus down
 bindsym $mod+Up			    	focus up
@@ -288,12 +296,9 @@ bindsym $mod+Shift+Down		    move down
 bindsym $mod+Shift+Up			move up
 bindsym $mod+Shift+Right        move right
 
-# External Scripts
+## External Scripts ##
 # Remaps the capslock key to escape and uses the US international keyboard with dead keys:
-exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl -option caps:escape
-# Remap Menu button to super:
-exec-always --no-startup-id xmodmap -e 'keycode 135 = Super_R'
-bindsym Menu exec --no-startup-id xmodmap -e 'keycode 135 = Super_R'
+exec_always no-startup-id exec remaps
 # composite manager
 exec --no-startup-id compton --xrender-sync-fence
 # Dunst for notifications:
@@ -313,10 +318,10 @@ exec_always --no-startup-id exec $HOME/.fehbg
 
 # #---Extra XF86 Keys---# #
 # These are the extra media keys that some keyboards have.
-#bindsym XF86AudioMute		exec 
+#bindsym XF86AudioMute		exec
 bindsym XF86AudioLowerVolume	exec --no-startup-id amixer -D pulse sset Master 5%-
-bindsym XF86AudioRaiseVolume	exec --no-startup-id amixer -D pulse sset Master 5%+  
-##bindsym XF86PowerOff		exec 
+bindsym XF86AudioRaiseVolume	exec --no-startup-id amixer -D pulse sset Master 5%+
+##bindsym XF86PowerOff		exec
 ##bindsym XF86Copy		exec
 ##bindsym XF86Open		exec
 ##bindsym XF86Paste		exec
@@ -337,14 +342,14 @@ bindsym XF86WWW			exec --no-startup-id $BROWSER
 #bindsym XF86MyComputer		exec $term -e ranger
 ##bindsym XF86Back		exec
 ##bindsym XF86Forward		exec
-#bindsym XF86Eject		exec 
-#bindsym XF86AudioNext		exec 
-#bindsym XF86AudioPlay		exec 
-#bindsym XF86AudioPrev		exec 
-#bindsym XF86AudioStop		exec 
+#bindsym XF86Eject		exec
+#bindsym XF86AudioNext		exec
+#bindsym XF86AudioPlay		exec
+#bindsym XF86AudioPrev		exec
+#bindsym XF86AudioStop		exec
 ##bindsym XF86AudioRecord       exec
-#bindsym XF86AudioRewind	exec 
-#bindsym XF86AudioForward	exec 
+#bindsym XF86AudioRewind	exec
+#bindsym XF86AudioForward	exec
 ##bindsym XF86Phone		exec
 ##bindsym XF86Tools		exec
 bindsym XF86HomePage		exec $BROWSER https://lukesmith.xyz
@@ -362,27 +367,27 @@ bindsym XF86Reload		restart
 ##bindsym XF86Launch7		exec
 ##bindsym XF86Launch8		exec
 ##bindsym XF86Launch9		exec
-#bindsym XF86AudioMicMute	exec 
-#bindsym XF86TouchpadToggle	exec 
-#bindsym XF86TouchpadOn		exec  
-#bindsym XF86TouchpadOff	exec  
-#bindsym XF86Suspend		exec 
+#bindsym XF86AudioMicMute	exec
+#bindsym XF86TouchpadToggle	exec
+#bindsym XF86TouchpadOn		exec
+#bindsym XF86TouchpadOff	exec
+#bindsym XF86Suspend		exec
 #bindsym XF86Close		kill
-#bindsym XF86WebCam		exec 
+#bindsym XF86WebCam		exec
 bindsym XF86Mail		exec $term -e neomutt
-#bindsym XF86Messenger		exec $term -e irssi
+bindsym XF86Messenger   exec $term -e irssi
 bindsym XF86Search		exec $BROWSER https://startpage.com
 ##bindsym XF86Go		exec
-##bindsym XF86Finance		exec
+##bindsym XF86Finance   exec
 ##bindsym XF86Game		exec
 #bindsym XF86Shop		exec $BROWSER https://ebay.com
-#bindsym XF86MonBrightnessDown	exec 
-#bindsym XF86MonBrightnessUp	exec 
+#bindsym XF86MonBrightnessDown	exec
+#bindsym XF86MonBrightnessUp	exec
 bindsym XF86AudioMedia		exec --no-startup-id $term -e ncmpcpp
 ##bindsym XF86Display		exec --no-startup-id arandr
 #bindsym XF86KbdLightOnOff	exec
-#bindsym XF86KbdBrightnessDown	exec 
-#bindsym XF86KbdBrightnessUp	exec 
+#bindsym XF86KbdBrightnessDown	exec
+#bindsym XF86KbdBrightnessUp	exec
 ##bindsym XF86Reply		exec
 ##bindsym XF86MailForward	exec
 ##bindsym XF86Save		exec
