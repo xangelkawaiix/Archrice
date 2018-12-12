@@ -1,73 +1,56 @@
+" Some of these .vimrc snippets are from Luke Smith
+" And the others are tweaked by myself.
+
 let mapleader =" "
-" Load Pathogen for plugins:
-	execute pathogen#infect()
-	execute pathogen#helptags()
+" Used for vimplug
+call plug#begin('~/.vim/plugged')
+Plug 'LukeSmithxyz/vimling'
+Plug 'junegunn/seoul256.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'tpope/vim-sensible'
+Plug 'junegunn/limelight.vim', { 'for': 'markdown' }
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plug 'vimwiki/vimwiki'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
+Plug 'flazz/vim-colorschemes'
+Plug 'scrooloose/nerdtree'
+call plug#end()
 
 " Some basics:
 	set nocompatible
 	filetype plugin on
 	syntax enable
     set shell=bash
-    colorscheme carvedwoodcool
+    colorscheme seoul256
     set termencoding=utf-8
-	set encoding=utf-8
-   	set number
-    set relativenumber
+    set encoding=utf-8
+   	set number relativenumber
     set tabstop=4
-    set softtabstop=0 
-    set expandtab 
+    set softtabstop=0
+    set expandtab
     set shiftwidth=4
     set smarttab
     set nowrap
     set autoindent
     set copyindent
     set showmatch
-    set undolevels=1000
+    set undolevels=2000
 
-" Make the keyboard faaaaaaast
+" Disable automatic commenting on newline:
+    autocmd Filetype * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Make the keyboard fast:
      set ttyfast
      set timeout timeoutlen=1000 ttimeoutlen=5
 
-" Latex live preview
-let g:livepreview_previewer = 'zathura'        
-
-" Copy/Paste from X11 clipboard
-    vmap <leader>xyy :!xclip -f -sel clip<CR>
-    map <leader>xpp mz:-1r !xclip -o -sel clip<CR>`z
-
-" View an image for a suckless sent presentation:
-	map <leader>v $F@ly$:!feh --scale-down --auto-zoom --image-bg black <c-r>" &<CR><CR>
-
-" Open corresponding.pdf
-	map <leader>p :!zathura <c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
-
-" Spell-check set to F2:
-	map <F2> :setlocal spell! spelllang=en_us<CR> 
-
-" Get line, word and character counts with F3:
-	map <F3> :!wc <C-R>%<CR>
-
-" Toggle NerdTree
-	map <F6> :NERDTreeToggle<CR>
-
-" Toggle LaTeX Preview
-    map <F7> :LLPStartPreview<CR>
-
-" Open file as suckless sent presentation
-	map <F9> :w!<CR>:!sent <c-r>%<CR><CR>
-
-" Goyo plugin makes text more readable when writing prose:
-	map <F10> :Goyo<CR>
-
-" Readme auto wrap text:
-	autocmd BufRead,BufNewFile *README.md set tw=79
+" LaTeX live preview default pdf:
+let g:livepreview_previewer = 'zathura'
 
 " Navigating with guides
 	inoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
 	vnoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
 	map <Space><Tab> <Esc>/<++><Enter>"_c4l
-
-"" Vim plugin
 
 " Enable autocompletion:
 	set wildmode=longest,list,full
@@ -75,7 +58,7 @@ let g:livepreview_previewer = 'zathura'
 
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 	set splitbelow
-	set splitright    
+	set splitright
 
 " Shortcutting split navigation, saving a keyp ress:
 	map <C-h> <C-w>h
@@ -90,7 +73,59 @@ let g:livepreview_previewer = 'zathura'
 " Open corresponding.pdf
 map <leader>p :!zathura <c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
 
-"""LATEX
+" Copy/Paste from X11 clipboard:
+    vmap <C-c> :!xclip -f -sel clip<CR>
+    map <C-p>xpp mz:-1r !xclip -o -sel clip<CR>`z
+
+" Compile document, based on the filetype
+    map <leader>c :w! \| !compile <c-r>%<CR><CR>
+
+" View an image for a suckless sent presentation:
+	map <leader>v $F@ly$:!feh --scale-down --auto-zoom --image-bg black <c-r>" &<CR><CR>
+
+" Open corresponding .pdf:
+	map <leader>p :!zathura <c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
+
+" Spell-check set to F2:
+	map <leader>o :setlocal spell! spelllang=en_us<CR>
+
+" Fuzzy Finder for searching and open file:
+	map <leader>f :FZF<CR>
+
+" Focusing on task with goyo and limelight:
+	map <leader>g :Goyo \| :Limelight \| set linebreak<CR>
+
+" Get line, word and character counts with F3:
+	map <F3> :!wc <C-R>%<CR>
+
+" Toggle NerdTree
+	map <F6> :NERDTreeToggle<CR>
+
+" Toggle LaTeX Preview
+    map <F7> :LLPStartPreview<CR>
+
+ " Open file as suckless sent presentation
+	map <F9> :w!<CR>:!sent <c-r>%<CR><CR>
+
+" Enable goyo for default for mutt writing:
+    autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
+    autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo
+
+" Delete all trailing whitespace on save | This is very useful for development
+    autocmd BufWritePre * %s/\s\+$//e
+
+" Set the file readed as it is:
+    let g:vimwiki_ext2syntax = { '.Rmd': 'markdown', '.rmd': 'markdown', '.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown' }
+    autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
+    autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
+    autocmd BufRead,BufNewFile *.tex set filetype=tex
+    " Readme auto wrap text:
+	autocmd BufRead,BufNewFile *README.md set tw=79
+
+" Run xrdb whenever xdefaults or Xresources are updated:
+    autocmd BufWritePost ~/.Xresources,~/.Xdefaults !xrdb %
+
+"LATEX
 	" Word count:
 	autocmd FileType tex map <F3> :w !detex \| wc -w<CR>
 	autocmd FileType tex inoremap <F3> <Esc>:w !detex \| wc -w<CR>
@@ -135,7 +170,7 @@ map <leader>p :!zathura <c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
 	autocmd FileType tex inoremap ,col \begin{columns}[T]<Enter>\begin{column}{.5\textwidth}<Enter><Enter>\end{column}<Enter>\begin{column}{.5\textwidth}<Enter><++><Enter>\end{column}<Enter>\end{columns}<Esc>5kA
 	autocmd FileType tex inoremap ,rn (\ref{})<++><Esc>F}i
 
-"""PHP/HTML
+"PHP/HTML
 	autocmd FileType php,html inoremap ,b <b></b><Space><++><Esc>FbT>i
 "	autocmd FileType php,html inoremap ,dv <div<Space>class="<++>"<Space>id="<++>"><Enter></div><++><Esc>2h1ki
 	autocmd FileType php,html inoremap ,it <em></em><Space><++><Esc>FeT>i
@@ -161,7 +196,7 @@ map <leader>p :!zathura <c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
 	autocmd FileType php,html inoremap &<space> &amp;<space>
 
 
-""".bib
+".bib
 	autocmd FileType bib inoremap ,a @article{<Enter><tab>author<Space>=<Space>"<++>",<Enter><tab>year<Space>=<Space>"<++>",<Enter><tab>title<Space>=<Space>"<++>",<Enter><tab>journal<Space>=<Space>"<++>",<Enter><tab>volume<Space>=<Space>"<++>",<Enter><tab>pages<Space>=<Space>"<++>",<Enter><tab>}<Enter><++><Esc>8kA,<Esc>i
 	autocmd FileType bib inoremap ,b @book{<Enter><tab>author<Space>=<Space>"<++>",<Enter><tab>year<Space>=<Space>"<++>",<Enter><tab>title<Space>=<Space>"<++>",<Enter><tab>publisher<Space>=<Space>"<++>",<Enter><tab>}<Enter><++><Esc>6kA,<Esc>i
 	autocmd FileType bib inoremap ,c @incollection{<Enter><tab>author<Space>=<Space>"<++>",<Enter><tab>title<Space>=<Space>"<++>",<Enter><tab>booktitle<Space>=<Space>"<++>",<Enter><tab>editor<Space>=<Space>"<++>",<Enter><tab>year<Space>=<Space>"<++>",<Enter><tab>publisher<Space>=<Space>"<++>",<Enter><tab>}<Enter><++><Esc>8kA,<Esc>i
@@ -183,18 +218,3 @@ map <leader>p :!zathura <c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
 	autocmd Filetype rmd inoremap ,r ```{r}<CR>```<CR><CR><esc>2kO
 	autocmd Filetype rmd inoremap ,p ```{python}<CR>```<CR><CR><esc>2kO
 	autocmd Filetype rmd inoremap ,c ```<cr>```<cr><cr><esc>2kO
-
-""".xml
-	autocmd FileType xml inoremap ,e <item><Enter><title><++></title><Enter><guid<space>isPermaLink="false"><++></guid><Enter><pubDate><Esc>:put<Space>=strftime('%a, %d %b %Y %H:%M:%S %z')<Enter>kJA</pubDate><Enter><link><++></link><Enter><description><![CDATA[<++>]]></description><Enter></item><Esc>?<title><enter>cit
-	autocmd FileType xml inoremap ,a <a href="<++>"><++></a><++><Esc>F"ci"
-
-
-vnoremap K xkP`[V`]
-vnoremap J xp`[V`]
-vnoremap L >gv
-vnoremap H <gv
-
-map <enter><enter> yi[:e <c-r>"<cr>
-
-" Snippets are from Luke Smith.
-" Some are tweaked by myself
