@@ -12,17 +12,21 @@ align=left
 command=i3weather
 interval=1800
 
+[memory]
+command=i3mem
+interval=30
+
 [volume]
 interval=once
 command=i3volume
 interval=3
 signal=10
 
-[mail]
-label=📬
-command=i3mail
-interval=60
-align=left
+#[mail]
+#label=📬
+#command=i3mail
+#interval=60
+#align=left
 
 [iface]
 label=🌐
@@ -44,7 +48,7 @@ label=📅
 command=echo $(date '+%Y %b %d %I:%M%p') 🕓
 interval=5
 
-[wifi]
-command=i3wifi
+#[wifi]
+#command=i3wifi
 #instance=wlp2s0b1
-interval=10
+#interval=10
