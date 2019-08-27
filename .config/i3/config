@@ -1,256 +1,148 @@
 # vim: filetype=i3
+# File originally by Luke Smith <https://lukesmith.xyz>
+
+# This config file will use environmental variables such as $BROWSER and $TERMINAL.
+# You can set these variables in ~/.profile or ~/.bash_profile if you have it as below:
 #
-## Basic Definition ##
+# export FILE="ranger"
+# export TERMINAL="st"
+
+# #---Basic Definitions---# #
+for_window [class="^.*"] border pixel 4
+gaps inner 5
+gaps outer 5
+set $term --no-startup-id $TERMINAL
 set $mod Mod4
-font pango:Monaco 10
-for_window [class=".*"] border pixel 1
 
-set $term --no-startup-id       urxvt
-set $BROWSER --no-startup-id    firefox
-set $reboot sudo -A reboot
-set $shutdown sudo -A shutdown -h now
-
-floating_modifier 	$mod
-hide_edge_borders 	both
-
-## Required for i3 gaps ##
-gaps inner 15
-gaps outer 15
-
-## System Menu ##
-set $sysmenu "[p]oweroff  re[b]oot  [r]eload [s]uspend  [l]ogout  "
-bindsym $mod+Delete   mode $sysmenu
-
-mode $sysmenu {
-    bindsym r         restart
-    bindsym l         exit
-    bindsym p         exec shutdown -P now
-    bindsym b         exec shutdown -r now
-    bindsym s         exec systemctl suspend
-    bindsym Return    mode "default"
-    bindsym Escape    mode "default"
-}
-
-## Basic binding ##
-bindsym $mod+Return       exec $term
-bindsym $mod+Shift+Return exec $term -e tmux
-bindsym $mod+Shift+space  floating toggle
-bindysm $mod+space        focus mode_toggle
-
-## Dropdown Terminal ##
-#for_window [instance="tmuxdd"] floating enable
-#for_window [instance="tmuxdd"] resize set 625 400
-#for_window [instance="tmuxdd"] move scratchpad
-#for_window [instance="tmuxdd"] border pixel 2
-#exec --no-startup-id $term -n dropdown -e tmux
-
-# R
-#for_window [instance="dropdowncalc"] floating enable
-#for_window [instance="dropdowncalc"] resize set 800 300
-#for_window [instance="dropdowncalc"] move scratchpad
-#for_window [instance="dropdowncalc"] border pixel 2
-#exec --no-startup-id $term -n math -f mono:pixelsize=18 -e R -q
-
-
-## Application launcher ##
-# Row First
-bindsym $mod+q kill
-#bindsym $mod+Shift+q
-
-bindsym $mod+w exec --no-startup-id $BROWSER
-bindsym $mod+Shift+w exec qutebrowser
-
-bindsym $mod+e exec $term -e neomutt
-#bindsym $mod+Shift+e
-
-bindsym $mod+r exec  $term -e ranger
-bindsym $mod+Shift+r exec $term -e sudo ranger /
-
-#bindsym $mod+t exec
-bindsym $mod+Shift+t gaps inner current set 10; gaps outer current set 10
-
-bindsym $mod+y  exec $term -e calcurse
-bindsym $mod+Shift+y exec --no-startup-id i3resize left
-
-#bindsym $mod+u [instance="tmuxdd"] scratchpad show; [instance="tmuxdd"] move position center
-bindsym $mod+Shift+u exec --no-startup-id i3resize down
-
-bindsym $mod+i exec $term -e htop
-bindsym $mod+Shift+i exec --no-startup-id i3resize up
-
-bindsym $mod+o sticky toggle
-bindsym $mod+Shift+o exec --no-startup-id i3resize right
-
-bindsym $mod+p exec mpc toggle
-##bindsym $mod+Shift+p
-
-# Row second
-#bindsym $mod+a [instance="dropdowncalc"] scratchpad show; [instance="dropdowncalc"] move position center
-bindsym $mod+Shift+a exec $term -e pulsemixer
-
-bindsym $mod+s gaps inner current plus 5
-bindsym $mod+Shift+s gaps inner current minus 5
-
-bindsym $mod+d exec --no-startup-id dmenu_run -i -fn Monaco-12
-bindsym $mod+Shift+d gaps inner current set 0; gaps outer current set 0
-
-bindsym $mod+f fullscreen toggle
-#bindsym $mod+Shift+f
-
-bindsym $mod+g workspace prev
-bindsym $mod+Shift+g exec --no-startup-id gimp; workspace $ws5
-
-bindsym $mod+h focus left
-bindsym $mod+Shift+h move left 30
-
-bindsym $mod+j focus down
-bindsym $mod+Shift+j move down 30
-
-bindsym $mod+k focus up
-bindsym $mod+Shift+k move up 30
-
-bindsym $mod+l focus right
-bindsym $mod+Shift+l move right 30
-
-# Row Third
-bindsym $mod+z gaps outer current plus 5
-bindsym $mod+Shift+z gaps outer current minus 5
-
-bindsym $mod+x exec --no-startup-id mpc pause && betterlockscreen -l dim
-bindsym $mod+Shift+x exec shutdown -h now
-
-bindsym $mod+c exec --no-startup-id camtoggle
-#bindsym $mod+Shift+c
-
-bindsym $mod+v exec $term -e ncmpcpp -s visualizer
-#bindsym $mod+Shift+v
-
-#bindsym $mod+b
-bindsym $mod+Shift+b exec --no-startup-id blender; workspace $ws7
-
-bindsym $mod+n exec $term -e newsboat
-#bindsym $mod+Shift+n
-
-bindsym $mod+m exec --no-startup-id $term -e ncmpcpp
-#bindsym $mod+Shift+m
-
-## Media ##
-bindsym $mod+plus		    exec --no-startup-id pamixer -i 5
-bindsym $mod+Shift+plus		exec --no-startup-id pamixer -i 15
-bindsym $mod+minus 		    exec --no-startup-id pamixer -d 5
-bindsym $mod+Shift+minus	exec --no-startup-id pamixer -d 15
-bindsym $mod+less 		    exec --no-startup-id mpc prev
-bindsym $mod+Shift+less		exec --no-startup-id mpc prev
-bindsym $mod+greater		exec --no-startup-id mpc next
-bindsym $mod+Shift+greater  exec --no-startup-id mpc next
-
-## Function Buttons ##
-##bindsym $mod+F1     exec
-bindsym $mod+F2     exec arandr
-bindsym $mod+F3     exec displayselect
-bindsym $mod+F4	    exec $term -e bashmount
-bindsym $mod+F5       restart
-#bindsym $mod+F6	    exec
-#bindsym $mod+F7        exec
-#bindsym $mod+F8 	    exec
-#bindsym $mod+F9       exec
-#bindsym $mod+F10	    exec
-bindsym $mod+F11    exec $reboot
-bindsym $mod+F12    exec $shutdown
-
-## Floating Windows ##
-# Gimp
-for_window [title="GIMP Startup"] move workspace $ws5
-for_window [class="Gimp"] move workspace $ws5
-for_window [window_role="GtkFileChooserDialog"] resize shrink height 10 px
-
-## Mpv
-for_window [title="video0 - mpv"] floating enable
-for_window [title="video0 - mpv"] sticky enable
-
-# Steam
-for_window [class="^Steam$" title="^Friends$"] floating enable
-for_window [class="^Steam$" title="Steam - News"] floating enable
-for_window [class="^Steam$" title=".* - Chat"] floating enable
-for_window [class="^Steam$" title="^Settings$"] floating enable
-for_window [class="^Steam$" title="^Steam Library Folders$"] floating enable
-for_window [class="^Steam$" title=".* - event started"] floating enable
-for_window [class="^Steam$" title=".* CD key"] floating enable
-for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
-for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
-for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
-for_window [title="^Steam Keyboard$"] floating enable
-
-## For screenshot and recording ##
-
-# Print current window
-bindsym Print exec scrot -q 100 -u '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/Scrot'
-# Print fullscreen
-bindsym Shift+Print exec scrot -q 100 '%Y%m%d_%Ho%M%S.png' -e 'mv $f ~/Pictures/Scrot'
-# Screencast
-bindsym $mod+Print exec screencast
-# Kill screencast
-bindsym $mod+Shift+Print exec killrecording
-# Record audio
-bindsym $mod+Insert exec audio
-# Kill audio
-bindsym $mod+Shift+Insert exec killaudio
-
-## Workspace Bindings ##
-bindsym $mod+Home workspace $ws1
-bindsym $mod+Control+Home move container to  workspace $ws1
-bindsym $mod+End workspace $ws10
-bindsym $mod+Control+End move container to workspace $ws10
-bindsym $mod+apostrophe 	split horizontal ;; exec $term
-bindsym $mod+slash          split vertical ;; exec $term
-bindsym $mod+Shift+slash	kill
-bindsym $mod+backslash workspace back_and_forth
-bindsym $mod+Tab workspace back_and_forth
-
-# Set Xresources colors:
-set_from_resource $darkblack	color0  #000000
-set_from_resource $black	    color8  #000000
-set_from_resource $darkred	    color1  #000000
-set_from_resource $red		    color9  #000000
-set_from_resource $darkgreen	color2  #000000
-set_from_resource $green	    color10 #000000
-set_from_resource $darkyellow	color3  #000000
-set_from_resource $yellow	    color11 #000000
-set_from_resource $darkblue	    color4  #000000
-set_from_resource $blue		    color12 #000000
-set_from_resource $darkmagenta	color5  #000000
-set_from_resource $magenta	    color13 #000000
-set_from_resource $darkcyan	    color6  #000000
-set_from_resource $cyan		    color14 #000000
-set_from_resource $darkwhite	color7  #000000
-set_from_resource $white	    color15 #000000
-set $transparent		        #00000000
-
-#                       BORDER		    BACKGROUND	TEXT		INDICATOR   CHILD_BORDER
-client.focused		$red		        $red		$magenta	$darkmagenta	$darkblue
-client.unfocused	$transparent	    $blue		$white		$darkblue		$darkblack
-client.focused_inactive	$transparent    $blue		$white		$darkblue		$darkblack
-client.urgent		$darkred	        $darkred	$black		$darkred		$darkred
-client.background   $black
+# #---Dropdown Windows---# #
+# General dropdown window traits. The order can matter.
+for_window [instance="dropdown_*"] floating enable
+for_window [instance="dropdown_*"] move scratchpad
+for_window [instance="dropdown_*"] sticky enable
+for_window [instance="dropdown_*"] scratchpad show
+for_window [instance="dropdown_tmuxdd"] resize set 625 450
+for_window [instance="dropdown_dropdowncalc"] resize set 800 300
+for_window [instance="dropdown_tmuxdd"] border pixel 3
+for_window [instance="dropdown_dropdowncalc"] border pixel 2
+for_window [instance="dropdown_*"] move position center
 
 bar {
-	font pango: Hack 11
-	colors {
-           background $darkblack
-           statusline $darkwhite
-           separator $cyan
-           focused_workspace  $blue $darkblue $darkblack
-           active_workspace   $blue $blue $darkwhite
-           inactive_workspace $darkblack $darkblack $white
-           urgent_workspace   $darkblack $darkblack $white
-   }
-    status_command i3blocks
-    position top
-    mode dock
-    modifier None
+	font pango:Monaco 9
+	status_command i3blocks
+	position top
+	mode dock
+	modifier None
+colors {
+	background #2f343f
+	statusline #2f343f
+	separator #4b5262
+	# colour of border, background, and text
+	focused_workspace       #2f343f #bf616a #d8dee8
+	active_workspace        #2f343f #2f343f #d8dee8
+	inactive_workspace      #2f343f #2f343f #d8dee8
+	urgent_workspace        #2f343f #ebcb8b #2f343f
+}
 }
 
-## Define names for default workspaces ##
+# colour of border, background, text, indicator, and child_border
+client.focused              #bf616a #2f343f #d8dee8 #bf616a #d8dee8
+client.focused_inactive     #2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.unfocused            #2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.urgent               #2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.placeholder          #2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.background           #2f343f
+
+# #---Basic Bindings---# #
+bindsym $mod+Shift+Return	exec --no-startup-id samedir
+
+bindsym $mod+Shift+space 	floating toggle
+bindsym $mod+space		focus mode_toggle
+
+bindsym $mod+Escape		workspace prev
+bindsym $mod+Shift+Escape 	exec --no-startup-id prompt "Exit i3?" "i3-msg exit"
+
+#STOP/HIDE EVERYTHING:
+bindsym $mod+Shift+Delete	exec --no-startup-id lmc truemute ; exec --no-startup-id lmc pause ; exec --no-startup-id pauseallmpv; workspace 0; exec $term -e htop ; exec $term -e $FILE
+
+# #---Letter Key Bindings---# #
+bindsym $mod+q			[con_id="__focused__" instance="^(?!dropdown_).*$"] kill
+bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!dropdown_).*$"] exec --no-startup-id kill -9 `xdotool getwindowfocus getwindowpid`
+
+bindsym $mod+Shift+r		exec --no-startup-id winresize
+
+bindsym $mod+t			split toggle
+bindsym $mod+Shift+t		gaps inner current set 10; gaps outer current set 10
+
+bindsym $mod+Shift+y		exec --no-startup-id i3resize left
+
+bindsym $mod+u			exec --no-startup-id ddspawn tmuxdd
+bindsym $mod+Shift+u		exec --no-startup-id i3resize down
+bindsym $mod+Shift+i		exec --no-startup-id i3resize up bindsym $mod+o			sticky toggle bindsym $mod+Shift+o		exec --no-startup-id i3resize right
+
+bindsym $mod+a			exec --no-startup-id ddspawn dropdowncalc -f mono:pixelsize=24
+
+bindsym $mod+s			gaps inner current plus 5
+bindsym $mod+Shift+s		gaps inner current minus 5
+
+bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
+
+set $freeze Distraction-free mode (super+shift+f to reactivate bindings)
+mode "$freeze" { bindsym $mod+Shift+f mode "default"
+}
+
+bindsym $mod+f			fullscreen toggle
+bindsym $mod+Shift+f		mode "$freeze" ;; exec --no-startup-id notify-send "Distraction-free mode activated." "Press Super+Shift+f to return."
+
+bindsym $mod+g			workspace prev
+
+bindsym $mod+h			focus left
+bindsym $mod+Shift+h		move left 30
+bindsym $mod+Ctrl+h		move workspace to output left
+
+bindsym $mod+j			focus down
+bindsym $mod+Shift+j		move down 30
+bindsym $mod+Ctrl+j		move workspace to output down
+
+bindsym $mod+k			focus up
+bindsym $mod+Shift+k		move up 30
+bindsym $mod+Ctrl+k		move workspace to output up
+
+bindsym $mod+l			focus right
+bindsym $mod+Shift+l		move right 30
+bindsym $mod+Ctrl+l		move workspace to output right
+
+bindsym $mod+z			gaps outer current plus 5
+bindsym $mod+Shift+z		gaps outer current minus 5
+
+bindsym $mod+c			exec --no-startup-id cabl
+
+bindsym $mod+v			exec --no-startup-id $term -e $EDITOR -c "VimwikiIndex"
+
+bindsym $mod+b			bar mode toggle
+bindsym $mod+Shift+b		floating toggle; sticky toggle; exec --no-startup-id hover left
+
+bindsym $mod+Shift+n		floating toggle; sticky toggle; exec --no-startup-id hover right
+
+# #---Workspace Bindings---# #
+bindsym $mod+Home		workspace $ws1
+bindsym $mod+Shift+Home		move container to workspace $ws1
+bindsym $mod+End		workspace $ws10
+bindsym $mod+Shift+End		move container to workspace $ws10
+bindsym $mod+Prior		workspace prev
+bindsym $mod+Shift+Prior	move container to workspace prev
+bindsym $mod+Next		workspace next
+bindsym $mod+Shift+Next		move container to workspace next
+bindsym $mod+Tab		workspace back_and_forth
+bindsym $mod+XF86Back		workspace prev
+bindsym $mod+Shift+XF86Back	move container to workspace prev
+bindsym $mod+XF86Forward	workspace next
+bindsym $mod+Shift+XF86Forward	move container to workspace next
+bindsym $mod+semicolon		workspace next
+bindsym $mod+apostrophe		split horizontal ;; exec $term
+bindsym $mod+slash		split vertical ;; exec $term
+bindsym $mod+Shift+slash	kill
+bindsym $mod+backslash		workspace back_and_forth
+
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -262,136 +154,60 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-## switch to workspace ##
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
+# switch to workspace
+bindsym $mod+1		workspace $ws1
+bindsym $mod+2		workspace $ws2
+bindsym $mod+3		workspace $ws3
+bindsym $mod+4		workspace $ws4
+bindsym $mod+5		workspace $ws5
+bindsym $mod+6		workspace $ws6
+bindsym $mod+7		workspace $ws7
+bindsym $mod+8		workspace $ws8
+bindsym $mod+9		workspace $ws9
+bindsym $mod+0		workspace $ws10
 
-## move focused container to workspace ##
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
+# move focused container to workspace
+bindsym $mod+Shift+1	move container to workspace $ws1
+bindsym $mod+Shift+2	move container to workspace $ws2
+bindsym $mod+Shift+3	move container to workspace $ws3
+bindsym $mod+Shift+4	move container to workspace $ws4
+bindsym $mod+Shift+5	move container to workspace $ws5
+bindsym $mod+Shift+6	move container to workspace $ws6
+bindsym $mod+Shift+7	move container to workspace $ws7
+bindsym $mod+Shift+8	move container to workspace $ws8
+bindsym $mod+Shift+9	move container to workspace $ws9
+bindsym $mod+Shift+0	move container to workspace $ws10
 
-## Arrow Keys ##
-bindsym $mod+Left		    	focus left
-bindsym $mod+Down		    	focus down
-bindsym $mod+Up			    	focus up
-bindsym $mod+Right 		        focus right
-bindsym $mod+Shift+Left		    move left
-bindsym $mod+Shift+Down		    move down
-bindsym $mod+Shift+Up			move up
-bindsym $mod+Shift+Right        move right
+for_window [class="Pinentry"] sticky enable
+for_window [class="sent"] border pixel 0px
+for_window [title="GIMP Startup"] move workspace $ws5
+for_window [class="Gimp"] move workspace $ws5
+for_window [window_role="GtkFileChooserDialog"] resize set 800 600
+for_window [window_role="GtkFileChooserDialog"] move position center
+for_window [title="Default - Wine desktop"] floating enable
 
-## External Scripts ##
-# Remaps the capslock key to escape and uses the US international keyboard with dead keys:
-exec_always no-startup-id exec remaps
-# composite manager
-exec --no-startup-id compton --xrender-sync-fence
-# Dunst for notifications:
-exec --no-startup-id dunst
-# Network Manager Applet
-exec --no-startup-id nm-applet
-# Music player daemon:
-exec --no-startup-id mpd
-# Torrent daemon:
-exec --no-startup-id transmission-daemon
-# Setting up the background
-exec_always --no-startup-id exec $HOME/.fehbg
-# Launch Polybar
-#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-# Run Polybar Script
-#exec_always --no-startup-id $HOME/.config/polybar.sh
+# Bindings to make the webcam float and stick.
+for_window [title="mpvfloat"] floating enable
+for_window [title="mpvfloat"] sticky enable
+for_window [title="mpvfloat"] border pixel 0
+no_focus [title="mpvfloat"]
 
-# #---Extra XF86 Keys---# #
-# These are the extra media keys that some keyboards have.
-#bindsym XF86AudioMute		exec
-bindsym XF86AudioLowerVolume	exec --no-startup-id amixer -D pulse sset Master 5%-
-bindsym XF86AudioRaiseVolume	exec --no-startup-id amixer -D pulse sset Master 5%+
-##bindsym XF86PowerOff		exec
-##bindsym XF86Copy		exec
-##bindsym XF86Open		exec
-##bindsym XF86Paste		exec
-##bindsym XF86Cut		exec
-##bindsym XF86MenuKB		exec
-bindsym XF86Calculator		exec $term -e R -q
-##bindsym XF86Sleep		This binding is typically mapped by systemd automatically.
-##bindsym XF86WakeUp		exec
-bindsym XF86Explorer		exec $term -e ranger
-##bindsym XF86Send		exec
-##bindsym XF86Xfer		exec
-bindsym XF86WWW			exec --no-startup-id $BROWSER
-##bindsym XF86DOS		exec
-#bindsym XF86ScreenSaver	exec --no-startup-id lockscreen
-##bindsym XF86RotateWindows	exec
-##bindsym XF86TaskPane		exec
-##bindsym XF86Favorites		exec
-#bindsym XF86MyComputer		exec $term -e ranger
-##bindsym XF86Back		exec
-##bindsym XF86Forward		exec
-#bindsym XF86Eject		exec
-#bindsym XF86AudioNext		exec
-#bindsym XF86AudioPlay		exec
-#bindsym XF86AudioPrev		exec
-#bindsym XF86AudioStop		exec
-##bindsym XF86AudioRecord       exec
-#bindsym XF86AudioRewind	exec
-#bindsym XF86AudioForward	exec
-##bindsym XF86Phone		exec
-##bindsym XF86Tools		exec
-bindsym XF86HomePage		exec $BROWSER https://lukesmith.xyz
-bindsym XF86Reload		restart
-##bindsym XF86ScrollUp		exec
-##bindsym XF86ScrollDown	exec
-##bindsym XF86New		exec
-##bindsym XF86LaunchA		exec
-##bindsym XF86LaunchB		exec
-##bindsym XF86Launch2		exec
-##bindsym XF86Launch3		exec
-##bindsym XF86Launch4		exec
-##bindsym XF86Launch5		exec
-##bindsym XF86Launch6		exec
-##bindsym XF86Launch7		exec
-##bindsym XF86Launch8		exec
-##bindsym XF86Launch9		exec
-#bindsym XF86AudioMicMute	exec
-#bindsym XF86TouchpadToggle	exec
-#bindsym XF86TouchpadOn		exec
-#bindsym XF86TouchpadOff	exec
-#bindsym XF86Suspend		exec
-#bindsym XF86Close		kill
-#bindsym XF86WebCam		exec
-bindsym XF86Mail		exec $term -e neomutt
-bindsym XF86Messenger   exec $term -e irssi
-bindsym XF86Search		exec $BROWSER https://startpage.com
-##bindsym XF86Go		exec
-##bindsym XF86Finance   exec
-##bindsym XF86Game		exec
-#bindsym XF86Shop		exec $BROWSER https://ebay.com
-#bindsym XF86MonBrightnessDown	exec
-#bindsym XF86MonBrightnessUp	exec
-bindsym XF86AudioMedia		exec --no-startup-id $term -e ncmpcpp
-##bindsym XF86Display		exec --no-startup-id arandr
-#bindsym XF86KbdLightOnOff	exec
-#bindsym XF86KbdBrightnessDown	exec
-#bindsym XF86KbdBrightnessUp	exec
-##bindsym XF86Reply		exec
-##bindsym XF86MailForward	exec
-##bindsym XF86Save		exec
-bindsym XF86Documents		exec $term -e ranger ~/Documents
-##bindsym XF86Battery		exec
-##bindsym XF86Bluetooth		exec
-#bindsym XF86WLAN 		exec
+exec_always --no-startup-id nm-applet
+exec_always --no-startup-id ibus-daemon -drx
+
+# #---Function Buttons---# #
+bindsym $mod+F2		restart
+
+# #---Arrow Keys---# #
+bindsym $mod+Left		focus left
+bindsym $mod+Ctrl+Left		move workspace to output left
+bindsym $mod+Down		focus down
+bindsym $mod+Ctrl+Down		move workspace to output down
+bindsym $mod+Up			focus up
+bindsym $mod+Ctrl+Up		move workspace to output up
+bindsym $mod+Right 		focus right
+bindsym $mod+Ctrl+Right		move workspace to output right
+bindsym $mod+Shift+Left		move left
+bindsym $mod+Shift+Down		move down
+bindsym $mod+Shift+Up		move up
+bindsym $mod+Shift+Right 	move right

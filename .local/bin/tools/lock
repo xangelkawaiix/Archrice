@@ -1,0 +1,4 @@
+#!/bin/sh
+# locking current session with betterlockscreen cuz muh aesthetic..
+
+notify-send "Locking Desktop"; sleep .5; mpc pause; pauseallmpv; betterlockscreen -l dimblur 2>/dev/null
