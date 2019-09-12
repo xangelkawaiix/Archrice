@@ -1,6 +1,6 @@
 # Archrice
 ![Wallpaper](./.config/wall.png)
-![Desktop](./.config/desktop.png)
+![Desktop](./.config/Desktop.png)
 
 These are my config file. I make this repo because i was inspired by [Luke Smith](https://www.github.com/lukesmithxyz).
 This ricing setup should **work** on any Arch based distro. Some packages might
