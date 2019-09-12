@@ -1,51 +1,107 @@
-# Blog
-http://lukesmith.xyz/rss.xml
-https://notrelated.libsyn.com/rss
+#################################
+#		Blog 		#
+#################################
 
-# Github
-https://github.com/dankehidayat.private.atom?token=Ahl5S8WB6f2e8OR3IjchVGFJllYwq6Ywks66BoAZwA== "~dankehidayat (Github)" "github"
+--------------------------------------------------
+			BLOG
+--------------------------------------------------
+https://www.archlinux.org/feeds/news/ "Tech"
+https://aur.archlinux.org/rss/ "~AUR (Arch Linux)" "Tech"
+https://news.mit.edu/mitnews-rss.xml "~MIT News"
+http://lukesmith.xyz/rss.xml "Blog"
+http://xpenguin.club/rss.xml "Blog"
+https://begriffs.com/atom.xml "~begriffs"
+https://static.fsf.org/fsforg/rss/news.xml "Tech"
+https://dankehidayat.000webhostapp.com/feed "~The Latest from Danke" "Blog"
+http://verisimilitudes.net/rss.xml
+https://n-o-d-e.net/rss/rss.xml
+### Security ###
+https://isc.sans.edu/rssfeed_full.xml "~SANS Internet Storm Center" "Security"
+https://threatpost.com/feed/ "Security"
+https://www.schneier.com/blog/atom.xml "Security"
 
-# Tech
-https://www.archlinux.org/feeds/news/ "tech"
-http://feeds.feedburner.com/ThisIsMyNextPodcast "tech"
-https://linustechtips.libsyn.com/wanshow "tech"
+#################################
+# 		Misc		#
+#################################
 
-# Social
-http://feeds.gimletmedia.com/hearreplyall "social"
+--------------------------------------------------
+			MISC
+--------------------------------------------------
+### Git ###
+https://gitlab.com/dankehidayat.atom "~dankehidayat (Github)"
+https://github.com/LukeSmithxyz.atom "~LukeSmithxyz (Github)"
+### Anime ###
+http://www.horriblesubs.info/rss.php?res=720 "~HorribleSubs"
 
-# YouTube
-https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~Luke Smith (YouTube)" "yt"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCKTehwyGCKF-b2wo0RKwrcg "~Bisqwit (YouTube)" "yt"
-https://www.youtube.com/feeds/videos.xml?channel_id=UC2wXHrCSgvZ4aoFIFN-p8uw "~Danke Hidayat (YouTube)" "yt"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCkf4VIqu3Acnfzuk3kRIFwA "~Gotbletu (YouTube)" "yt"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCvjgXvBlbQiydffZU7m1_aw "~TheCodingTrain (YouTube)" "yt"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCEFY_ZrVOs4-XcKQx-cZiJw "~Rigamarole (YouTube)" "yt"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCmO_G49F6QTFS5CPUfuQADg "~Spatry (YouTube)" "yt"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg "~DistroTube (YouTube)" "yt"
-https://www.youtube.com/feeds/videos.xml?channel_id=UC0vBXGSyV14uvJ4hECDOl0Q "~Techquickie (YouTube)" "yt"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCEBb1b_L6zDS3xTUrIALZOw "~MIT OpenCourse (YouTube)" "yt"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCYFvEPbFbDIVRiODrh1-x4g "~Mowtendoo (YouTube)" "yt"
-https://www.youtube.com/feeds/videos.xml?channel_id=UClq42foiSgl7sSpLupnugGA "~DONG (YouTube)" "yt"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCXuqSBlHAE6Xw-yeJA0Tunw "~Linus Tech Tips (YouTube)" "yt"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCtxJFU9DgUhfr2J2bveCHkQ "~Verge Science (YouTube)" "yt"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCLXo7UDZvByw2ixzpQCufnA "~Vox (YouTube)" "yt"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCDrekHmOnkptxq3gUU0IyfA "~Devon Crawford (YouTube)" "yt"
-https://www.youtube.com/feeds/videos.xml?channel_id=UC8butISFwT-Wl7EV0hUK0BQ "~FreeCodeCamp (YouTube)" "yt"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCf93fPKwotph47H3_KDcRyg "~Kris Occhipinti (YouTube)" "yt"
+--------------------------------------------------
+			REDDIT
+--------------------------------------------------
+## /r/ ###
+https://www.reddit.com/.rss?feed=7e643fda299d81dc364c7057b941d94d7cd7449b&user=RomonsTr "~REDDIT: Front Page"
+https://www.reddit.com/r/linux.rss "~REDDIT: r/linux" "Social"
+https://www.reddit.com/r/unixporn.rss "~REDDIT: r/unixporn" "Social"
+https://www.reddit.com/r/archlinux.rss "~REDDIT: r/archlinux" "Social"
+https://www.reddit.com/r/animemes.rss "~REDDIT: r/animemes" "Social"
+https://www.reddit.com/r/tf2.rss "~REDDIT: r/tf2" "Social"
+https://www.reddit.com/r/touhou.rss "~REDDIT: r/touhou" "Social"
+https://www.reddit.com/r/touhou_NSFW.rss "~REDDIT: r/touhou_NSFW" "Social"
 
-## Music
-https://www.youtube.com/feeds/videos.xml?channel_id=UCGGY3oTOQ9g9FCu9hLFJsqw "~Luna (YouTube)" "yt" "music"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCAaGaynFpku5cAx6OOSrW-w "~Honeyworks (YouTube)" "yt" "music"
-https://www.youtube.com/feeds/videos.xml?channel_id=UC9AYHlE2OLcMlZJo3MBlfkQ "~CosmoP (YouTube)" "yt" "music"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCDOTPjUW-NhQMDmYbgMvQKA "~Police Piccadily (YouTube)" "yt" "music"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCE0uNSkGhhsNMwAZcIQY7rw "~Mitchie M (YouTube)" "yt" "music"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCBHddZ8LVkY3wlfpz6MFVGw "~Yasuha (YouTube)" "yt" "music"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCMMBGMjrrWcRZmG_lW4jC-Q "~Pinocchio (YouTube)" "yt" "music"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCG09qajPDZdPtLsTkW7mJQA "~40meterP (YouTube)" "yt" "music"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCD7pKXtQ-ZFixYZp8NYAY1Q "~HachiojiP (YouTube)" "yt" "music"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCu33JdVED-0vqaNyw_bCTKg "~1st PLACE / IA (YouTube)" "yt" "music"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCsFCD8G80_achmqcPEidGAw "~LamazeP (YouTube)" "yt" "music"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCQS8TAEfaDhnU-L5oZ5Mj5A "~Emon (YouTube)" "yt" "music"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCl2BybuWtxg09OjzdCHMjUQ "~noboru (YouTube)" "yt" "music"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCVh47EKH9VLresRqiYi9txw "~Mili (YouTube)" "yt" "music"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCB6pJFaFByws3dQj4AdLdyA "~Reol (YouTube)" "yt" "music"
+
+#########################
+# 	Podcast 	#
+#########################
+
+--------------------------------------------------
+			PODCAST
+--------------------------------------------------
+https://dataskeptic.libsyn.com/rss "~Data Skeptic" "Podcast"
+https://learningmachines101.libsyn.com/rss "~Learning Machine 101" "Podcast"
+https://notrelated.libsyn.com/rss "Podcast"
+http://askhistorians.libsyn.com/rss "Podcast"
+
+
+#########################
+# 	YouTube 	#
+#########################
+
+--------------------------------------------------
+			YOUTUBE
+--------------------------------------------------
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~YOUTUBE: Luke Smith"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCAPR27YUyxmgwm3Wc2WSHLw "~YOUTUBE: Chris Were"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCkf4VIqu3Acnfzuk3kRIFwA "~YOUTUBE: gotbletu"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCKTehwyGCKF-b2wo0RKwrcg "~YOUTUBE: bisqwit"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCt-GOpCw4dOBlIyqL9A1ztA "~YOUTUBE: SrPelo"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCRE3NFNtdjR96-H4QG4U1Fg "~YOUTUBE: Hex DSL"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCZrrEuHiQjN2CUo84g5tk7w "~YOUTUBE: tripcode!Q/7"
+https://www.youtube.com/feeds/videos.xml?channel_id=UChBsOxskMpDmBAsgJ91fKcg "~YOUTUBE: ThuleanPerspective"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsnGwSIHyoYN0kiINAGUKxg "~YOUTUBE: Wolfgang's"
+
+#########################
+# 	Twitter 	#
+#########################
+
+--------------------------------------------------
+			TWITTER
+--------------------------------------------------
+http://twitrss.me/twitter_user_to_rss/?user=LasterK "~TWITTER: LasterK" "Social"
+http://twitrss.me/twitter_user_to_rss/?user=hews__ "~TWITTER: hews__" "Social"
+http://twitrss.me/twitter_user_to_rss/?user=didgk00 "~TWITTER: didgk00" "Social"
+http://twitrss.me/twitter_user_to_rss/?user=tauminust "~TWITTER: tauminust" "Social"
+http://twitrss.me/twitter_user_to_rss/?user=RealBisqwit "~TWITTER: RealBisqwit" "Social"
+http://twitrss.me/twitter_user_to_rss/?user=OCrsch "~TWITTER: 0Crsch" "Social"
+http://twitrss.me/twitter_user_to_rss/?user=michaelreeves08 "~TWITTER: michaelreeves08" "Social"
+http://twitrss.me/twitter_user_to_rss/?user=b0rk "~TWITTER: b0rk" "Social"
+http://twitrss.me/twitter_user_to_rss/?user=mikumiku_ebooks "~TWITTER: mikumiku_ebooks" "Social"
+
+#########################
+# 	OTHER 		#
+#########################
+
+--------------------------------------------------
+			OTHER
+--------------------------------------------------
+
+https://nyaa.si/?page=rss
+https://sukebei.nyaa.si/?page=rss
+https://distrowatch.com/news/dw.xml

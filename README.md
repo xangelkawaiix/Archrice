@@ -7,7 +7,6 @@ be available on Debian aswell (Haven't check it out).
 ## Programs
 List of the programs:
 * st
-* urxvt (Default terminal)
 * i3-gaps
 * i3blocks
 * mpd and ncmpcpp
@@ -19,7 +18,7 @@ List of the programs:
 * ranger
 * zathura
 * calcurse
-* mutt/neomutt
+* neomutt
 * dmenu
 * betterlockscreen
 * compton

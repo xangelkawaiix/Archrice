@@ -1,54 +1,73 @@
-command=/usr/lib/i3blocks/$BLOCK_NAME
+command=~/.local/bin/statusbar/$BLOCK_NAME
 separator_block_width=15
 markup=pango
 
-[mpd]
-command=i3mpd
+[record]
+command=cat /tmp/recordingicon
+interval=once
+signal=9
+
+[music]
 label=🎼
-interval=1
-align=left
+interval=once
+signal=11
+
+[news]
+label=📰
+interval=once
+signal=6
+
+#[iplocate]
+#interval=30
+
+[pacpackages]
+label=📦
+interval=once
+signal=8
+
+[torrent]
+interval=20
+signal=7
 
 [weather]
-command=i3weather
-interval=1800
+interval=18000
+signal=5
 
-[memory]
-command=i3mem
-interval=30
+[mailbox]
+label=📬
+interval=180
+signal=12
+
+#[memory]
+#interval=30
+#label=🧠
+
+#[cpu]
+#interval=15
+#label=💻
 
 [volume]
 interval=once
-command=i3volume
-interval=3
 signal=10
 
-#[mail]
-#label=📬
-#command=i3mail
+#[disk]
 #interval=60
-#align=left
+#command=disk /
 
-[iface]
-label=🌐
-instance=wlp2s0b1
-color=#00FF00
-interval=10
-
-[wifi]
-label=🌐
-instance=enp1s0
-interval=10
+#[disk]
+#interval=60
+#command=disk /home 🏠
 
 [battery]
-command=i3battery
+command=battery BAT0
 interval=5
 
-[time]
+[clock]
 label=📅
-command=echo $(date '+%Y %b %d %I:%M%p') 🕓
-interval=5
+interval=30
 
-#[wifi]
-#command=i3wifi
-#instance=wlp2s0b1
-#interval=10
+[internet]
+interval=10
+
+[help]
+interval=once
