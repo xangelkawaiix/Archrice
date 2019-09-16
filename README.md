@@ -1,32 +1,31 @@
-# Archrice
 ![Wallpaper](./.config/wall.png)
 ![Desktop](./.config/Desktop.png)
 
-These are my config file. I make this repo because i was inspired by [Luke Smith](https://www.github.com/lukesmithxyz).
-This ricing setup should **work** on any Arch based distro. Some packages might
-be available on Debian aswell (Haven't check it out).
+My i3-gaps dotfiles, setup theme might changes from time to time. This repos was archived for quite sometimes but i reopened this
+again.
 
-## Programs
-List of the programs:
-* st - suckless terminal
-* rtv - ncurses reddit in terminal
-* i3-gaps - the tiling window manager with gaps
-* mpd/ncmpcpp and cmus - the daemon and the music player
-* mpv - suck *_less_* media player
-* neofetch - displaying basic machine information
-* newsboat (RSS is still a thing you know)
-* polybar (That awesome bar)
-* qutebrowser - webkit based browser (Rarely used this)
-* ranger and nnn - for file manager
-* zathura - pdf viewer
-* calcurse for managing calendar
-* neomutt for email client
-* dmenu - suckless software
-* betterlockscreen - i3lock but better
-* ~~compton~~ xcompmgr - a bit minimalist
+### Softwares:
+Software list
+- st - suckless terminal
+- rtv - ncurses reddit in terminal
+- i3-gaps - the tiling window manager with gaps
+- mpd and ncmpcpp - the daemon and the music player
+- mpv - mplayer based program
+- neofetch - displaying basic machine information
+- newsboat - rss reader
+- polybar (That awesome bar)
+- qutebrowser - webkit based browser (Rarely used this)
+- ranger and nnn - for file manager
+- zathura - pdf viewer
+- calcurse - ncurses calendar
+- neomutt for email client
+- dmenu - suckless app launcher
+- betterlockscreen - i3lock but better
+- ~~compton~~ xcompmgr - minimalist touch
 
-## Scripts
-some [scripts](./.scripts) belong to [Luke Smith](https://www.github.com/lukesmithxyz). I also create some small scripts too.
+### Scripts:
+I create some scripts by own and some other [scripts](./.scripts) belong to [Luke Smith](https://www.github.com/lukesmithxyz) and other people i can't tell it's name.
 
-## License
-[MIT License](./LICENSE)
+### License:
+This dotfiles are MIT licensed. See below
+[License](./LICENSE).

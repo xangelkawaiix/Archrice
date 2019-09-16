@@ -2,37 +2,37 @@
 # https://github.com/dylanaraps/neofetch/wiki/Customizing-Info
 print_info() {
 	info title
-	info underline
+#	info underline
 
-	info "Packages" packages
-	info "Terminal" term
-# 	info "DE" de
- 	info "Kernel" kernel
- 	info "Shell" shell
+#	info "TERMINAL" term
 	info "OS" distro
-#	info "Local IP" local_ip
+ 	info "DE" de
+ 	info "KERNEL" kernel
+ 	info "SHELL" shell
+#	info "LOCAL IP" local_ip
+	info "PACKAGES" packages
 
-	info "WM" wm
-#	info "Uptime" uptime
-	info "Memory" memory
-#	info "Terminal Font" term_font
-	info "WM Theme" wm_theme
-#	info "Host" model
-	info "Theme" theme
-	info "Icons" icons
- 	info "CPU" cpu
- 	info "GPU" gpu
+#	info "WM" wm
+	info "UPTIME" uptime
+#	info "MEMORY" memory
+#	info "TERM FONT" term_font
+#	info "WM THEME" wm_theme
+#	info "HOST" model
+#	info "THEME" theme
+#	info "ICONS" icons
+# 	info "CPU" cpu
+# 	info "GPU" gpu
 
-    	info "Resolution" resolution
-	info "Song" song
-#	info "GPU Driver" gpu_driver  # Linux/macOS only
-#	info "CPU Usage" cpu_usage
-#	info "Disk" disk
-#	info "Battery" battery
-#	info "Font" font
-#	info "Public IP" public_ip
-#	info "Users" users
-#	info "Locale" locale  # This only works on glibc systems.
+#    	info "RESOLUTION" resolution
+#	info "SONG" song
+#	info "GPU DRIVER" gpu_driver  # Linux/macOS only
+#	info "CPU DRIVER" cpu_usage
+#	info "DISK" disk
+#	info "BATTERY" battery
+#	info "FONT" font
+#	info "PUBLIC IP" public_ip
+#	info "USERS" users
+#	info "LOCALE" locale  # This only works on glibc systems.
 
 	info line_break
 	info cols
@@ -462,7 +462,7 @@ colors=(distro)
 # Default:  'on'
 # Values:   'on', 'off'
 # Flag:     --bold
-bold="on"
+bold="off"
 
 # Enable/Disable Underline
 #
@@ -503,7 +503,7 @@ block_range=(0 7)
 # Default:  'on'
 # Values:   'on', 'off'
 # Flag:     --color_blocks
-color_blocks="on"
+color_blocks="off"
 
 # Color block width in spaces
 #
@@ -625,7 +625,7 @@ image_source="ascii"
 #       Change this to 'Lubuntu', 'Xubuntu', 'Ubuntu-GNOME' or 'Ubuntu-Budgie' to use the flavors.
 # NOTE: Arch, Crux and Gentoo have a smaller logo variant.
 #       Change this to 'arch_small', 'crux_small' or 'gentoo_small' to use the small logos.
-ascii_distro="arch"
+ascii_distro="arch_small"
 
 # Ascii Colors
 #
@@ -644,7 +644,7 @@ ascii_colors=(distro)
 # Default: 'on'
 # Values:  'on', 'off'
 # Flag:    --ascii_bold
-ascii_bold="on"
+ascii_bold="off"
 
 
 # Image Options
