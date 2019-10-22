@@ -1,0 +1,4 @@
+#!/bin/sh
+# Download danbooru pic by using the id
+
+gallery-dl "https://danbooru.donmai.us/posts/"$1""
