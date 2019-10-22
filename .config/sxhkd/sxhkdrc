@@ -14,7 +14,7 @@ super + n
 super + i
 	$TERMINAL -e htop
 super + y
-	$TERMINAL -e calcurse
+	$TERMINAL -e calcurse -D ~/.config/calcurse
 super + shift + a
 	$TERMINAL -e pulsemixer; pkill -RTMIN+10 i3blocks
 super + shift + c
@@ -22,7 +22,7 @@ super + shift + c
 super + shift + e
 	tutorialvids
 super + w
-	webby | xargs -r $BROWSER
+	qutebrowser
 super + shift + w
 	$BROWSER
 super + shift + g
@@ -39,6 +39,8 @@ super + shift + x
 	prompt "Shutdown computer?" "sudo -A shutdown -h now"
 super + shift + BackSpace
 	prompt "Reboot computer?" "sudo -A shutdown -r now"
+super + x
+	lock
 XF86Launch1
 	xset dpms force off
 XF86AudioMute
@@ -72,7 +74,7 @@ XF86MonBrightnessUp
 # Recording
 # Take screenshot
 Print
-	maim pic-full-$(date '+%y%m%d-%H%M-%S').png
+	maim ~/Screenshot/pic-full-$(date '+%Y-%m-%d-%H-%M-%S').png && notify-send "Saved Screenshot as $(date '+%Y-%m-%d-%H-%M-%S').png"
 # Pick screenshot type
 shift + Print
 	maimpick
@@ -136,7 +138,7 @@ super + F10
 	dmenuumount
 # Search with Duckduckgo
 super + F11
-	ducksearch
+	startsearch
 # Network Manager interface
 super + F12
 	$TERMINAL -e sudo -A nmtui

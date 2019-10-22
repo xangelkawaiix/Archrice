@@ -1,26 +1,21 @@
 body {
 	color: #ddd;
-	background: url("../wall.png") no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+/*	background: url("wall.png") no-repeat center center fixed; */
+	background: #222;
 }
 
-#center{
-        font-family: monospace;
-        font-size: 14px;
-	border-radius: 24px;
+#center {
+        font-family: "Noto Sans";
+        font-size: 22px;
 	float: left;
 	display: inline-block;
 	width: 300px;
 	height: 70px;
 	position: absolute;
-	top: 50%;
-	bottom: 50%;
+	top: 20%;
+	bottom: 80%;
 	left: 0;
 	right: 0;
 	margin: auto;
 	text-align: center;
-	background-color: rgba(20, 20, 20, 1.0);
 }

@@ -1,21 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 stty -ixon # Disable ctrl-s and ctrl-q.
 shopt -s autocd #Allows you to cd into directory merely by typing the directory name.
-shopt -s cdspell # Auto correct cd
-shopt -s checkwinsize # Check window on resize
-
 HISTSIZE= HISTFILESIZE= # Infinite history.
-export PS1=" \[\e[00;34m\]λ \W \[\e[0m\]"
+export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
 
 [ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc" # Load shortcut aliases
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
-
-# Bash auto-completion feature
-if [ -f /etc/bash_completion ]; then
-	. /etc/bash_completion
-fi
-
-# adds autoomplete to commands that dont work
-if [ "$PS1" ]; then
-	complete -cf sudo man
-fi

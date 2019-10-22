@@ -1,7 +1,7 @@
 # #---Basic Definitions---# #
-for_window [class="^.*"] border pixel 5
-gaps inner 10
-gaps outer 10
+for_window [class="^.*"] border pixel 0
+gaps inner 15
+gaps outer 15
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
 
@@ -18,20 +18,20 @@ for_window [instance="dropdown_dropdowncalc"] border pixel 2
 for_window [instance="dropdown_*"] move position center
 
 #bar {
-#font pango:Hack 10
-#status_command i3blocks
-#position top
-#mode dock
-#modifier None
+        #font pango:Fantasque Sans Mono 11
+        #status_command i3blocks
+        #position bottom
+        #mode dock
+        #modifier None
 #colors {
-#background #2f343f
-#statusline #2f343f
-#separator #4b5262
-       # colour of border, background, and text
-#focused_workspace       #2f343f #bf616a #d8dee8
-#active_workspace        #2f343f #2f343f #d8dee8
-#inactive_workspace      #2f343f #2f343f #d8dee8
-#urgent_workspace        #2f343f #ebcb8b #2f343f
+        #background #1e2123
+        #statusline #2f343f
+        #separator #4b5262
+        # colour of border, background, and text
+        #focused_workspace       #1e2123 #1e2123 #bf616a
+        #active_workspace        #1e2123 #1e2123 #d8dee8
+        #inactive_workspace      #1e2123 #1e2123 #d8dee8
+        #urgent_workspace        #1e2123 #ebcb8b #2f343f
 #}
 #}
 
@@ -138,16 +138,16 @@ bindsym $mod+slash		split vertical ;; exec $term
 bindsym $mod+Shift+slash	kill
 bindsym $mod+backslash		workspace back_and_forth
 
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws1 "1: 一"
+set $ws2 "2: 二"
+set $ws3 "3: 三"
+set $ws4 "4: 四"
+set $ws5 "5: 五"
+set $ws6 "6: 六"
+set $ws7 "7: 七"
+set $ws8 "8: 八"
+set $ws9 "9: 九"
+set $ws10 "10: 十"
 
 # switch to workspace
 bindsym $mod+1		workspace $ws1
@@ -180,6 +180,12 @@ for_window [class="Gimp"] move workspace $ws5
 for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 for_window [window_role="GtkFileChooserDialog"] move position center
 for_window [title="Default - Wine desktop"] floating enable
+for_window [title="Library" instance="mcomix"] floating enable resize set 1024 480
+for_window [title="Customize Look and Feel" instance="lxappearance"] floating enable resize set 800 600
+for_window [title="Customize Look and Feel" instance="lxappearance"] move position center
+for_window [title="Network Connections"] floating enable
+for_window [title="Screen Layout Editor" instance="arandr"] floating enable resize set 800 600
+for_window [title="Screen Layout Editor" instance="arandr"] move position center
 
 # Bindings to make the webcam float and stick.
 for_window [title="mpvfloat"] floating enable
@@ -187,13 +193,11 @@ for_window [title="mpvfloat"] sticky enable
 for_window [title="mpvfloat"] border pixel 0
 no_focus [title="mpvfloat"]
 
-# Autostart programs
-#exec_always --no-startup-id nm-applet
-exec_always --no-startup-id poly-launch
-#exec_always --no-startup-id ibus-daemon -drx
-
 # #---Function Buttons---# #
 bindsym $mod+F2		restart
+
+# Autostart script
+exec_always --no-startup-id poly-launch
 
 # #---Arrow Keys---# #
 bindsym $mod+Left		focus left

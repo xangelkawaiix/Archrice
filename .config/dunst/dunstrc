@@ -1,17 +1,17 @@
 [global]
 monitor = 0
 follow = mouse
-geometry = "250x50-24+24"
+geometry = "250x50-24+32"
 indicate_hidden = yes
 shrink = no
 separator_height = 0
-padding = 10
-horizontal_padding = 24
+padding = 15
+horizontal_padding = 15
 frame_width = 2
-sort = no
+sort = yes
 idle_threshold = 120
-font = Noto Sans 10
-line_height = 4
+font = Fantasque Sans Mono 11
+line_height = 5
 markup = full
 format = "<b>%s</b>\n%b"
 alignment = left
@@ -36,17 +36,17 @@ history = ctrl+grave
 context = ctrl+shift+period
 
 [urgency_low]
-background = "#2f343f"
+background = "#1e2123"
 foreground = "#d8dee8"
 timeout = 2
 
 [urgency_normal]
-background = "#2f343f"
+background = "#1e2123"
 foreground = "#d8dee8"
 timeout = 4
 
 [urgency_critical]
-background = "#2f343f"
+background = "#1e2123"
 foreground = "#d8dee8"
 frame_color = "#bf616a"
 timeout = 0

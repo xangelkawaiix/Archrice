@@ -1,3 +1,3 @@
 #!/bin/sh
 # locking current session with betterlockscreen
-notify-send "Locking the Desktop"; sleep 1; mpc pause; pauseallmpv; betterlockscreen -l dim -t "Politically Incorrect." 2>/dev/null;
+notify-send " Locking the Desktop"; sleep 1; mpc pause; pauseallmpv; betterlockscreen -l dim -t "Politically Incorrect." 2>/dev/null;
